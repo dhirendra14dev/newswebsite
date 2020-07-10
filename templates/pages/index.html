@@ -1,0 +1,75 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Relevant and Irrereverent | Welcome</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+  
+</head>
+<body>
+    <header class='top-header'>
+        <div class="navbar">
+          <div class="navlogo">
+            <img src="{% static './images/R&I-logo.png' %}" alt="logo">
+          </div>
+            <nav class="nav-items">
+              <ul>
+                  <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latest' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+      </header>
+      <main>
+          <div class="content">
+              <h2 class="main-text">Welcome to <span class="text-highlight">Relevant & Irreverent</span></h2>
+                <p id = "description">
+                     Relevant & Irreverent is a weekly roundup of interesting stories from around the world that caught our eye. We know you saw the headlines, we're bringing you the ones you might have missed.
+                </p>
+            
+            <div class="subs-form">
+              <form action="{% url 'subscribe' %}" method="POST" class="input-form">
+                  {% csrf_token %}
+               <div><input type="email" id="email" name="email" placeholder="Enter your email address" required></div>  
+               <div><button type="submit" class="btn" name="subscribe" value="subscribe">Subscribe</button></div>
+              </form>
+            </div>
+
+            </div>    
+          </main>
+      </section>
+      <footer id="main-footer">
+        <div class="footer-container">
+       
+            <!-- <div class="footer-logo">
+                <img src="{% static 'images/R&I-logo.png' %}" alt="R&I">
+            </div> -->
+            
+          <div class="navlinks">
+            <ul class="linklist">
+                <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latest' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="icons">
+            <p>Follow us on</p>
+            <a target="_blank"  href="https://www.facebook.com/RnIsays"><i class="fab fa-facebook fa-2x"></i></a>
+            <a target="_blank" href="http://twitter.com/RnIsays" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+            <a target="_blank"  href="http://instagram.com/relevant.irreverent" target="_blank"><i class="fab fa-instagram fa-2x"></i></a> 
+          </div>
+        
+        </div>
+      </footer>
+</body>
+</html>

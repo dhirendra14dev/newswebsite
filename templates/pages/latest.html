@@ -1,0 +1,274 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Relevant and Irrereverent | Welcome</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&family=Lora&display=swap');
+      </style>
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+  </style>
+</head>
+<body>
+    <header class='top-header'>
+        <div class="navbar">
+          <div>
+            <img src="{% static 'images/R&I-logo.png' %}" alt="logo">
+          </div>
+            <nav class="nav-items">
+              <ul>
+                  <li><a href="{% url 'index'%}">Home</a></li>
+                  <li><a href="{% url 'latest' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>  
+      </header>
+      <main style= "margin:40px; padding:0px; font-family:'Open Sans', sans-serif; font-size: 16px; font-weight:400 ; background: rgb(223, 223, 223);color:#333; line-height: 1.8; word-spacing:5px;">
+          <table border="0px" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                  <td>
+                      <table align="center" border="0 px solid #cccccc;" cellpadding="0" cellspacing="0" width="1000" style="border-collapse:collapse">
+                        <tr>
+                          <td>
+                              <table border="0 px" cellpadding="0px" cellspacing="0">
+                                    <tr>
+                                            <td style="padding:20px 10px 0px 10px;text-align: right;">
+                                                <p style="color: rgb(136, 136, 136)">4 July 2020</p>
+                                              </td>
+                                            </tr>
+                                  <!-- <tr>
+                                      <td style="text-align:center;">
+                                        <img style="width:40%;margin:0px 0px -40px 0px; "src="https://2.bp.blogspot.com/-rRkNTB9Rrdk/Xv8KNOW-phI/AAAAAAAAOB0/BmJPEwAN3GYi0r5AXOdo90KzhIsk9JLagCLcBGAsYHQ/s1600/R%2526I-logo%2B%25286%2529.png" title="logo" alt="logo"> 
+                                  
+                                      </td>
+                                  </tr> -->
+                                  <tr>
+                                      <td style="padding:0px 10px 30px 10px;">
+                                                  <h3 style="font-family: 'Crimson Text', serif; font-weight: 700; font-size:24px;font-style:italic;text-align: right;"></h3>
+                                                  In this edition of <span style= "font-style:italic; font-size:18; font-weight: 400;" >Relevant & Irreverent</span>, we're talking about one country's move to convert a museum into a mosque and another's seeming indifference to dying pachyderms. We're also exploring the world of green cereal and giving thanks to those doomsday movies. 
+                                        </td>
+                                      </tr>
+                              </table>
+                              <table align="center" border="0 solid #cccccc;" cellpadding="0" cellspacing="0px" width="1000" style="border-collapse:collapse">
+                                  <tr>
+                                      <td style="padding:30px 10px 0px 10px
+                                                    ;text-align: center;border-bottom: 1px solid rgb(136, 136, 136);">
+                                                       
+                                                        <span style="font-family:'Open Sans', sans-serif; font-size: 25px; font-weight:800 ; margin-bottom:20px;">In the spotlight</span>
+                                              
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td style="padding:30px 10px 20px 10px;">
+                                          <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">Turkey's monumental move:  </span> President Recep Tayyip Erdogan's move to convert the world-famous Hagia Sophia tourist attraction into a mosque is aimed at appeasing his voters, but it's finding opponents all over the world. Hagia Sophia was built in the sixth century during the Christian Byzantine Empire and served as the seat of the Greek Orthodox Church. When the Ottomans conquered Istanbul in the 15th century, the cathedral was immediately converted into a mosque. In 1935, Mustafa Kemal Ataturk, the founder of the Turkish Republic, to proclaim Turkey's secular nature to the world, turned the monument into a museum. On Thursday, the country's highest administrative court heard a case challenging the legality of Ataturk's move.
+                                          Although there have long been calls to convert the UNESCO World Heritage site back into a mosque to better reflect the country's identity as a Muslim majority, this is the first time the issue has proceeded so far. In a letter to UNESCO, Greece's culture minister said Erdogan's plan "rekindles national and religious fanaticism." US Secretary of State Mike Pompeo has angered Ankara with his statement that the monument is better left alone as a museum. The court will give its <a href="https://www.dailysabah.com/politics/turkeys-top-administrative-court-completes-hearing-on-status-of-hagia-sophia/news" style="text-decoration: none;color:rgb(32, 133, 140) ">verdict</a> within 15 days. 
+                                      </td>
+                                  </tr>
+                                    
+                                  
+                                  <tr>
+                                      <td style="padding:30px 10px 50px 10px;">
+                                          <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">Botswana's conservation disaster: </span> Botswana's Okavango Delta is strewn with the carcasses of dead elephants and scientists are at a loss to explain the mass deaths. In mid-May about a dozen elephants were reported dead; by the end of the month it was 169. That figure has now crossed 350, with conservationists warning the number is likely to be higher as carcasses can be difficult to spot in an aerial survey. Experts say more are likely to die, with live elephants appearing weak and shrunken and seen walking around in circles, an indication of neurological impairment. Samples have not yet been tested so it's not known what is causing the mass deaths. As tusks of the dead elephants have not been taken, poachers are being ruled out. Anthrax was initially considered the most likely cause but that has also been ruled out. Conservationists are concerned at Botswana's lack of urgency in getting the samples tested. "It's a <a href="https://www.theguardian.com/environment/2020/jul/01/more-than-350-elephants-dead-in-mysterious-mass-die-off-botswana-aoe" style="text-decoration: none;color:rgb(32, 133, 140) ">conservation disaster</a> – it speaks of a country that is failing to protect its most valuable resource," said Niall McCann, director of conservation at National Park Rescue, a UK-based charity. Between 10% and 12% of Botswana's GDP is attributable to ecotourism, only diamonds contribute more.
+        
+                                      </td>
+                                  </tr>
+                                </table>
+                                <table align="center" border="0px solid #cccccc;" cellpadding="0" cellspacing="0" width="1000" style="border-collapse:collapse">
+                                    <tr>
+                                        <td style="padding:0px 10px 0px 10px
+                                                      ;text-align: center;border-bottom: 1px solid rgb(136, 136, 136);">
+                                                         
+                                                          <span style="font-size: 30px; font-weight:800 ; margin-bottom:20px;">Mask up!</span>
+                                                
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:30px 10px 0px 10px;">
+                                            <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">My Lord, it's common sense.  </span> That's what Tom Hanks has to say to those who "cannot find it in themselves" to just <a href="https://people.com/movies/tom-hanks-says-shame-on-you-to-those-who-dont-wear-a-mask-and-social-distance-do-your-part/?" style="text-decoration: none;color:rgb(32, 133, 140) ">wear a mask</a>.
+          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:20px 10px 0px 10px;">
+                                            Little did Lenin Gutierrez know that a simple question about a mask would raise such hell. On Monday, the Starbucks barista found himself at the receiving end of a diatribe when he inquired of a customer if she had a mask, something Starbucks requires its customers to wear. Amber Lynn Gilles' fury did not subside with the insults she hurled at him at the store; she later took to Facebook to vent further. In what one can only assume is to her utter dismay, her comments section was flooded with support for the barista, with some remarking that they wished they could give Gutierrez a tip. So Matt Cowan decided to <a href="https://edition.cnn.com/2020/06/28/us/starbucks-barista-mask-amber-lynn-gilles-trnd/index.html" style="text-decoration: none;color:rgb(32, 133, 140) ">facilitate</a> just that. Upset that Gutierrez was "being bullied for doing the right thing," Cowan set up a GoFundMe so that those who wanted to tip the barista could do so. <a href="https://www.gofundme.com/f/tips-for-lenen-standing-up-to-a-san-diego-karen?utm_source=facebook&utm_medium=social&utm_campaign=p_cp+share-sheet&fbclid=IwAR2sEnAtNcYLUdolydivjCAgWtwAH9my7juGfqJYbAi83GxR0cGY8ySORpM" style="text-decoration: none;color:rgb(32, 133, 140) ">Contributions</a> have crossed $100,000.
+        
+          
+          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:20px 10px 20px 10px;">
+                                            Unfortunately, a similar request to wear a mask did not stop at verbal abuses but got physical in India's Andhra Pradesh. When a colleague reminded him to wear a mask as part of India's coronavirus regulations, C Bhaskar, a senior state tourism department employee, abused, insulted and physically assaulted his female colleague. The police <a href="https://www.hindustantimes.com/india-news/told-to-wear-a-mask-andhra-govt-official-assaults-woman-arrested/story-x447ZyzvuRvpcKG7ZLfEPI.html" style="text-decoration: none;color:rgb(32, 133, 140) ">complaint</a> against him reads that he "dragged her from her chair, caught hold of her hair and started beating her on her face and head with a stick pulled out from a wooden chair."
+        
+          
+          
+                                        </td>
+                                    </tr>
+                                  </table>
+                                  <table align="center" border="0px solid #cccccc;" cellpadding="0" cellspacing="0" width="1000" style="border-collapse:collapse">
+                                      <tr>
+                                          <td style="padding:30px 10px 0px 10px
+                                                        ;text-align: center;border-bottom: 1px solid rgb(136, 136, 136);">
+                                                           
+                                                            <span style="font-size: 30px; font-weight:800 ; margin-bottom:20px;">Meanwhile</span>
+                                                  
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td style="padding:30px 10px 20px 10px;">
+                                              <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">Think you know what's best for your child?  </span> The UK's education secretary seems to think otherwise. Gavin Williamson has said that come September when schools reopen in the UK, parents had better have a "good reason" if they want to keep their kids away. And if found without one, they'll have to <a href="https://news.sky.com/story/parents-could-be-fined-if-they-dont-send-their-children-back-to-school-in-september-education-secretary-warns-12017324" style="text-decoration: none;color:rgb(32, 133, 140) ">pay a fine</a>.
+            
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding:30px 10px 20px 10px;">
+                                            <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">Bear with me.  </span> A brown bear in Italy's Trentino region has been sentenced to death and animal rights activists aren't having it. About 15,000 people have already signed a petition to spare the animal and Sergio Costa, Italy's environment minister, has written to the governor of Trentino saying he is against the slaying of the bear, which attacked two men on a hiking trail last week. According to Italian regulations, bears that attack humans must be euthanized. Still, as DNA evidence is being gathered to identify the bear, animal rights groups are calling for a stay of the culling order at least until an investigation is carried out and more details emerge as to what led to the <a href="https://edition.cnn.com/2020/06/27/world/bear-sentenced-to-death-in-italy-scli-intl/index.html" style="text-decoration: none;color:rgb(32, 133, 140) ">attack</a>. Costa writes in his letter that it could have been a mother protecting her cubs.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:30px 10px 20px 10px;">
+                                            <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">Sanskrit, anyone?   </span> Sanskrit, once the spoken language of India and now heard only at religious ceremonies, is making a comeback in Karamana, a suburb of Thiruvananthapuram, thanks to an initiative rolled out in late 2018 to popularize the language. And Mani, a tea-stall owner, is doing his bit to bring the nearly dead language back to life. With the coronavirus slowing down business, Mani came up with the novel idea of offering a discount at his tea stall to anyone ordering in Sanskrit. Not only has business boomed, it's also been a <a href="https://www.aninews.in/news/national/general-news/sanskrit-language-making-gradual-comeback-in-keralas-karamana-village20200628233936/#:~:text=Thiruvananthapuram%20(Kerala)%20%5BIndia%5D,languages%20is%20making%20a%20comeback." style="text-decoration: none;color:rgb(32, 133, 140) ">welcome marketing move</a> for the initiative.
+          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:30px 10px 0px 10px;">
+                                            <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">Shed the pounds.   </span> That's what zookeepers are telling Mao, a female African elephant in Japan's Morioka Zoological Park. When Mao lost her appetite after her mate died, staff put her on a high-calorie diet in an attempt to maintain her weight. But it's more than maintain she did, she piled on quite a few extra pounds as well. Now officials are taking the help of visitors to the zoo to get her back in shape. Visitors are encouraging Mao to get moving and make the 60-meter journey to the fence of her enclosure by tempting her with bananas and apples. Once she attains her <a href="https://www.japantimes.co.jp/news/2020/06/30/national/elephant-diet-morioka-zoo/#.XvsnDJMzaNY" style="text-decoration: none;color:rgb(32, 133, 140) ">ideal weight</a>, experts want to artificially inseminate her. A success story would mean Japan's first baby elephant born through artificial insemination. We're keeping our fingers crossed.
+        
+          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:20px 10px 30px 10px;">
+                                            And over in the UK, Prime Minister Boris Johnson wants <a href="https://www.telegraph.co.uk/politics/2020/06/29/boris-johnson-vows-tackle-uks-obesity-crisis-saying-britons/" style="text-decoration: none;color:rgb(32, 133, 140) ">obese</a> Britons to do the same, noting that a "fitter" population would be better equipped to deal with a health crisis.
+        
+          
+          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:20px 10px 20px 10px;">
+                                            <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">Fancy a degree in ninja studies? There's a university for that.   </span> Located in central Japan, a region once filled with ninjas, Mie University in 2017 set up the world's first research center devoted to ninja studies and a year later started a graduate program. After spending two years at the university garnering martial arts skills and studying the ways of the ninja 
+                                            <p style="display: inline;">&ndash;</p> those experts of silent assassination and espionage <p style="display: inline;">&ndash;</p> Genichi Mitsuhashi has now become the only person in the world to hold a master's degree in ninja studies. The 45-year-old, who has adopted farming as a way of life to emulate the <a href="https://www.japantimes.co.jp/news/2020/06/27/national/japan-university-first-ninja-studies-degree/#.Xv7W15MzaNZ" style="text-decoration: none;color:rgb(32, 133, 140) ">ways of the ninja</a>, whose day job was tending the land, is keen to get a doctorate.
+          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:30px 10px 20px 10px;">
+                                            <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">Want milk with that? </span> South Koreans are in a frenzy over a green onion-flavored cereal that just hit the shelves. The <a href="http://www.koreatimes.co.kr/www/nation/2020/06/694_292075.html" style="text-decoration: none;color:rgb(32, 133, 140) ">limited-edition</a> Chex cereal was one of the most searched keywords on major search portals in the weeks leading up to its July 1 launch. In a 2004 online poll by Kellogg's asking consumers for ideas for new cereals, green onion flavor, to almost everyone's surprise, was in huge demand. To quote someone from the cereal maker: "We were skeptical of making a cereal with the taste in the first place. But we made it after all, to show our respect for the support that people gave us 16 years ago."
+          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:30px 10px 10px 10px;">
+                                            <span style="font-size: 16px; font-weight:700 ; margin-bottom:20px;color:rgb(238, 96, 20);">I knew some good would come of that!  </span> Feeling calm and collected in the face of the raging pandemic? You've got those end-of-the-world movies to thank. Finally, there's proof that all those hours spent gorging on doomsday movies weren't a total waste. Psychologists say those apocalyptic movies have left us better equipped to deal with the coronavirus pandemic. A <a href="https://psyarxiv.com/4c7af/" style="text-decoration: none;color:rgb(32, 133, 140) ">recent study</a> of 310 volunteers suggests that while fans of horror movies are likely to be less distressed than most by the current crisis, fans of movies where <a href="https://www.theguardian.com/science/2020/jul/01/end-of-the-world-as-we-know-it-fans-of-apocalyptic-films" style="text-decoration: none;color:rgb(32, 133, 140) ">society collapses</a> when faced with flesh-eating zombies, invading aliens and contagious diseases sparing none, are mentally and practically better prepared to deal with the situation. So, if you haven't already, now is not a bad time to get caught up on those end-of-the-world movies. 
+        
+                                            
+        
+          
+                                        </td>
+                                    </tr>
+                                
+                                    </table>
+                                    <table align="center" border="0px solid #cccccc;" cellpadding="0" cellspacing="0" width="1000" style="border-collapse:collapse">
+                                        <tr>
+                                            <td style="padding:40px 10px 0px 10px
+                                                          ;text-align: center;border-bottom: 1px solid rgb(136, 136, 136);">
+                                                             
+                                                              <span style="font-size: 30px; font-weight:800 ; margin-bottom:20px;">Other R&I picks</span>
+                                                    
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td style="padding:20px 10px 0px 10px;">
+                                                Want to know why a Dutch e-bike ad is banned in France? Find out  <a href="https://nltimes.nl/2020/07/01/dutch-companys-e-bike-ad-banned-french-tv" style="text-decoration: none;color:rgb(32, 133, 140) ">here</a>. 
+        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:20px 10px 0px 10px;">
+                                                A trip to the highest reaches of earth's atmosphere excites you? Find out <a href="https://www.adn.com/business-economy/2020/06/28/florida-based-startup-wants-to-fly-passengers-to-the-edge-of-space-beneath-giant-balloons-launched-from-kodiak/" style="text-decoration: none;color:rgb(32, 133, 140) ">here</a> how to make that happen. 
+        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:20px 10px 0px 10px;">
+                                                Want to know what this Nepalese town did when swarms of locusts visited them? Find out  <a href="https://www.aninews.in/news/world/asia/people-clang-utensils-to-drive-away-locusts-in-kathmandu20200701072543/" style="text-decoration: none;color:rgb(32, 133, 140) ">here</a>. 
+        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:20px 10px 0px 10px;">
+                                                A glove that can instantly translate sign language into speech? How, you ask. Find out  <a href="https://edition.cnn.com/2020/06/30/health/sign-language-glove-ucla-scn-scli-intl/index.html" style="text-decoration: none;color:rgb(32, 133, 140) ">here</a>. 
+        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:20px 10px 20px 10px;">
+                                                Fancy being sheriff of your own Wild West town in New Zealand? Find out <a href="https://www.theguardian.com/world/2020/jun/29/wild-west-replica-town-for-sale-in-new-zealand-attracts-interest-in-us-and-hong-kong" style="text-decoration: none;color:rgb(32, 133, 140) ">here</a> how you can make that happen. 
+        
+                                            </td>
+                                        </tr>
+                                      </table>
+                                            
+                                    <table align="center" border="0 px solid #cccccc;" cellpadding="0" cellspacing="0" width="1000" style="border-collapse:collapse">
+                                        <tr>
+                                            <td style="border-top: 1px solid rgb(136, 136, 136);padding:30px 0px 20px 10px; background:white ;">
+                                                <span style="font-style:italic;">Relevant & Irreverent</span> is a weekly roundup of interesting stories from around the world that caught our eye. We know you saw the headlines, these are the ones you might have missed. To leave feedback and comments please email us at <span style="font-style: italic;">Relevant.Irreverent@gmail.com</span>
+                                            
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:20px 0px 40px 10px;text-align: center;">
+                                                
+                                                <a href="https://relevant-irreverent.mailchimpsites.com/"style="text-decoration:none;background:rgb(238, 96, 20); border-radius: 5px; color: white;padding: 10px 10px 10px 10px">Click to Subscribe</a>
+                                          </td>
+                                        </tr>
+                                      </table>         
+        
+                      </table>
+                    </td>
+                </tr>
+        
+          </table>
+        
+          </main>
+      </section>
+      <footer id="main-footer">
+        <div class="footer-container">
+       
+            <div class="footer-logo">
+                <img src="{% static 'images/R&I-logo.png' %}" alt="R&I">
+            </div>
+            
+          <div class="navlinks">
+            <ul class="linklist">
+                <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latest' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="icons">
+            <p>Follow us on</p>
+            <a target="_blank"  href="https://www.facebook.com/RnIsays"><i class="fab fa-facebook fa-2x"></i></a>
+            <a target="_blank" href="http://twitter.com/RnIsays" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+            <a target="_blank"  href="http://instagram.com/relevant.irreverent" target="_blank"><i class="fab fa-instagram fa-2x"></i></a> 
+          </div>
+        
+        </div>
+      </footer>
+</body>
+</html>
