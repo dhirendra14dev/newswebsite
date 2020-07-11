@@ -131,6 +131,9 @@ ul a:hover {
   margin-top: 3rem;
   
 }
+.flex-columns.flex-reverse{
+    margin-bottom: 200px;
+}
 .flex-columns.flex-reverse .row {
   flex-direction: row-reverse;
 }
@@ -248,7 +251,8 @@ color: white;
 }
 /* archives */
 .weekid{
-  Margin: 5rem 0px 20px 7rem;
+  Margin: 5rem 0px 3rem 0px;
+padding: 0px 0px 3rem 15rem;
     line-height: 1.5
 }
 .weekid .datestyle{
@@ -258,7 +262,7 @@ color: white;
 .storylist a{
   color: black;
   padding: 5px 5px;
-  font-size:18px;
+  font-size:15px;
 }
 .linebreak {
   margin:15px;
@@ -394,10 +398,9 @@ color: white;
  
 #contact-form{
   padding:0px 0px 30px 30px;
-  margin-bottom: 10rem;
 }
 .l-heading{
-  margin-top:20px;
+  margin-top:-3rem;
   font-size:16px;
   font-weight: 700;
   padding-bottom: 20px; 
@@ -424,20 +427,21 @@ color: white;
 
 /* archives */
 .weekid{
-  Margin: 3rem 0px 20px 3rem;
+  Margin: 3rem 0px 20px 10px;
+    padding: 0px 20px 200px  20px;
     line-height: 1.5
 }
 .weekid .datestyle{
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 700;  
 }
 .storylist a{
   color: black;
   padding: 5px 5px;
-  font-size:0.8;
+  font-size:0.7;
 }
 .linebreak {
-  margin:10px;
+  margin:15px;
 }
     /* story template */
 .storybox {
