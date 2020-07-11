@@ -128,3 +128,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'newsletter/static')
 ]
+try:
+    from .local_settings import *
+except ImportError:
+    pass
