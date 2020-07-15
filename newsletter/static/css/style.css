@@ -517,7 +517,7 @@ margin-top:0rem;
 }
 .l-heading{
   margin-top:-3rem;
-  font-size:15px;
+  font-size:1rem;
   font-weight: 700;
   padding-bottom: 20px; 
 }
@@ -555,12 +555,12 @@ margin-top:0rem;
 }
 
 .storylist{
-  font-size:1;
+  font-size:1rem;
   font-family:'Open Sans', sans-serif;
 }
 .storylist li{
   text-indent:-0.9rem;
-  margin:8px;
+  margin:10px;
   
   
 }
@@ -572,6 +572,7 @@ margin-top:0rem;
 }
 .linebreak {
   margin:15px;
+border-bottom:0.8px solid rgb(235, 233, 233);
 }
     /* story template */
 .smicons{
