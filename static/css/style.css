@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 /* Reset*/
 * {
   margin:0;
@@ -47,7 +48,7 @@ img {
   margin-top: 6rem;
 }
 .navlogo {
-    padding-top: 20px;
+    padding-top: 25px;
 }
 ul a {
   font-size: 1.1rem;
@@ -85,15 +86,15 @@ ul a:hover {
   margin-bottom: 2rem;
 }
 .main-text .text-highlight{
-  font-size: 2.4rem;
+  font-size: 2.1rem;
   color: #f6660c;
-  font-family: 'Crimson Text', serif;
+  font-family: 'Playfair Display', serif; 
   
 }
 
 .content p {
   font-size: 1.2rem;
-  padding: 0px 30px 0px 30px;
+  padding: 0px 50px 0px 50px;
   margin-bottom: 20px;
 
 
@@ -182,6 +183,21 @@ ul a:hover {
   font-weight:1000;
   line-height: 2rem;
 }
+.bottomtext{
+    text-align:center;
+    margin-top:-6rem;
+    margin-bottom: 5rem;
+        
+}
+    
+.bottomtext p{
+    font-family: 'Playfair Display', serif; 
+    font-size:1rem;
+     padding: 0px 20px 0px 20px;
+        
+        
+}
+
 
 /*Contact form*/
 #contact-form{
@@ -255,52 +271,79 @@ color: white;
   padding:0px 15px 0px 10px;
   color:#f6660c ;
 }
+.icons a .sicons{
+  font-size:30px;
+}
 /* archives */
 .weekid{
   Margin: 5rem 0px 3rem 0px;
-padding: 0px 20px 3rem 15rem;
+    padding: 0px 20px 3rem 15rem;
     line-height: 1.5;
 }
 
 .weekid .datestyle{
-    font-family: 'Lora', serif;
-    
-  font-size: 1rem;
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 .storylist{
   font-size:1rem;
   font-family:'Open Sans', sans-serif;
 }
-/*
-.storylist li{
-  text-indent:-1.2rem;
-}
-*/
+
 .storylist a{
   color: black;
-  padding: 5px 5px;
-  font-size:15px;
+  font-size:1rem;
 }
+.storylist li{
+  margin:5px; 
+}
+
+
 .linebreak {
   margin:15px;
-  border-bottom:0.1px solid rgb(235, 233, 233);
+  border-bottom:0.4px solid rgb(235, 233, 233);
 }
 
 /* story template */
-
+smicons{
+  margin-bottom: 3rem;
+}
 .storybox {
-Margin: 10rem 10rem 0px 10rem;
+Margin: 10rem 10rem 10rem 10rem;
 }
 .storytitle{
 
 font-size: 1.3rem;
+font-family: 'Lora', serif;
 font-weight: 700;
 padding:0px 0px 10px 0px;
+line-height: 1.2;
 }
 .storycontent{
-font-size: 16px;
+font-size: 1rem;
 }
+.iconstop{
+  display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.iconstop p{
+  font-size:0.8rem;
+}   
+
+.iconstop a{
+  padding: 0px 15px 0px 5px;
+}
+.iconstop i{
+  font-size:17px;
+  color: #bababa;
+}
+.iconstop i :hover{
+  opacity: 0.6;
+}
+
 /* Mobile */
 /*************************************************************************/
 @media(max-width: 767px) {
@@ -344,7 +387,8 @@ ul a {
     padding: 10px 10px 10px 10px;
   }
   .main-text .text-highlight{
-    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.5rem;
     line-height: 1.2; 
   }
   .content p {
@@ -445,7 +489,21 @@ margin-top:0rem;
       flex: 100%;
       max-width: 100%;
   }
-
+.bottomtext{
+    text-align:center;
+    margin-top:-4rem;
+    margin-bottom: 5rem;
+        
+}
+    
+.bottomtext p{
+    font-family: 'Playfair Display', serif; 
+    font-size:14px;
+     padding: 0px 20px 0px 20px;
+        
+        
+}
+    
  /*Contact form*/
  
 #contact-form{
@@ -487,12 +545,12 @@ margin-top:0rem;
 .weekid{
   Margin: 3rem 0px 20px 30px;
     padding: 0px 20px 200px  20px;
-    line-height: 1.5;
+    line-height: 1.2;
     
 }
 .datestyle{
     text-indent:0rem;
-  font-size: -1.2rem;
+  font-size:1.2rem;
   font-family: 'Lora', serif;  
 }
 
@@ -502,6 +560,9 @@ margin-top:0rem;
 }
 .storylist li{
   text-indent:-0.9rem;
+  margin:8px;
+  
+  
 }
 .storylist a{
   color: black;
@@ -547,11 +608,19 @@ overflow:auto;
 font-size: 1.3rem;
 font-family: 'Lora', serif;
 font-weight: 700;
-padding:0px 0px 10px 0px;
+padding:0px 0px 20px 0px;
+line-height: 1.2;
 }
 .storycontent{
 font-size: 1rem;
 margin-bottom: 0rem;
 overflow:auto;
 }
+}
+@media(orientation: landscape){
+   .main-text{
+    
+    margin-top: -1rem;
+    
+  }
 }
