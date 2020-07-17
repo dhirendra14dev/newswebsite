@@ -615,7 +615,6 @@ border-bottom:0.8px solid rgb(235, 233, 233);
 }
     /* story template */
 .smicons{
- 
     margin-bottom: 6rem;
     display:none;
 /*   background: #f7c08a; */
@@ -660,6 +659,43 @@ overflow:auto;
 .storycontent a{
 color:rgb(32, 133, 140);
 }
+    
+    
+    
+/* latest*/
+.basic{
+  margin: 40px 0rem 200px 0rem;
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.padstory{
+  padding: 20px 20px 20px 20px;
+}
+.shareicons{
+  padding: 10px 20px 30px 0px;
+  text-align: right;
+}
+.mainheading{
+  font-size: 25px; 
+  font-weight:800;
+  text-align: center;
+  padding-bottom:30px;
+  border-bottom: 1px solid rgb(136, 136, 136);
+}
+.title{
+  font-weight:700 ; 
+  color:rgb(238, 96, 20);
+}
+.storygroup a{
+  color:rgb(32, 133, 140);
+  text-decoration: none;
+}
+.rnipicks{
+  padding: 20px 20px 10px 20px;
+}
+    
 }
 @media(orientation: landscape){
    .main-text{
