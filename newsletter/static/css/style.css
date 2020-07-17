@@ -28,7 +28,7 @@ ul {
 }
 a {
   text-decoration: none;
-  color: white;
+  color:#2224b5;
 }
 img {
   width: 100%;
@@ -74,6 +74,7 @@ ul a:hover {
   justify-content: center;
   text-align: center;
   height:80vh;
+  margin-bottom:200px;
     /* background-image:url('../cropped.JPG');
      background-position:48% 55%; 
     background-position:cover;   */
@@ -202,6 +203,7 @@ ul a:hover {
 /*Contact form*/
 #contact-form{
   padding:30px 50px 0px 50px;
+  margin-bottom: 200px;
 }
 .l-heading{
   padding-bottom: 40px; 
@@ -276,7 +278,7 @@ color: white;
 }
 /* archives */
 .weekid{
-  Margin: 5rem 0px 3rem 0px;
+    Margin: 5rem 0px 1rem 0px;
     padding: 0px 20px 3rem 15rem;
     line-height: 1.5;
 }
@@ -306,11 +308,11 @@ color: white;
 }
 
 /* story template */
-smicons{
-  margin-bottom: 3rem;
+.smicons{
+  margin-bottom: 200px;
 }
 .storybox {
-Margin: 10rem 10rem 10rem 10rem;
+Margin: 10rem 10rem 5rem 10rem;
 }
 .storytitle{
 
@@ -322,6 +324,9 @@ line-height: 1.2;
 }
 .storycontent{
 font-size: 1rem;
+}
+.storycontent a{
+color:#2224b5;
 }
 .iconstop{
   display:flex;
@@ -616,6 +621,9 @@ line-height: 1.2;
 font-size: 1rem;
 margin-bottom: 0rem;
 overflow:auto;
+}
+.storycontent a{
+color:rgb(32, 133, 140);
 }
 }
 @media(orientation: landscape){

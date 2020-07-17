@@ -30,7 +30,7 @@
       <main >
         <div class="storybox">
         <h3 class="storytitle">{{newscontent.title}}</h3>
-        <p class="storycontent">{{newscontent.content|urlize}}</p>
+        <p class="storycontent">{{hyperlinked_text| safe |escape}}</p>
       </div>
       </main>
       <section class = "smicons">
@@ -39,7 +39,7 @@
             <div>
             <a href="http://facebook.com" target="_blank" class="lefticon"><i class="fab fa-facebook fa-2x"></i></a>
             <a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-            <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a> 
+            <a href="http://twitter.com" target="_blank"><i class="fab fa-whatsapp fa-2x" aria-hidden="true"></i></a> 
               </div>
           </div>
 

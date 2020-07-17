@@ -34,7 +34,7 @@
               {% regroup stories by published_date as newslist %}
               <ul>
                   {% for published_date in newslist %}
-                  <li class="datestyle">{{ published_date.grouper | date }}
+                  <li class="datestyle">{{ published_date.grouper}}
               <ul class="storylist">
               {% for story in published_date.list %}
               <li><a href="{% url 'newscontent' story.id %}">{{story.title}}</a></li>
