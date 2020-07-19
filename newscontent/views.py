@@ -3,8 +3,7 @@ from .models import Newscontent
 
 def archives(request):
   stories= Newscontent.objects.all()
-  # stories.order_by("-published_date")
-  print(stories)
+
   context = {
     'stories': stories
   }
@@ -14,8 +13,14 @@ def archives(request):
 def newscontent(request,newscontent_id):
   newscontent = get_object_or_404(Newscontent, pk=newscontent_id)
   
-  hyperlinked_text = newscontent.content.replace(newscontent.word1,"<a href={0} target={1}>{2}</a>".format(newscontent.link1,"_blank", newscontent.word1))
-  hyperlinked_text = hyperlinked_text.replace(newscontent.word2,"<a href={0} target={1}>{2}</a>".format(newscontent.link2,"_blank", newscontent.word2))
+  print(newscontent.word2)
+  if newscontent.word2 != '':
+    hyperlinked_text = newscontent.content.replace(newscontent.word1,"<a href={0} target={1}>{2}</a>".format(newscontent.link1,"_blank", newscontent.word1))
+
+    hyperlinked_text = hyperlinked_text.replace(newscontent.word2,"<a href={0} target={1}>{2}</a>".format(newscontent.link2,"_blank", newscontent.word2))
+  else:
+    hyperlinked_text = newscontent.content.replace(newscontent.word1,"<a href={0} target={1}>{2}</a>".format(newscontent.link1,"_blank", newscontent.word1))
+
 
   context = {
     'hyperlinked_text': hyperlinked_text ,
