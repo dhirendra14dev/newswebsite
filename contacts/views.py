@@ -13,6 +13,6 @@ def contact(request):
 
     contact.save()
 
-    messages.success(request, 'We have got your message, will get back to you soon!')
+    messages.success(request, "Thanks for getting in touch! We'll get back soon.")
     return redirect('/contactus')
   

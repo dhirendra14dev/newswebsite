@@ -11,5 +11,5 @@ def subscribe(request):
 
     subscribe.save()
 
-    messages.success(request, 'We have got your message, will get back to you soon!')
+    messages.success(request, 'Thank you for subscribing! Look out for R&I in your inbox on Saturday.')
     return redirect('/')

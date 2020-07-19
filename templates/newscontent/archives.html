@@ -31,7 +31,7 @@
         <section>
           
           <div class="weekid">
-              {% regroup stories by published_date as newslist %}
+              {% regroup stories|dictsortreversed:"published_date" by published_date as newslist %}
               <ul>
                   {% for published_date in newslist %}
                   <li class="datestyle">{{ published_date.grouper}}
