@@ -368,14 +368,14 @@ Margin: 10rem 10rem 5rem 10rem;
 }
 .storytitle{
 
-font-size: 1.4rem;
+font-size: 1.3rem;
 font-family: 'Lora', serif;
 font-weight: 700;
 padding:0px 0px 10px 0px;
 line-height: 1.2;
 }
 .storycontent{
-font-size: 1.1rem;
+font-size: 1rem;
 font-weight: 600;
 }
 .storycontent a{
@@ -659,7 +659,7 @@ border-bottom:0.8px solid rgb(235, 233, 233);
 }
     /* story template */
 .smicons{
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     
 
 /*   background: #f7c08a; */
