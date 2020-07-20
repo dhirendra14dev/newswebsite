@@ -362,7 +362,7 @@ color: white;
 /* story template */
 .smicons{
   margin-bottom: 200px;
-/*   display:none; */
+   display:none; 
 }
 .storybox {
 Margin: 10rem 10rem 5rem 10rem;
@@ -661,7 +661,7 @@ border-bottom:0.8px solid rgb(235, 233, 233);
     /* story template */
 .smicons{
     margin-bottom: 6rem;
-    display:none;
+
 /*   background: #f7c08a; */
 }
 .iconstop{
