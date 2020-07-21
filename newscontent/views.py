@@ -1,8 +1,13 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Newscontent
+from datetime import datetime
+
+
 
 def archives(request):
-  stories= Newscontent.objects.all()
+  stories= Newscontent.objects.filter(is_published = True)
+  
+
 
   context = {
     'stories': stories
@@ -13,7 +18,6 @@ def archives(request):
 def newscontent(request,newscontent_id):
   newscontent = get_object_or_404(Newscontent, pk=newscontent_id)
   
-  print(newscontent.word2)
   if newscontent.word2 != '':
     hyperlinked_text = newscontent.content.replace(newscontent.word1,"<a href={0} target={1}>{2}</a>".format(newscontent.link1,"_blank", newscontent.word1))
 
