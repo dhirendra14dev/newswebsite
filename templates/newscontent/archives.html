@@ -40,14 +40,14 @@
               <ul class="storylist">
               {% for story in published_date.list %}
               <li><a href="{% url 'newscontent' story.id %}">{{story.title}}</a></li>
+              {% endfor %}
+              {% endif %}
+              {% endfor %}
             </ul>
           </li>
           <div class="linebreak"></div>
-          {% endfor %}
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
         </ul>
+           
           </div>
         </section>
       </main>
