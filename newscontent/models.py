@@ -6,6 +6,7 @@ class Newscontent(models.Model):
   title = models.CharField(max_length=200)
   published_date = models.DateField(blank=True)
   content = models.TextField()
+  is_published = models.BooleanField(default=True)
   word1 = models.CharField(max_length=200, blank=True)
   link1 = models.TextField(blank=True)
   word2 = models.CharField(max_length=200, blank=True)
