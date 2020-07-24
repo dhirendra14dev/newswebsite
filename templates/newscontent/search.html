@@ -35,24 +35,25 @@
                   <label for="year" >Year</label>
                   <select name="year" id="year">
                     <option value="2020">2020</option>
+                    
                   </select>
                 </div>
                 <div class = "monthselect" >
-                    <label for="month">Month</label>
-                    <select name="month" id="month">
-                      {% for key,value in month_dict.items %}
-                      <option value="{{value}}" {% if value == correct_month %} selected="true" {%endif%}>{{key}}</option>
-                      {%endfor%}
-                      
-                    </select>
-                  </div>
+                  <label for="month">Month</label>
+                  <select name="month" id="month">
+                    {% for key,value in month_dict.items %}
+                    <option value="{{value}}"{% if value == month %} selected {%endif%}>{{key}}</option>
+                    {%endfor%}
+                  </select>
+                </div>
                   <button type="submit" class="btn">Go!</button>
                 </form>
       </section>
         <section>
           
           <div class="weekid">
-              {% regroup stories|dictsortreversed:"published_date" by published_date as newslist %}
+              {%if length_query != 0 %}
+              {% regroup stories_selected_month|dictsortreversed:"published_date" by published_date as newslist %}
               <ul>
                 {% for published_date in newslist %}
                 <li class="datestyle">{{ published_date.grouper}}
@@ -66,6 +67,14 @@
           {% endfor %}
           </ul>
           </div>
+          {%else%}
+          <p></p>
+          <div class ="errormessage" >
+            <div><img src="{% static 'images/errordog.jpg' %}" alt="nodog">
+            </div>
+          </div>
+          
+          {%endif%}
         </section>
       </main>
       <footer id="main-footer">

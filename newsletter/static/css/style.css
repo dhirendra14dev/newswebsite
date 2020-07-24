@@ -329,6 +329,77 @@ color: white;
   font-size:30px;
 }
 /* archives */
+.dateselect{
+  background: #739eb6;
+  margin: 3rem 2rem 0rem 2rem;
+  padding: 10px 0px 10px 0px;
+  border-radius: 10px;
+}
+.datewidget{
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+}
+.yearselect label {
+/* font-family:'Times New Roman', Times, serif; */
+font-size:1.1rem ;
+font-weight: 600;
+color:white;
+padding:0px 10px 0px 0px;
+}
+.yearselect select {
+  width: 100px;
+  font-size:1.1rem;
+  border-radius:5px;
+  }
+
+  .yearselect select:focus{
+    outline: none;
+  border-color: #f7c08a
+    }
+.monthselect{
+  margin-left: 1rem;
+}
+.monthselect select {
+  width: 120px;
+  font-size:1.1rem;
+  border-radius:5px;
+  }
+.monthselect label{
+  /* font-family:'Times New Roman', Times, serif; */
+  font-size:1.1rem ;
+  font-weight: 600;
+  color:white;
+ padding:0px 10px 0px 20px;
+  
+}
+.yearselect select:focus{
+  outline: none;
+border-color: #f7c08a
+  }
+  .monthselect select:focus{
+    outline: none;
+  border-color: #f7c08a
+    }
+    .datewidget .btn {
+      cursor: pointer;
+      /* display: inline-block; */
+      padding: 10px 20px;
+      color:black;
+      background-color:rgb(215, 255, 233);
+      font-weight: 400;
+      font-size:16px;
+      border: none;
+      border-radius: 5px;
+      margin-left: 2rem;
+    }
+    .datewidget .btn:hover {
+      opacity: 0.8;
+    }
+    .errormessage{
+      margin: 5rem 5rem 1rem 0rem;
+    }
+
 .weekid{
     Margin: 5rem 0px 1.2rem 0px;
     padding: 0px 20px 3rem 15rem;
@@ -336,11 +407,13 @@ color: white;
 }
 
 .weekid .datestyle{
+  
   font-family: 'Lora', serif;
   font-size: 1.4rem;
   font-weight: 700;
 }
 .storylist{
+  
   font-size:1.1rem;
   font-family:'Open Sans', sans-serif;
 }
@@ -368,14 +441,14 @@ Margin: 10rem 10rem 5rem 10rem;
 }
 .storytitle{
 
-font-size: 1.3rem;
+font-size: 1.4rem;
 font-family: 'Lora', serif;
 font-weight: 700;
 padding:0px 0px 10px 0px;
 line-height: 1.2;
 }
 .storycontent{
-font-size: 1rem;
+font-size: 1.1rem;
 font-weight: 600;
 }
 .storycontent a{
@@ -624,7 +697,79 @@ margin-top:0rem;
 }
 
 
-/* archives */
+/* archives */ 
+.dateselect{
+  background: #739eb6;
+  margin: 1.5rem 1rem 0rem 1rem;
+  padding: 10px 0px 10px 0px;
+  border-radius: 10px;
+}
+.datewidget{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.yearselect label {
+/* font-family:'Times New Roman', Times, serif; */
+font-size:1rem ;
+font-weight: 600;
+color:white;
+padding:0px 10px 0px 0px;
+}
+.yearselect select {
+  width: 80px;
+  font-size:1rem;
+  border-radius:5px;
+  margin-bottom:1rem;
+  }
+
+  .yearselect select:focus{
+    outline: none;
+  border-color: #f7c08a
+    }
+.monthselect{
+  margin-left: -2rem;
+}
+.monthselect select {
+  width: 100px;
+  font-size:1rem;
+  border-radius:5px;
+  }
+.monthselect label{
+  /* font-family:'Times New Roman', Times, serif; */
+  font-size:1rem ;
+  font-weight: 600;
+  color:white;
+ padding:0px 10px 0px 40px;
+  
+}
+.yearselect select:focus{
+  outline: none;
+border-color: #f7c08a
+  }
+  .monthselect select:focus{
+    outline: none;
+  border-color: #f7c08a
+    }
+    .datewidget .btn {
+      cursor: pointer;
+      /* display: inline-block; */
+      padding: 5px 20px;
+      color:black;
+      background-color:rgb(215, 255, 233);
+      font-weight: 400;
+      font-size:16px;
+      border: none;
+      border-radius: 5px;
+      margin-left: 2.5rem;
+    }
+    .datewidget .btn:hover {
+      opacity: 0.8;
+    }
+    .errormessage{
+      margin: 1rem 1rem 100px 1rem;
+    }
 .weekid{
   Margin: 3rem 0px 20px 30px;
     padding: 0px 20px 200px  20px;
@@ -659,7 +804,7 @@ border-bottom:0.8px solid rgb(235, 233, 233);
 }
     /* story template */
 .smicons{
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     
 
 /*   background: #f7c08a; */
