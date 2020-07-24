@@ -397,7 +397,10 @@ border-color: #f7c08a
       opacity: 0.8;
     }
     .errormessage{
-      margin: 5rem 5rem 1rem 0rem;
+      margin: 5rem 5rem 1rem 8rem;
+    }
+.errormessage img{
+      width:50%;
     }
 
 .weekid{
@@ -768,7 +771,10 @@ border-color: #f7c08a
       opacity: 0.8;
     }
     .errormessage{
-      margin: 0rem 1rem 0px 0rem;
+      margin: 1rem 1rem 100px 2rem;
+    }
+    .errormessage img{
+      width:70%;
     }
 .weekid{
   Margin: 3rem 0px 20px 30px;
