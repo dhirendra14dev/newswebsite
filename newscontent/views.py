@@ -17,8 +17,6 @@ month_dict = {
     'Decemebr':12,
   }
 
-
-
 def search(request):
 
   month = int(request.GET['month'])
@@ -43,9 +41,7 @@ def archives(request):
   
   
   last_story = Newscontent.objects.order_by('published_date').last()
-  print(last_story.published_date.day)
-  print(last_story.title)
-  print(last_story.published_date < datetime.now().date())
+
   
   stories= Newscontent.objects.filter(published_date__year = datetime.now().year).filter(published_date__month=datetime.now().month).filter(is_published=True)
   
