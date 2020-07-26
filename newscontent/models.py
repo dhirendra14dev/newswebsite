@@ -5,6 +5,7 @@ from datetime import datetime
 class Newscontent(models.Model):
   title = models.CharField(max_length=200)
   published_date = models.DateField(blank=True)
+  main_heading = models.IntegerField(default=0)
   content = models.TextField()
   is_published = models.BooleanField(default=True)
   word1 = models.CharField(max_length=200, blank=True)

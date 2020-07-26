@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'pages',
     'newscontent.apps.NewscontentConfig',
     'contacts.apps.ContactsConfig',
+    'latest.apps.LatestConfig',
     'subscribe.apps.SubscribeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
