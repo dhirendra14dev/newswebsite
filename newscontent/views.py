@@ -17,9 +17,7 @@ month_dict = {
     'Decemebr':12,
   }
 
-def latest(request):
 
-  return render(request, 'newscontent/latest.html')
 
 def search(request):
 
