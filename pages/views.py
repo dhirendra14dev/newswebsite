@@ -9,6 +9,9 @@ def about(request):
 def contactus(request):
   return render(request, 'pages/contact.html')
 
+def latest(request):
+  return render(request, 'pages/latest.html')
+
 
 
 

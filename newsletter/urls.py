@@ -22,5 +22,5 @@ urlpatterns = [
     path('newscontent/',include('newscontent.urls')),
     path('contacts/',include('contacts.urls')),
     path('subscribe/',include('subscribe.urls')),
-    path('latest/',include('latest.urls')),
+    
 ]
