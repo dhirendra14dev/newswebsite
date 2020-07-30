@@ -1,0 +1,516 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173563544-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173563544-1');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Relevant and Irreverent | Welcome</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&family=Lora&display=swap');
+      </style>
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+  </style>
+</head>
+<body>
+    
+    <header class='top-header'>
+        <div class="navbar">
+          <div>
+            <img src="{% static 'images/R&I-logo.png' %}" alt="logo">
+          </div>
+            <nav class="nav-items">
+              <ul>
+                  <li><a href="{% url 'index'%}">Home</a></li>
+                  <li><a href="{% url 'latestnews' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>  
+      </header>
+      {%for latestnews in latestnews%}
+      <main class="basic">
+        <div class="padstory">
+              {{latestnews.abstract|safe}}
+        </div>
+        <section class="storygroup"> 
+          <div class = "mainheading">
+            <p>{{latestnews.main_heading1}}</p>
+          </div>
+          {%if latestnews.image1_1%}
+          <div class="padstory">
+            <img src="{{latestnews.image1_1.url}}" alt="christmas">
+            <p style="font-size:12px;font-style: italic;"> {{latestnews.image_credits1_1}}</p>
+          </div>
+          {%endif%}
+          {%if latestnews.title1_1%}
+          <div class="padstory">
+              <p class= "title">{{latestnews.title1_1}} </p>{{latestnews.content1_1|safe}}</div>
+          <div class="shareicons padstory">
+            <a href="{{latestnews.s_link1_1_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+            <img alt="" style="display: inline-block; opacity: 0.5;width: 20px"  width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+            </a>
+            <a href="{{latestnews.s_link1_1_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+            <img alt="" style="display: inline-block;opacity: 0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a>
+          </div>
+          {%endif%}
+          {%if latestnews.image1_2%}
+          <div class="padstory">
+              <img src="{{latestnews.image1_2.url}}" alt="christmas">
+              <p style="font-size:12px;font-style: italic;"> {{latestnews.image_credits1_2}}</p>
+            </div>
+            {%endif%}
+            {%if latestnews.title1_2%}
+          <div class="padstory">
+              <p class= "title">{{latestnews.title1_2}} </p> {{latestnews.content1_2|safe}}
+          </div>
+          
+          <div class="shareicons">
+            <a href="{{latestnews.s_link1_2_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+            <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+            </a>
+            <a href="{{latestnews.s_link1_2_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+            <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+            </a>   
+               
+          </div>
+          {%endif%}  
+          {%if latestnews.image1_3%}
+          <div class="padstory">
+            
+            <img src="{{latestnews.image1_3.url}}" alt="bear">
+            <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits1_1}}</p>
+            
+          </div>
+          {%endif%}
+          {%if latestnews.title1_3%}
+        <div class="padstory">
+            <p class= "title">{{latestnews.title1_3}}</p> {{latestnews.content1_3|safe}} 
+        </div>
+        
+        <div class="shareicons">
+          <a href="{{latestnews.s_link1_3_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+          <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+          </a>
+          <a href="{{latestnews.s_link1_3_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+          <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+          </a>   
+          
+        </div>
+        {%endif%}   
+        {%if latestnews.image1_4%}
+        <div class="padstory">
+            
+            <img src="{{latestnews.image1_4.url}}" alt="bear">
+            <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits1_4}}</p>
+            
+          </div>
+          {%endif%}
+          {%if latestnews.title1_4%}
+        <div class="padstory">
+            
+            <p class= "title">{{latestnews.title1_4}}</p> {{latestnews.content1_4|safe}} 
+        </div>
+        
+        <div class="shareicons">
+          <a href="{{latestnews.s_link1_4_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+          <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+          </a>
+          <a href="{{latestnews.s_link1_4_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+          <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+          </a>  
+          
+        </div>
+        {%endif%}  
+        </section> 
+        <section class="storygroup"> 
+            <div class = "mainheading">
+              <p>{{latestnews.main_heading2}}</p>
+            </div>
+            {%if latestnews.image2_1%}
+            <div class="padstory">
+                
+                <img src="{{latestnews.image2_1.url}}" alt="bear">
+                <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits2_1}}</p>
+                
+              </div>
+              {%endif%}
+              {%if latestnews.title2_1%}
+            <div class="padstory"> 
+                
+                <p class= "title">{{latestnews.title2_1}}</p> {{latestnews.content2_1|safe}}</div>
+            
+            <div class="shareicons">
+              <a href="{{latestnews.s_link2_1_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+              <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+              </a>
+              <a href="{{latestnews.s_link2_1_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+              <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+              </a>
+                         
+            </div>
+            {%endif%}   
+            {%if latestnews.image2_2%}
+            <div class="padstory">
+                
+                <img src="{{latestnews.image2_2.url}}"  alt="beer">
+                <p style="font-size:12px;font-style: italic;"> {{latestnews.image_credits2_2}}</p>
+                
+              </div>
+              {%endif%}
+              {%if latestnews.title2_2%}
+            <div class="padstory">
+                
+                <p class= "title">{{latestnews.title2_2}}</p> {{latestnews.content2_2|safe}}
+            </div>
+            
+            <div class="shareicons">
+              <a href="{{latestnews.s_link2_2_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+              <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+              </a>
+              <a href="{{latestnews.s_link2_2_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+              <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+              </a> 
+              
+            </div>
+            {%endif%}     
+            {%if latestnews.image2_3%}
+            <div class="padstory">
+                
+                <img src="{{latestnews.image2_3.url}}"  alt="beer">
+                <p style="font-size:12px;font-style: italic;"> {{latestnews.image_credits2_3}}</p>
+                
+              </div>
+              {%endif%}
+              {%if latestnews.title2_3%}
+            <div class="padstory">
+                
+              <p class= "title">{{latestnews.title2_3}}</p> {{latestnews.content2_3|safe}}
+          </div>
+          
+          <div class="shareicons">
+            <a href="{{latestnews.s_link2_3_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                                    <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                                    </a>
+                                    <a href="{{latestnews.s_link2_3_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                                    <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                                    </a>
+                                    {%endif%}
+          </div>
+          <div class="padstory">
+              {%if latestnews.image2_4%}
+              <img src="{{latestnews.image2_4.url}}"  alt="beer">
+              <p style="font-size:12px;font-style: italic;"> {{latestnews.image_credits2_4}}</p>
+              
+            </div>
+            {%endif%}
+            {%if latestnews.title2_4%}
+          <div class="padstory">
+              
+            <p class= "title">{{latestnews.title2_4}}</p>{{latestnews.content2_4|safe}}
+        </div>
+        
+        <div class="shareicons">
+          <a href="{{latestnews.s_link2_4_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                                  <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                                  </a>
+                                  <a href="{{latestnews.s_link2_4_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                                  <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                                  </a> 
+                                  
+        </div>
+        {%endif%}
+          </section> 
+          <section class="storygroup"> 
+              <div class = "mainheading">
+                <p>{{latestnews.main_heading3}}</p>
+              </div>
+              {%if latestnews.image3_1%}
+              <div class="padstory">
+                  
+                <img src="{{latestnews.image3_1.url}}" alt="beer">
+                <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits3_1}}</p>
+                
+              </div>
+              {%endif%}
+              {%if latestnews.title3_1%} 
+              <div class="padstory">
+                 
+                  <p class= "title">{{latestnews.title3_1}}</p> {{latestnews.content3_1|safe}}  
+                                      
+              </div>
+              
+              <div class="shareicons">
+                <a href="{{latestnews.s_link3_1_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                </a>
+                <a href="{{latestnews.s_link3_1_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a>
+                           
+              </div>
+              {%endif%}    
+              {%if latestnews.image3_2%}
+              <div class="padstory">
+                 
+                <img src="{{latestnews.image3_2.url}}" alt="beer">
+                <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits3_2}}</p>
+                
+              </div>
+              {%endif%}
+              {%if latestnews.title3_2%} 
+              <div class="padstory"> 
+                  
+
+                  <p class= "title">{{latestnews.title3_2}}</p> {{latestnews.content3_2|safe}}
+              </div>
+              
+              <div class="shareicons">
+                <a href="{{latestnews.s_link3_2_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                </a>
+                <a href="{{latestnews.s_link3_2_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a>   
+                
+              </div>
+              {%endif%} 
+              {%if latestnews.image3_3%}
+              <div class="padstory">
+                  
+                <img src="{{latestnews.image3_3.url}}" alt="gin">
+                <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits3_3}}</p>
+                
+              </div>
+              {%endif%}
+              {%if latestnews.title3_3%} 
+              <div class="padstory">
+                  
+                <p class= "title">{{latestnews.title3_3}}</p> {{latestnews.content3_3|safe}}
+              </div>
+              
+              <div class="shareicons">
+                <a href="{{latestnews.s_link3_3_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                </a>
+                <a href="{{latestnews.s_link3_3_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a>  
+                  
+              </div>
+              {%endif%}    
+              {%if latestnews.image3_4%}
+              <div class="padstory">
+                 
+                <img src="{{latestnews.image3_4.url}}" alt="gin">
+                <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits3_4}}</p>
+                
+              </div>
+              {%endif%}
+              {%if latestnews.title3_4%} 
+              <div class="padstory">
+                  
+                <p class= "title">{{latestnews.title3_4}}</p> {{latestnews.content3_4|safe}}
+              </div>
+              
+              <div class="shareicons">
+                <a href="{{latestnews.s_link3_4_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                </a>
+                <a href="{{latestnews.s_link3_4_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a> 
+                   
+              </div>
+              {%endif%}   
+              {%if latestnews.image3_5%}
+              <div class="padstory">
+                  
+                  <img src="{{latestnews.image3_5.url}}" alt="bike">
+                  <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits3_5}}</p>
+                  
+                </div>
+                {%endif%}
+                {%if latestnews.title3_5%} 
+              <div class="padstory">
+                  
+                <p class= "title">{{latestnews.title3_5}}</p> {{latestnews.content3_5|safe}}
+              </div>
+              
+              <div class="shareicons">
+                <a href="{{latestnews.s_link3_5_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                </a>
+                <a href="{{latestnews.s_link3_5_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a> 
+                
+              </div>
+              {%endif%}   
+              {%if latestnews.image3_6%}
+              <div class="padstory">
+                  
+                  <img src="{{latestnews.image3_6.url}}" alt="bike">
+                  <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits3_6}}</p>
+                 
+                </div>
+                {%endif%}
+                {%if latestnews.title3_6%} 
+              <div class="padstory">
+                  
+              <p class= "title">{{latestnews.title3_6}}</p> {{latestnews.content3_6|safe}}
+              </div>
+              
+              <div class="shareicons">
+                <a href="{{latestnews.s_link3_6_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                </a>
+                <a href="h{{latestnews.s_link3_6_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a>   
+                 
+              </div>
+              {%endif%}  
+              {%if latestnews.image3_7%}
+              <div class="padstory">
+                  
+                  <img src="{{latestnews.image3_7.url}}" alt="bike">
+                  <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits3_7}}</p>
+                 
+                </div>
+                {%endif%}
+                {%if latestnews.title3_7%} 
+              <div class="padstory">
+                  
+              <p class= "title">{{latestnews.title3_7}}</p> {{latestnews.content3_7|safe}}
+              </div>
+              
+              <div class="shareicons">
+                <a href="{{latestnews.s_link3_7_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                </a>
+                <a href="h{{latestnews.s_link3_7_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a>   
+                
+              </div>
+              {%endif%}   
+              {%if latestnews.image3_8%}
+              <div class="padstory">
+                  
+                  <img src="{{latestnews.image3_8.url}}" alt="bike">
+                  <p style="font-size:12px;font-style: italic;">{{latestnews.image_credits3_8}}</p>
+                 
+                </div>
+                {%endif%}
+                {%if latestnews.title3_8%} 
+              <div class="padstory">
+                  
+              <p class= "title">{{latestnews.title3_8}}</p> {{latestnews.content3_8|safe}}
+              </div>
+              
+              <div class="shareicons">
+                <a href="{{latestnews.s_link3_8_1}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block;opacity:0.5; width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e865734bf6f7.jpg">
+                </a>
+                <a href="h{{latestnews.s_link3_8_2}}" target="_blank" rel="noopener" style="text-decoration: none;" class="">
+                <img alt="" style="display: inline-block; opacity:0.5;width: 20px" width="20" src="https://media.sailthru.com/5z8/1k4/4/2/5e86574d1eb82.jpg">
+                </a>    
+              </div>
+              {%endif%}   
+            </section>
+            <section class="storygroup"> 
+                <div class = "mainheading">
+                  <p>{{latestnews.main_heading4}}</p>
+                </div>
+                
+                <div class="rnipicks">
+                  {{latestnews.content4_1|safe}}
+                                        
+                </div>
+                <div class="rnipicks">
+                  {{latestnews.content4_2|safe}}
+                                        
+                </div>
+                <div class="rnipicks">
+                  {{latestnews.content4_3|safe}}    </div>
+                <div class="rnipicks">
+                  {{latestnews.content4_4|safe}}
+                                        
+                </div>
+                <div class="rnipicks">
+                    {{latestnews.content4_5|safe}}
+                                          
+                  </div>
+              </section> 
+              <section class="storygroup"> 
+                <div class = "mainheading">
+                  <p>{{latestnews.main_heading5}}</p>
+                </div>
+                
+                <div class="padstory">
+                  <p class= "title">{{latestnews.title5_1}}</p> {{latestnews.content5_1|safe}}
+              </div>
+              <div class="padstory">
+                <p class= "title">{{latestnews.title5_2}}</p> {{latestnews.content5_2|safe}}
+              </div>  
+            </div>
+            <div class="padstory">
+              <p class= "title">{{latestnews.title5_3}}</p> {{latestnews.content5_3|safe}}
+            </div> 
+            <div class="padstory">
+                <p class= "title">{{latestnews.title5_4}}</p> {{latestnews.content5_4|safe}}
+              </div> 
+              <div class="padstory">
+                  <p class= "title">{{latestnews.title5_5}}</p> {{latestnews.content5_5|safe}}
+                </div> 
+                
+              </section> 
+
+      </main>
+      {%endfor%}
+      
+      
+      <footer id="main-footer">
+        <div class="footer-container">
+            
+          <div class="navlinks">
+            <ul class="linklist">
+                <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latestnews' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="icons">
+            <p>Follow us on</p>
+            <a target="_blank"  href="https://www.facebook.com/RnIsays"><i class="fab fa-facebook fa-2x sicons"></i></a>
+            <a target="_blank" href="http://twitter.com/RnIsays" target="_blank"><i class="fab fa-twitter fa-2x 
+                sicons"></i></a>
+            <a target="_blank"  href="http://instagram.com/relevant.irreverent" target="_blank"><i class="fab fa-instagram fa-2x sicons"></i></a> 
+          </div>
+        
+        </div>
+      </footer>
+</body>
+
+</html>

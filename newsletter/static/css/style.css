@@ -29,7 +29,7 @@ ul {
 }
 a {
   text-decoration: none;
-  color:#2224b5;
+  color:rgb(32, 133, 140);
 }
 img {
   width: 100%;
@@ -44,7 +44,10 @@ img {
   font-size:1rem
 }
 .padstory{
-  padding: 30px 0px 0px 0px;
+  padding: 30px 0px 10px 0px;
+}
+.padstory p{
+  display:inline;
 }
 .shareicons{
   padding: 10px 0px 30px 0px;
@@ -64,9 +67,9 @@ img {
   font-weight:700 ; 
   color:rgb(238, 96, 20);
 }
-.storygroup a{
-  color:rgb(32, 133, 140);
-  text-decoration: none;
+.storygroup .padstory p a{
+  color:rgb(32, 133, 140) !important;
+  text-decoration: none !important;
 }
 .rnipicks{
   padding: 20px 0px 10px 0px;
@@ -446,8 +449,9 @@ Margin: 10rem 10rem 5rem 10rem;
 
 font-size: 1.4rem;
 font-family: 'Lora', serif;
+color:#f6660c;
 font-weight: 700;
-padding:0px 0px 10px 0px;
+padding:0px 0px 40px 0px;
 line-height: 1.2;
 }
 .storycontent{

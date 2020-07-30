@@ -35,12 +35,14 @@ INSTALLED_APPS = [
     'newscontent.apps.NewscontentConfig',
     'contacts.apps.ContactsConfig',
     'subscribe.apps.SubscribeConfig',
+    'latest.apps.LatestConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +130,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'newsletter/static')
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 try:
     from .local_settings import *
 except ImportError:
