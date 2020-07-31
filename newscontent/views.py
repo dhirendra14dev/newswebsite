@@ -61,7 +61,7 @@ def archives(request):
         correct_month = last_story.published_date.month
         return correct_month
       else:
-        correct_month = last_story.published_date.month - 1
+        correct_month = datetime.now().month - 1
         return correct_month 
     
   correct_month = get_correct_month()
