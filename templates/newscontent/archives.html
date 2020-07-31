@@ -50,8 +50,8 @@
                     <label for="month">Month</label>
                     <select name="month" id="month">
                       {% for key,value in month_dict.items %}
-                      {%if value <= last_story.published_date.month%}
-                      {%if value >= first_story.published_date.month%}
+                      {%if value <= last_month_of_year%}
+                      {%if value >= first_month_of_year%}
                       <option value="{{value}}" {% if value == correct_month %} selected="true" {%endif%}>{{key}}</option>
                       {%endif%}
                       {%endif%}

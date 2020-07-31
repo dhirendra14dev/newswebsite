@@ -25,13 +25,18 @@ def search(request):
 
   length_query = len(stories_selected_month)
  
+  first_month_of_year = Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').first().published_date.month
   
+  last_month_of_year = Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').last().published_date.month
+
   context = {
     'month': month,
     'year':year,
     'stories_selected_month':stories_selected_month,
     'length_query':length_query,
     'month_dict':month_dict,
+    'first_month_of_year':first_month_of_year,
+    'last_month_of_year': last_month_of_year,
   }
   return render(request, 'newscontent/search.html', context)
 
@@ -42,7 +47,9 @@ def archives(request):
   
   last_story = Newscontent.objects.order_by('published_date').last()
 
-  # print(Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').first().published_date.month)
+  first_month_of_year = Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').first().published_date.month
+  
+  last_month_of_year = Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').last().published_date.month
 
   stories= Newscontent.objects.filter(published_date__year = datetime.now().year).filter(published_date__month=datetime.now().month).filter(is_published=True)
   
@@ -66,6 +73,8 @@ def archives(request):
     'last_story':last_story,
     'correct_month':correct_month,
     'month_dict':month_dict,
+    'first_month_of_year':first_month_of_year,
+    'last_month_of_year': last_month_of_year,
     
   }
 

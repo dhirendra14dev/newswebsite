@@ -51,7 +51,11 @@
                   <label for="month">Month</label>
                   <select name="month" id="month">
                     {% for key,value in month_dict.items %}
+                    {%if value <= last_month_of_year%}
+                    {%if value >= first_month_of_year%}
                     <option value="{{value}}"{% if value == month %} selected {%endif%}>{{key}}</option>
+                    {%endif%}
+                    {%endif%}
                     {%endfor%}
                   </select>
                 </div>
