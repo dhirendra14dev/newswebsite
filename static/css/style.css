@@ -46,9 +46,9 @@ img {
 .padstory{
   padding: 30px 0px 10px 0px;
 }
-.padstory p{
+/* .padstory p{
   display:inline;
-}
+} */
 .shareicons{
   padding: 10px 0px 30px 0px;
   text-align: right;
@@ -447,19 +447,21 @@ Margin: 10rem 10rem 5rem 10rem;
 }
 .storytitle{
 
-font-size: 1.4rem;
+font-size: 1.4rem !important;
 font-family: 'Lora', serif;
 color:#f6660c;
-font-weight: 700;
+font-weight: 700 !important;
 padding:0px 0px 40px 0px;
-line-height: 1.2;
+line-height: 1.2 !important;
 }
 .storycontent{
-font-size: 1.1rem;
-font-weight: 600;
+font-size: 1.1rem !important;
+font-weight: 600 !important;
+
 }
-.storycontent a{
-color:#2224b5;
+.storycontent p a{
+color:#2224b5 !important;
+text-decoration: none !important;
 }
 .iconstop{
   display:flex;
@@ -844,19 +846,20 @@ Margin: 3rem 2rem 6rem 2rem;
 
 }
 .storytitle{
-font-size: 1.3rem;
+font-size: 1.2rem !important;
 font-family: 'Lora', serif;
 font-weight: 700;
 padding:0px 0px 20px 0px;
 line-height: 1.2;
 }
 .storycontent{
-font-size: 1rem;
+font-size: 1rem !important;
 margin-bottom: 0rem;
 overflow:auto;
 }
-.storycontent a{
-color:rgb(32, 133, 140);
+.storycontent p a{
+color:rgb(32, 133, 140) !important;
+text-decoration: none !important;
 }
     
     

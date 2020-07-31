@@ -42,7 +42,8 @@ def archives(request):
   
   last_story = Newscontent.objects.order_by('published_date').last()
 
-  
+  # print(Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').first().published_date.month)
+
   stories= Newscontent.objects.filter(published_date__year = datetime.now().year).filter(published_date__month=datetime.now().month).filter(is_published=True)
   
   stories_all= Newscontent.objects.all().filter(is_published=True)
