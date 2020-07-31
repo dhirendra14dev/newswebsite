@@ -46,9 +46,9 @@ img {
 .padstory{
   padding: 30px 0px 10px 0px;
 }
-/* .padstory p{
+.padstory p{
   display:inline;
-} */
+}
 .shareicons{
   padding: 10px 0px 30px 0px;
   text-align: right;
@@ -846,7 +846,7 @@ Margin: 3rem 2rem 6rem 2rem;
 
 }
 .storytitle{
-font-size: 1.2rem !important;
+font-size: 1.3rem !important;
 font-family: 'Lora', serif;
 font-weight: 700;
 padding:0px 0px 20px 0px;
@@ -875,6 +875,9 @@ text-decoration: none !important;
 }
 .padstory{
   padding: 20px 20px 20px 20px;
+}
+.padstory p{
+  display:inline;
 }
 .shareicons{
   padding: 10px 20px 30px 0px;
