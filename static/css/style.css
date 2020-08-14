@@ -443,7 +443,11 @@ border-color: #f7c08a
   margin-bottom: 200px;
 }
 .storybox {
-Margin: 10rem 10rem 5rem 10rem;
+  margin: 7rem 10rem 5rem 10rem;
+}
+.story-date{
+  text-align: right;
+  margin-bottom:3rem;
 }
 .storytitle{
 
