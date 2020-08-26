@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'contest',
+    'crossword',
     'pages',
     'newscontent.apps.NewscontentConfig',
     'contacts.apps.ContactsConfig',
@@ -43,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    
 ]
 
 MIDDLEWARE = [

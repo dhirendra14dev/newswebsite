@@ -373,7 +373,7 @@ padding:0px 10px 0px 0px;
   font-size:1.1rem ;
   font-weight: 600;
   color:white;
- padding:0px 10px 0px 20px;
+  padding:0px 10px 0px 20px;
   
 }
 .yearselect select:focus{
@@ -443,11 +443,7 @@ border-color: #f7c08a
   margin-bottom: 200px;
 }
 .storybox {
-  margin: 7rem 10rem 5rem 10rem;
-}
-.story-date{
-  text-align: right;
-  margin-bottom:3rem;
+Margin: 10rem 10rem 5rem 10rem;
 }
 .storytitle{
 
@@ -487,6 +483,273 @@ text-decoration: none !important;
 .iconstop i :hover{
   opacity: 0.6;
 }
+/*Crossword*/
+.crossword-instructions{
+  margin: 1rem 5rem 2rem 5rem;
+}
+.crossword-instructions h3{
+  color: #f6660c;
+  font-weight:700;
+}
+.crossword-instructions .instruction-list{
+  font-size:1rem;
+  border: 1px solid rgb(5, 159, 206);
+  border-radius: 10px;
+}
+.crossword-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  margin:3rem 2rem 200px 2rem;
+  
+}
+.crossword-grid{
+  display: inline-flex; 
+  flex-direction:column; 
+  flex-wrap:wrap; 
+  
+}
+
+.empty-cell{
+  width:25px;
+  height:25px;
+  background:rgb(68, 68, 68);
+}
+.input-boxes{
+  width:25px;
+  height:25px; 
+  font-size:1rem;
+  text-align: center;
+  text-transform: capitalize;
+  
+}
+.crossword-form{
+  
+  margin-left: auto;
+  margin-right:13rem;
+}
+.clue-box{
+  display:flex;
+  flex-direction: row;
+  margin-left:13rem;
+  margin-right:auto;
+  
+
+}  
+
+.clue-list {
+  
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:top;
+  font-size: 1;
+  font-weight: 500;
+  padding: 0px 5px 0px 5px;
+  width:100%;
+}
+.clue-list .list-title {
+  font-size:1.1rem;
+  font-weight: 900;
+  padding-bottom: 5px;
+}
+.clue-list .start-position {
+  color: #3f0cf6;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0px 5px 0px 0px;
+  
+}
+.input-wrapper{
+  position:relative;
+  float:left;
+  width:25px;
+  height:25px;
+}
+
+.input-wrapper .unit{
+  position:absolute;
+  top:4px;
+  left:4px;
+  font-size:0.6rem;
+}
+
+/* contests */
+/* ********** desktop************* */
+/* story-title */
+.storytitle-title{
+  margin:5rem 3rem 40px 3rem;
+  background:rgb(255, 245, 201);
+  border-radius:20px;
+  padding: 10px 10px 10px 10px;
+  font-weight: 700;
+}
+.main-container{
+  margin: 3rem 3rem 200px 3rem;
+  display:flex; 
+  flex-direction: row;
+  
+}
+.storytitle-body{
+  width:60%; 
+  background: white;
+  margin: 40px 0px 40px 0px;
+}
+.storytitle-content{
+  padding:20px 20px 20px 20px;
+  margin: 0px 20px 0px 0px; 
+  border: 3px outset #808080;
+  border-radius:20px ;
+}
+.storytitle-form{
+  width:40%; 
+  margin: 40px 0px 40px 0px;
+  background: rgb(255, 245, 201);
+  padding: 40px 20px 20px 20px;
+  border-radius:20px;
+}
+.storytitle-form label{
+  display: block;
+  margin-bottom: 5px;
+}
+.storytitle-form #wish_to_subscribe{
+  display: inline;
+
+}
+.storytitle-form input {
+  width: 100%;
+  padding: 10px;
+  font-size:0.9rem;
+  border: 1px #ddd solid;
+  border-radius: 4px;
+}
+
+.storytitle-form input:focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+.subscribe-me input{
+  width:auto; 
+  height:10px;
+  
+}
+
+subscribe-me label{
+  display:inline;
+  font-size:0.8rem;
+}
+.storytitle-btn{
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.contest-submit-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;
+}
+/* ********** mobile************* */
+/* story-title */
+@media(max-width: 767px) {
+  
+  .storytitle-title{
+    margin:1rem 10px 20px 10px;
+    background:rgb(255, 245, 201);
+    border-radius:20px;
+    padding: 10px 10px 10px 10px;
+  }
+  .main-container{
+    margin: 10px 10px 180px 10px;
+    display:flex; 
+    flex-direction: column;
+    
+  }
+  .storytitle-body{
+    width:100%; 
+    background: white;
+  }
+  .storytitle-content{
+    width:100%; 
+    padding:10px 10px 10px 10px;
+    border-radius:20px ;
+    border:none;
+  }
+  
+  .storytitle-form{
+    width:100%; 
+    background: rgb(255, 245, 201);
+    padding: 30px 20px 10px 10px;
+  }
+  .storytitle-form label{
+    display: block;
+    font-size:1rem;
+    margin-bottom: 5px;
+  }
+  .storytitle-form #wish_to_subscribe{
+    display: inline;
+  
+  }
+  .storytitle-form input {
+    width: 100%;
+    padding: 10px;
+    font-size:0.9rem;
+    border: 1px #ddd solid;
+    border-radius: 4px;
+  }
+  
+  .storytitle-form input:focus {
+    outline: none;
+    border-color: #f7c08a;
+  }
+  .subscribe-me input{
+    width:auto; 
+    height:10px;
+    
+  }
+  
+  subscribe-me label{
+    display:inline;
+    font-size:0.8rem;
+  }
+  .storytitle-btn{
+    font-size:1rem; 
+    color: white;
+    background:darkblue; 
+    padding: 8px 8px 8px 8px;
+    border-radius:6px;
+  }
+  .contest-submit-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+}
+
+/* End of contests */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Mobile */
 /*************************************************************************/
@@ -660,8 +923,8 @@ margin-top:0rem;
 .bottomtext p{
     font-family: 'Playfair Display', serif; 
     font-size:14px;
-     padding: 0px 20px 0px 20px;
-        
+    padding: 0px 20px 0px 20px;
+     
         
 }
     

@@ -25,5 +25,6 @@ urlpatterns = [
     path('contacts/',include('contacts.urls')),
     path('subscribe/',include('subscribe.urls')),
     path('latest/',include('latest.urls')),
-    
+    path('crossword/',include('crossword.urls')), 
+    path('contest/',include('contest.urls')),   
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

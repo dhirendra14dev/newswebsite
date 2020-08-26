@@ -1,0 +1,123 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173563544-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173563544-1');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Relevant and Irreverent | Welcome</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+  
+</head>
+<body>
+    <header class='top-header'>
+        <div class="navbar">
+          <div class="navlogo">
+            <img src="{% static './images/R&I-logo.png' %}" alt="logo">
+          </div>
+            <nav class="nav-items">
+              <ul>
+                  <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latestnews' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+      </header>
+      <main>
+        <div class="storytitle-title">
+        
+          Give this story a headline. If you win, your headline and name will make R&I's next edition. Go ahead, give it your best shot. If you're seeking inspiration, <a style="color:rgb(185, 21, 255) "href="https://www.rnisays.com/newscontent/">here's where</a> you can find some.
+        </div>
+          <div class = "main-container">
+            <div class = "storytitle-body">
+                <p class="storytitle-content ">Fancy finding yourself in the midst of zombies, the ones who carry chainsaws, because, you know, teeth just aren't enough? Then head to Tokyo. Kowagarasetai, the group that last month brought to fans of the macabre drive-in horror shows, is now putting on 15-minute shows to offer customers a distraction from the pressures of the pandemic. As they lie in a dark room in a coffin with a glass lid listening to tales of terror, customers can forget their future fears as they get prodded by fake zombies and sprayed with water.
+
+                  <br><br>
+                  
+                  "The pandemic is stressful, and we hope people can get a bit of relief by having a good scream," said Kenta Iwana, coordinator of Kowagarasetai, or Scare Squad.
+                  
+                  <br><br>
+                  
+                  Apparently, it works. Said a satisfied customer: "I feel relaxed now."</p>
+
+            </div>
+            
+            <div class="storytitle-form" style="background:#dbfbff">
+                <form action="{% url 'storytitle_submit' %}" method="POST">
+                    {% csrf_token %}
+                  <div>
+                    <label for="title">Your headline</label>
+                    <input type="text" name="title" id="title">
+                  </div>
+                  <div>
+                    <label for="name">Name</label>
+                    <input type="name" name="name" id="name">
+                  </div>
+                  <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                  </div>
+                  <div class="subscribe-me">
+                    <input type="checkbox" id="wish_to_subscribe"  name="wish_to_subscribe" style="width:auto; height:10px;" checked>
+                
+                  
+                    <label for="wish_to_subscribe" id="wish_to_subscribe" style="display:inline;font-size:0.8rem;">Sign me up for the newsletter</label>
+                  </div>
+                  
+                  <button type="submit" class="storytitle-btn" >Submit</button>
+                </form>
+            </div>
+          
+        </div>
+          </main>
+      <script>
+        var x = document.getElementById("wish_to_subscribe");
+            x.addEventListener("change",k)
+          function k(){
+            if (!x.checked) {
+              x.getAttribute.value = "off";
+            }
+          }
+      </script>
+      <footer id="main-footer">
+        <div class="footer-container">
+       
+            <!-- <div class="footer-logo">
+                <img src="{% static 'images/R&I-logo.png' %}" alt="R&I">
+            </div> -->
+            
+          <div class="navlinks">
+            <ul class="linklist">
+                <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latestnews' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="icons">
+            <p>Follow us on</p>
+            <a target="_blank"  href="https://www.facebook.com/RnIsays"><i class="fab fa-facebook fa-2x sicons"></i></a>
+            <a target="_blank" href="http://twitter.com/RnIsays" target="_blank"><i class="fab fa-twitter fa-2x 
+                sicons"></i></a>
+            <a target="_blank"  href="http://instagram.com/relevant.irreverent" target="_blank"><i class="fab fa-instagram fa-2x sicons"></i></a> 
+          </div>
+        
+        </div>
+      </footer>
+</body>
+</html>
