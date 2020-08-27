@@ -133,7 +133,7 @@ def crossword_check(request):
 
   
     
-  return render(request, 'pages/crosswordsubmit.html')
+  return render(request, 'pages/contestsubmit.html')
 
 
 
