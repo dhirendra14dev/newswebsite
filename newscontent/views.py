@@ -51,7 +51,6 @@ def archives(request):
   
   last_month_of_year = Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').last().published_date.month
 
-  stories= Newscontent.objects.filter(published_date__year = datetime.now().year).filter(published_date__month=datetime.now().month).filter(is_published=True)
   
   stories_all= Newscontent.objects.all().filter(is_published=True)
   
@@ -66,6 +65,7 @@ def archives(request):
     
   correct_month = get_correct_month()
  
+  stories= Newscontent.objects.filter(published_date__year = datetime.now().year).filter(published_date__month=correct_month).filter(is_published=True)
 
   context = {
     'stories': stories,
