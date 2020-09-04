@@ -1,7 +1,8 @@
 from django.db import models
 from datetime import datetime
 from ckeditor.fields import RichTextField
-
+from taggit.managers import TaggableManager
+from taggit.models import Tag
 
 class Newscontent(models.Model):
   title = models.CharField(max_length=200)
@@ -20,7 +21,8 @@ class Newscontent(models.Model):
   s_link3 = models.TextField(blank=True)
   s_link4 = models.TextField(blank=True)
   image = models.ImageField(blank=True)
-
+  tags = TaggableManager()  
+  
 
   def __str__(self):
     return self.title

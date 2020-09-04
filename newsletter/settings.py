@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'contest',
     'crossword',
     'pages',
+    'taggit',
     'newscontent.apps.NewscontentConfig',
     'contacts.apps.ContactsConfig',
     'subscribe.apps.SubscribeConfig',

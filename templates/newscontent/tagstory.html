@@ -17,17 +17,16 @@
   <title>Relevant and Irreverent | Welcome</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static './css/style.css' %}">
-  
 </head>
 <body>
     <header class='top-header'>
-        <div class="navbar navbar-old">
-          <div class="navlogo navlogo-old">
-            <img src="{% static './images/R&I-logo.png' %}" alt="logo">
+        <div class="navbar">
+          <div>
+            <img src="{% static 'images/R&I-logo.png' %}" alt="logo">
           </div>
-            <nav class="nav-items-old">
+            <nav class="nav-items">
               <ul>
-                  <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'index'%}">Home</a></li>
                 <li><a href="{% url 'latestnews' %}">Latest</a></li>
                 <li><a href="{% url 'archives'%}">Archives</a></li>
                 <li><a href="{% url 'about'%}">About</a></li>
@@ -36,31 +35,28 @@
             </nav>
           </div>
       </header>
+     
       <main>
-          <div class="content">
-              <h2 class=" main-text main-text-old">Welcome to <span class="text-highlight">Relevant & Irreverent</span></h2>
-                <p id = "description">
-                     Relevant & Irreverent is a weekly roundup of interesting stories from around the world that caught our eye. We know you saw the headlines, we're bringing you the ones you might have missed.
-                </p>
+        <section class="main-layout">
             
-            <div class="subs-form">
-              <form action="{% url 'subscribe' %}" method="POST" class="input-form">
-                  {% csrf_token %}
-               <div><input type="email" id="email" name="email" placeholder="Enter your email address" required></div>  
-               <div><button type="submit" class="btn" name="subscribe" value="subscribe">Subscribe</button></div>
-              </form>
+            <div class="left-layout">
+            <div class="left-layout-image" ><img src="{% static image_path %}" alt=""></div>
+
+            <div class="left-layout-title"><p>{{tag}}</p></div>
+            {%for key,value in quotes_dict.items%}
+            {% if key == tag.slug %}
+            <div class="left-layout-quote"><p>{{value| safe }}</p></div>
+            {%endif%}
+            {%endfor%}
             </div>
-            <div class="messages">{% if messages %}
-              <ul>
-                  {% for message in messages %}
-                  <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                  {% endfor %}
-              </ul>
-              {% endif %}
-            </div>
-            </div>    
-          </main>
-      </section>
+           
+            <div class="right-layout">
+            {% for stories in storiesbytopic %}
+            <p><a href="{% url 'newscontent' stories.id %}">{{stories.title}}</a></p>
+            {% endfor %}
+        </div>
+        </section>
+      </main>
       <footer id="main-footer">
         <div class="footer-container">
        
