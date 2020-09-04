@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Newscontent
 from datetime import datetime
+from taggit.models import Tag
 
 month_dict = {
     'January':1,
@@ -16,6 +17,33 @@ month_dict = {
     'November':11,
     'Decemebr':12,
   }
+quotes_dict = {
+    'women':'<em>Feminism is the radical notion that women are people.\n - Marie Shear</em>',
+    'human-rights':'<em>The rights of every man are diminished when the rights of one man are threatened.\n - John F. Kennedy</em>',
+    'preserving-the-planet':'<em>We are the first generation to feel the effect of climate change and the last generation who can do something about it.\n - Barack Obama</em>',
+    'innovation':'<em>Any sufficiently advanced technology is equivalent to magic.\n - Arthur C. Clarke</em>',
+     'animal-rights':'<em>Humanity\'s true moral test, its fundamental test ... consists of its attitude towards those who are at its mercy: animals.\n - Milan Kundera</em>',
+      'inspiring-and-uplifting':'<em>Life isn\'t about finding yourself. Life is about creating yourself.\n - George Bernard Shaw</em>',
+       'arts-and-entertainment':'<em>The purpose of art is washing the dust of daily life off our souls.\n - Pablo Picasso</em>',
+        'global-affairs':'<em>During times of universal deceit, telling the truth becomes a revolutionary act.\n - George Orwell</em>',
+  }
+def storiesbytopic(request,tag_slug=None):
+  stories_all= Newscontent.objects.all().filter(is_published=True)
+  tag = get_object_or_404(Tag, slug=tag_slug)
+  storiesbytopic = stories_all.filter(tags__in=[tag])
+  image_path = "./images/{0}.jpg".format(tag)
+  
+  tag_slug = tag.slug
+  context = {
+    'storiesbytopic': storiesbytopic,
+    'tag':tag,
+    'tag_slug':tag_slug,
+    'quotes_dict':quotes_dict,
+    'image_path':image_path,
+  }
+  return render(request, 'newscontent/tagstory.html', context)
+
+
 
 def search(request):
 
@@ -41,16 +69,18 @@ def search(request):
   return render(request, 'newscontent/search.html', context)
 
 def archives(request):
+
   
   first_story = Newscontent.objects.order_by('published_date').first()
   
   
-  last_story = Newscontent.objects.order_by('published_date').last()
+  last_story = Newscontent.objects.order_by('published_date').filter(is_published=True).last()
 
   first_month_of_year = Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').first().published_date.month
-  
+ 
   last_month_of_year = Newscontent.objects.filter(published_date__year = datetime.now().year).order_by('published_date').last().published_date.month
 
+  stories= Newscontent.objects.filter(published_date__year = datetime.now().year).filter(published_date__month=datetime.now().month).filter(is_published=True)
   
   stories_all= Newscontent.objects.all().filter(is_published=True)
   
@@ -64,9 +94,7 @@ def archives(request):
         return correct_month 
     
   correct_month = get_correct_month()
- 
   stories= Newscontent.objects.filter(published_date__year = datetime.now().year).filter(published_date__month=correct_month).filter(is_published=True)
-
   context = {
     'stories': stories,
     'first_story':first_story,
