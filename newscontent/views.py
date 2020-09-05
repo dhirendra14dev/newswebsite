@@ -18,7 +18,7 @@ month_dict = {
     'Decemebr':12,
   }
 quotes_dict = {
-    'women':'<em>Feminism is the radical notion that women are people.\n - Marie Shear</em>',
+    'womens-issues':'<em>Feminism is the radical notion that women are people.\n - Marie Shear</em>',
     'human-rights':'<em>The rights of every man are diminished when the rights of one man are threatened.\n - John F. Kennedy</em>',
     'preserving-the-planet':'<em>We are the first generation to feel the effect of climate change and the last generation who can do something about it.\n - Barack Obama</em>',
     'innovation':'<em>Any sufficiently advanced technology is equivalent to magic.\n - Arthur C. Clarke</em>',
