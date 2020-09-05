@@ -149,7 +149,13 @@ ul a:hover {
   outline: none;
   border-color: #f7c08a;
   }
-
+  .messages-top{
+    margin: 5px 0px 0px 0px;
+    color: #f6660c;
+    font-weight: 400;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    }
 
 
 
@@ -990,7 +996,7 @@ subscribe-me label{
   display:none;
 }
 }
-@media(max-width: 767px) {
+@media(max-width: 420px) {
     
     body{
         line-height:2;   
@@ -1044,7 +1050,7 @@ ul a {
     display:grid;
     /* grid-template-columns:87px 87px 87px 87px ; */
     grid-template-columns:95px 95px 95px 95px ;
-    grid-template-rows:70px 230px 230px 100px 100px 70px;
+    grid-template-rows:70px 250px 250px 100px 100px 70px;
     grid-row-gap:20px;
     grid-column-gap:5px;
     margin:auto;
@@ -1060,6 +1066,7 @@ ul a {
   }
   .box1{
     padding:1rem;
+    margin-top:20px;
     text-align: center;
     grid-area:box1;
   }
@@ -1101,21 +1108,21 @@ ul a {
   }
   
   .box4{
-    margin-top:0rem;
+    margin-top:-1rem;
     
     line-height:1.7;
     grid-area:box4;
     background:url('{% static './images/world.png' %}');
     clip-path: circle(50% at 50% 50%);
-    /* clip-path:none; */
+    
     position:relative;
   }
   .box4 p{
-    padding: 50px 10px 20px 20px;
+    padding: 50px 20px 0px 20px;
     text-align:center;
     font-family: 'Crimson Text', serif;
-    font-size:14px;
-    font-weight: 500;
+    font-size:15px;
+    font-weight: 400;
   }
   .box4::before {
   content: '';
@@ -1161,7 +1168,7 @@ ul a {
     padding:1rem;
     text-align: center;
     grid-area:box11;
-    font-size:14px;
+    font-size:12px;
     font-family: 'Playfair Display', serif;
   }
 
@@ -1685,3 +1692,133 @@ text-decoration: none !important;
     
   }
 }
+@media(max-width: 1070px) and (min-width:767px){
+  .grid{
+display:grid;
+grid-template-columns:140px 520px 140px ;
+grid-template-rows:65px 115px 115px 115px 115px 65px; 
+grid-row-gap:20px;grid-column-gap:5px;margin:auto;width:820px;
+margin-top:2rem;
+  }
+  .main-text{
+
+font-size: 1.7rem;
+
+margin-bottom: 1.5rem;
+}
+.main-text .text-highlight{
+font-size: 1.7rem;
+color: #f6660c;
+font-family: 'Playfair Display', serif; 
+
+}
+.box-title{ 
+line-height:1.2;
+font-size: 12px;
+font-weight:800;
+} 
+.box4{
+padding:1rem;
+line-height:2;
+grid-area:box4;
+background:url('{% static './images/world.png' %}');
+clip-path: circle(50% at 50% 50%);
+position:relative;
+}
+.box4 p{
+padding: 30px 40px 20px 40px;
+text-align:center;
+font-family: 'Crimson Text', serif;
+font-size:16px;
+font-weight: 500;
+}
+.bottom-grid{
+display:grid;
+grid-template-columns:repeat(1, auto);
+grid-gap:8px;margin:0px 4rem 200px 4rem;
+}
+
+.story-cards{
+box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23), 0 0 3px #aaa inset;
+border-radius: 10px;
+background: #ffffff;
+
+font-size:12px;
+font-weight:800;
+display:grid;
+grid-template-columns: auto auto;
+}
+
+.story-cards #headline{
+font-size:12px;
+}
+
+.story-cards #headline-date{
+font-size:10px;
+margin-left:auto;
+color:rgb(147, 147, 147);
+}
+}
+
+@media(max-width: 767px) and (min-width:420px){
+
+.grid{
+display:grid;
+/* grid-template-columns:87px 87px 87px 87px ; */
+grid-template-columns:105px 105px 105px 105px ;
+grid-template-rows:70px 200px 200px 100px 100px 70px;
+grid-row-gap:20px;
+grid-column-gap:5px;
+margin:auto;
+width:435px;
+margin-top:1rem;
+grid-template-areas:
+'box1 box1 box1 box1'
+'box4 box4 box4 box4'  
+'box4 box4 box4 box4' 
+'box2 box3 box5 box6'    
+'box7 box8 box9 box10' 
+'box11 box11 box11 box11'; 
+}
+
+.main-text{
+
+font-size: 1.4rem;
+margin:auto;
+margin-top:-1rem;
+
+}
+.main-text .text-highlight{
+font-size: 1.4rem;
+color: #f6660c;
+font-family: 'Playfair Display', serif; 
+
+}
+
+.box-title{ 
+font-size: 10px;
+line-height:1;
+font-weight:800;
+} 
+
+.box4{
+margin-top:-1rem;
+
+line-height:1.7;
+grid-area:box4;
+background:url('{% static './images/world.png' %}');
+clip-path: circle(50% at 50% 50%);
+
+position:relative;
+}
+.box4 p{
+padding: 40px 20px 0px 20px;
+text-align:center;
+font-family: 'Crimson Text', serif;
+font-size:15px;
+font-weight: 400;
+}
+
+}
+
+

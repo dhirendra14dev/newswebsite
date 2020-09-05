@@ -17,17 +17,17 @@
   <title>Relevant and Irreverent | Welcome</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static './css/style.css' %}">
- 
+  
 </head>
 <body>
     <header class='top-header'>
-        <div class="navbar">
-          <div>
-            <img src="{% static 'images/R&I-logo.png' %}" alt="logo">
+        <div class="navbar navbar-old">
+          <div class="navlogo navlogo-old">
+            <img src="{% static './images/R&I-logo.png' %}" alt="logo">
           </div>
-            <nav class="nav-items">
+            <nav class="nav-items-old">
               <ul>
-                <li><a href="{% url 'index'%}">Home</a></li>
+                  <li><a href="{% url 'index'%}">Home</a></li>
                 <li><a href="{% url 'latestnews' %}">Latest</a></li>
                 <li><a href="{% url 'archives'%}">Archives</a></li>
                 <li><a href="{% url 'storytitle'%}">Contests</a></li>
@@ -36,27 +36,21 @@
             </nav>
           </div>
       </header>
-      <section id="contact-form" class="py-3">
-          <div class="container">
-            <h1 class="l-heading">Get in touch, we'd love to hear from you!</h1>
-          
-            <form action="{% url 'contact' %}" method="POST">
-                {% csrf_token %}
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name">
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message"></textarea>
-              </div>
-              <button type="submit" class="btn">Submit</button>
-            </form>
-            <div class="messagescontact">{% if messages %}
+      <main>
+          <div class="content">
+              <h2 class=" main-text main-text-old">Welcome to <span class="text-highlight">Relevant & Irreverent</span></h2>
+                <p id = "description">
+                     Relevant & Irreverent is a weekly roundup of interesting stories from around the world that caught our eye. We know you saw the headlines, we're bringing you the ones you might have missed.
+                </p>
+            
+            <div class="subs-form">
+              <form action="{% url 'subscribe' %}" method="POST" class="input-form">
+                  {% csrf_token %}
+               <div><input type="email" id="email" name="email" placeholder="Enter your email address" required></div>  
+               <div><button type="submit" class="btn" name="subscribe" value="subscribe">Subscribe</button></div>
+              </form>
+            </div>
+            <div class="messages">{% if messages %}
               <ul>
                   {% for message in messages %}
                   <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
@@ -64,35 +58,35 @@
               </ul>
               {% endif %}
             </div>
-          </div>
-        </section>
-        <footer id="main-footer">
-          <div class="footer-container">
-         
+            </div>    
+          </main>
+      </section>
+      <footer id="main-footer">
+        <div class="footer-container">
+       
             <!-- <div class="footer-logo">
-              <img src="{% static './css/style.css' %}" alt="R&I">
-          </div> -->
-              
-            <div class="navlinks">
-              <ul class="linklist">
-                  <li><a href="{% url 'index'%}">Home</a></li>
-                  <li><a href="{% url 'latestnews' %}">Latest</a></li>
-                  <li><a href="{% url 'archives'%}">Archives</a></li>
-                  <li><a href="{% url 'storytitle'%}">Contests</a></li>
-                  <li><a href="{% url 'contactus' %}">Contact</a></li>
-              </ul>
-            </div>
-  
+                <img src="{% static 'images/R&I-logo.png' %}" alt="R&I">
+            </div> -->
             
-            <div class="icons">
+          <div class="navlinks">
+            <ul class="linklist">
+                <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latestnews' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'storytitle'%}">Contests</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="icons">
             <p>Follow us on</p>
             <a target="_blank"  href="https://www.facebook.com/RnIsays"><i class="fab fa-facebook fa-2x sicons"></i></a>
             <a target="_blank" href="http://twitter.com/RnIsays" target="_blank"><i class="fab fa-twitter fa-2x 
                 sicons"></i></a>
             <a target="_blank"  href="http://instagram.com/relevant.irreverent" target="_blank"><i class="fab fa-instagram fa-2x sicons"></i></a> 
           </div>
-          
-          </div>
-        </footer>
+        
+        </div>
+      </footer>
 </body>
 </html>

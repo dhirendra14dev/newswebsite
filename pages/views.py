@@ -1,10 +1,10 @@
 from django.shortcuts import render,get_object_or_404
 from newscontent.models import Newscontent
 import random
-def index(request):
-  return render(request, 'pages/index.html')
+def subscribe(request):
+  return render(request, 'pages/subscribe.html')
 
-def newhome(request):
+def index(request):
   stories_all= Newscontent.objects.all().filter(is_published=True)
   stories_id_list = stories_all.values_list('id', flat=True)
   random_id_list = random.sample(list(stories_id_list), 6)
@@ -12,7 +12,7 @@ def newhome(request):
   context = {
     'random_stories': random_stories,
   }
-  return render(request, 'pages/newhome.html', context)
+  return render(request, 'pages/index.html', context)
 
 
   
