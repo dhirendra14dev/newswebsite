@@ -1216,6 +1216,7 @@ ul a {
   }
   .box1{
     padding:1rem;
+    line-height:1.5;
     margin-top:20px;
     text-align: center;
     grid-area:box1;
@@ -1224,7 +1225,7 @@ ul a {
     
     font-size: 1.4rem;
     margin:auto;
-    margin-top:-1rem;
+    margin-top:-1.5rem;
     
   }
   .main-text .text-highlight{
