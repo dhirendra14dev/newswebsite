@@ -1844,7 +1844,7 @@ text-decoration: none !important;
   }
 }
 
-@media(max-width: 1070px) and (min-width:767px){
+@media(max-width: 1020px) and (min-width:767px){
   .grid{
 display:grid;
 grid-template-columns:140px 520px 140px ;
@@ -1902,7 +1902,7 @@ grid-template-columns: auto auto;
 }
 
 .story-cards #headline{
-font-size:12px;
+font-size:14px;
 }
 
 .story-cards #headline-date{
