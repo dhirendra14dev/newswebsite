@@ -18,25 +18,140 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static './css/style.css' %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style>
+    /*Crossword*/
+.crossword-instructions{
+  margin: 1rem 5rem 2rem 5rem;
+}
+.crossword-instructions h3{
+  color: #f6660c;
+  font-weight:700;
+}
+.crossword-instructions .instruction-list{
+  font-size:1rem;
+  border: 1px solid rgb(5, 159, 206);
+  border-radius: 10px;
+}
+.crossword-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  margin:3rem 2rem 200px 2rem;
+  
+}
+.crossword-grid{
+  display: inline-flex; 
+  flex-direction:column; 
+  flex-wrap:wrap; 
+  
+}
 
+.empty-cell{
+  width:28px;
+  height:28px;
+  background:rgb(68, 68, 68);
+}
+.input-boxes{
+  width:28px;
+  height:28px; 
+  font-size:1rem;
+  font-weight: 800;
+  text-align: center;
+  text-transform: capitalize;
+  
+}
+.crossword-form{
+  
+  margin-left: auto;
+  margin-right:13rem;
+}
+.clue-box{
+  display:flex;
+  flex-direction: row;
+  margin-left:13rem;
+  margin-right:auto;
+  
+
+}  
+
+.clue-list {
+  
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:top;
+  font-size: 1;
+  font-weight: 500;
+  padding: 0px 5px 0px 5px;
+  width:100%;
+}
+.clue-list .list-title {
+  font-size:1.1rem;
+  font-weight: 900;
+  padding-bottom: 5px;
+}
+.clue-list .start-position {
+  color: #3f0cf6;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0px 5px 0px 0px;
+  
+}
+.input-wrapper{
+  position:relative;
+  float:left;
+  width:28px;
+  height:28px;
+}
+
+.input-wrapper .unit{
+  position:absolute;
+  top:2px;
+  left:2px;
+  font-size:0.6rem;
+}
+  </style>
 </head>
 <body>
-    <header class='top-header'>
-        <div class="navbar">
-          <div>
-            <img src="{% static 'images/R&I-logo.png' %}" alt="logo">
-          </div>
-            <nav class="nav-items">
-              <ul>
-                <li><a href="{% url 'index'%}">Home</a></li>
-                <li><a href="{% url 'latestnews' %}">Latest</a></li>
-                <li><a href="{% url 'archives'%}">Archives</a></li>
-                <li><a href="{% url 'storytitle'%}">Contests</a></li>
-                <li><a href="{% url 'contactus' %}">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-      </header>
+  <header class='top-header'>
+    <div class="navbar">
+      <div class="navlogo">
+        <img src="{% static './images/R&I-logo.png' %}" alt="logo">
+      </div>
+   <div class="subscribe-link-wrapper">
+    <div class="subs-top">
+      <!-- <div class="messages-top" id="message-top">{% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+      </div> -->
+      <div><button  class="sub-btn" id ="sub-btn"  name="check-result" value="check-result">Subscribe</button></div>
+      
+      <div class="input-form-wrapper" id="input-form" style="margin-bottom:35px;">
+      <form action="{% url 'subscribe' %}" method="POST" class="sub-input-form" id="input-form">
+          {% csrf_token %}
+       <div> <input type="email" id="email-field" style="display:none;" name="email" placeholder="Enter your email address" required></div>  
+       <div> <button type="submit" class="sub-btn" id ="final-sub-btn" style="display:none;" name="subscribe" value="subscribe">Subscribe</button></div>
+      </form>
+    </div>
+    
+    </div>
+    
+        <nav class="nav-items">
+          <ul>
+              <li><a href="{% url 'index'%}">Home</a></li>
+            <li><a href="{% url 'latestnews' %}">Latest</a></li>
+            <li><a href="{% url 'archives'%}">Archives</a></li>
+            <li><a href="{% url 'storytitle'%}">Contests</a></li>
+            <li><a href="{% url 'contactus' %}">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      </div>
+  </header>
       <section>
           <div class="crossword-instructions"><h3>Instructions</h3>
             <ol class="intruction-list">

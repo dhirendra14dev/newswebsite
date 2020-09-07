@@ -20,22 +20,45 @@
   
 </head>
 <body>
-    <header class='top-header'>
-        <div class="navbar">
-          <div>
-            <img src="{% static 'images/R&I-logo.png' %}" alt="logo">
-          </div>
-            <nav class="nav-items">
-              <ul>
-                <li><a href="{% url 'index'%}">Home</a></li>
-                <li><a href="{% url 'latestnews' %}">Latest</a></li>
-                <li><a href="{% url 'archives'%}">Archives</a></li>
-                <li><a href="{% url 'storytitle'%}">Contests</a></li>
-                <li><a href="{% url 'contactus' %}">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-      </header>
+  <header class='top-header'>
+    <div class="navbar">
+      <div class="navlogo">
+        <img src="{% static './images/R&I-logo.png' %}" alt="logo">
+      </div>
+   <div class="subscribe-link-wrapper">
+    <div class="subs-top">
+      <!-- <div class="messages-top" id="message-top">{% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+      </div> -->
+      <div><button  class="sub-btn" id ="sub-btn"  name="check-result" value="check-result">Subscribe</button></div>
+      
+      <div class="input-form-wrapper" id="input-form" style="margin-bottom:35px;">
+      <form action="{% url 'subscribe' %}" method="POST" class="sub-input-form" id="input-form">
+          {% csrf_token %}
+       <div> <input type="email" id="email-field" style="display:none;" name="email" placeholder="Enter your email address" required></div>  
+       <div> <button type="submit" class="sub-btn" id ="final-sub-btn" style="display:none;" name="subscribe" value="subscribe">Subscribe</button></div>
+      </form>
+    </div>
+    
+    </div>
+    
+        <nav class="nav-items">
+          <ul>
+              <li><a href="{% url 'index'%}">Home</a></li>
+            <li><a href="{% url 'latestnews' %}">Latest</a></li>
+            <li><a href="{% url 'archives'%}">Archives</a></li>
+            <li><a href="{% url 'storytitle'%}">Contests</a></li>
+            <li><a href="{% url 'contactus' %}">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      </div>
+  </header>
       <main>
           <section class= "dateselect">
               <form action="{% url 'search' %}"class = "datewidget">
