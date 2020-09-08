@@ -18,6 +18,38 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static './css/style.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+  <style>
+  @media(max-width: 420px) {
+    .grid{
+    display:grid;
+    /* grid-template-columns:87px 87px 87px 87px ; */
+    grid-template-columns:95px 95px 95px 95px ;
+    grid-template-rows:70px 250px 250px 100px 100px 70px;
+    grid-row-gap:20px;
+    grid-column-gap:5px;
+    margin:auto;
+    width:395px;
+    margin-top:1rem;
+    grid-template-areas:
+    'box1 box1 box1 box1'
+    'box4 box4 box4 box4'  
+    'box4 box4 box4 box4' 
+    'box2 box3 box5 box6'    
+    'box7 box8 box9 box10' 
+    'box11 box11 box11 box11'; 
+  }
+  .box4{
+    margin-top:-1rem;
+    
+    line-height:1.7;
+    grid-area:box4;
+    background:url('{% static './images/world.png' %}');
+    clip-path: circle(55% at 50% 50%);
+    
+    position:relative;
+  }
+  }
+</style>
 </head>
 <body>
     <header class='top-header'>

@@ -1311,7 +1311,7 @@ ul a {
     line-height:1.7;
     grid-area:box4;
     background:url('{% static './images/world.png' %}');
-    clip-path: circle(50% at 50% 50%);
+    clip-path: circle(55% at 50% 50%);
     
     position:relative;
   }
