@@ -18,6 +18,27 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static './css/style.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+  <style>
+    @media(max-width: 420px){
+  .box4{
+    margin-top:-1rem;
+    
+    line-height:1.7;
+    grid-area:box4;
+    background:url('{% static './images/world.png' %}');
+    clip-path: circle(57% at 50% 50%);
+    
+    position:relative;
+  }
+  .box4 p{
+    padding: 30px 20px 0px 20px;
+    text-align:center;
+    font-family: 'Crimson Text', serif;
+    font-size:16px;
+    font-weight: 400;
+  }
+    }
+</style>
 </head>
 <body>
     <header class='top-header'>
