@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static './css/style.css' %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <style>
-    /*Crossword*/
+<style>
+  /*Crossword*/
 .crossword-instructions{
   margin: 1rem 5rem 2rem 5rem;
 }
@@ -33,46 +33,68 @@
   border-radius: 10px;
 }
 .crossword-container{
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  margin:3rem 2rem 200px 2rem;
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  
+  grid-column-gap:570px;
+  grid-row-gap:50px;
+  margin:4rem 0px 200px 0px;
+  /* background:burlywood; */
+  width:100%;
+  grid-template-areas: 
+  'box1 box2'
+  'box3 box3';
+}
+
+.crossword-left-box{
+  grid-area: box1;
   
 }
 .crossword-grid{
   display: inline-flex; 
   flex-direction:column; 
   flex-wrap:wrap; 
-  
 }
 
 .empty-cell{
-  width:28px;
-  height:28px;
+  width:25px;
+  height:25px;
   background:rgb(68, 68, 68);
 }
 .input-boxes{
-  width:28px;
-  height:28px; 
+  width:25px;
+  height:25px; 
   font-size:1rem;
-  font-weight: 800;
+  color: #3f0cf6;
+  font-weight:800;
+  padding-bottom:10px;
   text-align: center;
   text-transform: capitalize;
   
 }
 .crossword-form{
+  grid-area: box3;
+  width:100%;
+  /* background:rgb(204, 50, 50); */
+  text-align: center;
   
-  margin-left: auto;
-  margin-right:13rem;
+  
+  
 }
-.clue-box{
+
+.crossword-right-box{
+  grid-area: box2;
   display:flex;
   flex-direction: row;
-  margin-left:13rem;
-  margin-right:auto;
-  
+
+  /* background: rgb(145, 240, 164); */
 
 }  
+
+.crossword-form{
+  grid-area: box3;
+}
 
 .clue-list {
   
@@ -80,19 +102,19 @@
   flex-direction:column;
   align-content:center;
   justify-content:top;
-  font-size: 1;
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 0px 5px 0px 5px;
+  padding: 5px 5px 5px 5px;
   width:100%;
 }
 .clue-list .list-title {
-  font-size:1.1rem;
-  font-weight: 900;
+  font-size:1rem;
+  font-weight: 1000;
   padding-bottom: 5px;
 }
 .clue-list .start-position {
   color: #3f0cf6;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   padding: 0px 5px 0px 0px;
   
@@ -100,58 +122,93 @@
 .input-wrapper{
   position:relative;
   float:left;
-  width:28px;
-  height:28px;
+  width:25px;
+  height:25px;
 }
 
 .input-wrapper .unit{
   position:absolute;
-  top:2px;
-  left:2px;
+  top:0px;
+  left:1px;
   font-size:0.6rem;
 }
-  </style>
+
+#game-submit-form{
+  width:40%;
+  margin: auto;
+  background: rgb(224, 255, 253);
+  padding: 40px 20px 20px 20px;
+  border-radius:20px;
+}
+#game-submit-form input {
+  width: 100%;
+  padding: 10px;
+  margin:5px;
+  font-size:0.9rem;
+  border: 1px #ddd solid;
+  border-radius: 4px;
+}
+
+#game-submit-form :focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
+.subscribe-me{
+  
+  text-align:left;
+}
+.subscribe-me #wish_to_subscribe{
+  width:auto; 
+  height:10px;
+}
+
+.subscribe-me #checkbox-label{
+  display:inline;
+  font-size:0.8rem;
+}
+.crossword-submit-btn {
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.done-btn{
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.contest-submit-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;
+}
+</style>
 </head>
 <body>
-  <header class='top-header'>
-    <div class="navbar">
-      <div class="navlogo">
-        <img src="{% static './images/R&I-logo.png' %}" alt="logo">
-      </div>
-   <div class="subscribe-link-wrapper">
-    <div class="subs-top">
-      <!-- <div class="messages-top" id="message-top">{% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-      </div> -->
-      <div><button  class="sub-btn" id ="sub-btn"  name="check-result" value="check-result">Subscribe</button></div>
-      
-      <div class="input-form-wrapper" id="input-form" style="margin-bottom:35px;">
-      <form action="{% url 'subscribe' %}" method="POST" class="sub-input-form" id="input-form">
-          {% csrf_token %}
-       <div> <input type="email" id="email-field" style="display:none;" name="email" placeholder="Enter your email address" required></div>  
-       <div> <button type="submit" class="sub-btn" id ="final-sub-btn" style="display:none;" name="subscribe" value="subscribe">Subscribe</button></div>
-      </form>
-    </div>
-    
-    </div>
-    
-        <nav class="nav-items">
-          <ul>
-              <li><a href="{% url 'index'%}">Home</a></li>
-            <li><a href="{% url 'latestnews' %}">Latest</a></li>
-            <li><a href="{% url 'archives'%}">Archives</a></li>
-            <li><a href="{% url 'storytitle'%}">Contests</a></li>
-            <li><a href="{% url 'contactus' %}">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      </div>
-  </header>
+    <header class='top-header'>
+        <div class="navbar">
+          <div>
+            <img src="{% static 'images/R&I-logo.png' %}" alt="logo">
+          </div>
+            <nav class="nav-items">
+              <ul>
+                <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latestnews' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+      </header>
       <section>
           <div class="crossword-instructions"><h3>Instructions</h3>
             <ol class="intruction-list">
@@ -162,16 +219,14 @@
             </ol>
           </div>
           <div class = "crossword-container" id="main-box">
-            <div class="crossword-form">
-          <form action="{% url 'crossword_check' %}" method="POST" >
-              {% csrf_token %}
-          <div class="crossword-grid" style="max-height:412.5px">
+            <div class="crossword-left-box">
+            <div class="crossword-grid" style="max-height:420px">
               {%for item in all_cells%} 
               {%if item in empty_cells%}
-              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#fc802d;width:27.5px;height:27.5px;margin-top:0px !important;"></p>
+              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#fc802d;width:28px;height:28px;margin-top:0px !important;"></p>
               {%else%}
-              <div class="input-wrapper" style="width:27.5px;height:27.5px">
-              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="width:27.5px;height:27.5px;border:none;border-radius:0px;background:white;border:0.5px solid black;box-sizing:border-box;margin-top:0px !important; color:black;"></p>
+              <div class="input-wrapper" style="width:28px;height:28px">
+              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="width:28px;height:28px;border:none;border-radius:0px;background:white;border:0.5px solid black;box-sizing:border-box;margin-top:0px !important; color:black;"></p>
               {%for word in all_word_list%}
               {%if word.3 == item.0 and word.4 == item.1 %}
               <div class="unit">{{word.2}}</div>
@@ -183,18 +238,9 @@
               {%endfor%}
 
           </div>
-          <div class="game-submit" id="game-submit">
-          <div><input type="text" id="name" name="name" placeholder="Enter your name" required></div>  
-          <div><input type="email" id="email" name="email" placeholder="Enter your email address" required></div>  
-          <input type="checkbox" id="subscribe" name="subscribe" value="subcribe" checked>
-          <label for="subscribe">Please subscribe for the newsletter</label>
-          <div><button type="submit" class="submit-btn" id ="submit-btn"  name="check-result" value="check-result">Submit</button></div>
-        </div>
-        </form>
-        <div><button  class="done-btn" id ="done-btn"  name="check-result" value="check-result">Submit</button></div>
-        
-      </div>
-        <div class = "clue-box">
+
+    </div>
+        <div class = "crossword-right-box">
             <div class="clue-list">
                 <p class="list-title">Across</p>
                 {%for item in word_across_list%}
@@ -209,7 +255,26 @@
             </div>
             
             </div>
+            <div class="crossword-form" >
+           
+              <form id="game-submit-form" style="display:none;"  action="{% url 'crossword_check' %}" method="POST" >
+                  {% csrf_token %}
+              <div class="game-submit" id="game-submit">
+              <div><input type="text" id="name"  name="name" placeholder="Enter your name" required></div>  
+              <div><input type="email" id="email"  name="email" placeholder="Enter your email address" required></div>  
+              <div class="subscribe-me" style="text-align:left;">
+              <input type="checkbox" id="wish_to_subscribe" style="width:auto; height:10px;"  name="subscribe" value="subcribe" checked>
+              <label  id="checkbox-label" style="display:inline; font:0.9rem;" for="subscribe">Sign me up for the newsletter</label>
+              </div>
+              <div><button type="submit" class="crossword-submit-btn" id ="submit-btn" name="check-result" value="check-result">Submit</button></div>
+            </div>
+            </form>
+        
+            <div><button  class="done-btn" id ="done-btn"  name="check-result" value="check-result">Done</button></div>
+            
+          </div>
         </div>
+
  <script type="text/javascript">
 
 
@@ -221,13 +286,28 @@ var y = document.getElementsByClassName("empty-cell");
     
 var u = document.getElementById("done-btn");
     u.addEventListener("click",k);
-    
+// var a = document.getElementById("name");
+// var b = document.getElementById("email"); 
+// var c = document.getElementById("wish_to_subscribe"); 
+// var d = document.getElementById("submit-btn");  
+var o = document.getElementById("game-submit-form");     
     
   document.addEventListener("keypress",g, false);
   document.addEventListener("keydown",h, false);
   document.addEventListener("keyup",l, false);
   
   
+  var p = document.getElementById("wish_to_subscribe");
+            p.addEventListener("change",q)
+          function q(){
+            if (!p.checked) {
+              p.getAttribute.value = "off";
+            }
+          }
+
+
+
+
   for (i = 0; i <= {{max_x_coordinate}}; i++) {
   for (j = 0; j <= {{max_y_coordinate}}; j++) {
     if(x.namedItem(`cell${i},${j}`) != null){
@@ -259,10 +339,7 @@ function f(e){
 function g(e){
     w[w.length-1].textContent = e.key;
   }
-function k(e){
-    v.style.display = "none";
-    n.style.display = "";
-}
+
 
 
 
@@ -352,6 +429,11 @@ function h(e) {
       
       }
      }
+    
+    function switch_display(){
+    u.style.display = "none";
+    o.style.display = "";
+    }
     resultString="";
     function k(e) {
     for (i = 0; i <= {{max_x_coordinate}}; i++) {
@@ -359,16 +441,20 @@ function h(e) {
     if(x.namedItem(`cell${i},${j}`) != null){
       resultString += x.namedItem(`cell${i},${j}`).textContent;
       console.log(resultString);
+      
+
     }
   }
+  switch_display();
 }
-    }
+    }  
+  
 console.log(resultString);
       </script>
       <script>
         $(document).ready(function(){
           $("#done-btn").click(function(){
-            console.log("Hello 1");
+            // console.log("Hello 1");
             $.post("{% url 'crossword_check' %}",
             {
               
@@ -376,8 +462,8 @@ console.log(resultString);
               csrfmiddlewaretoken : "{{csrf_token}}"
             },
             function(data,status){
-              console.log("Hello 1");
-              alert("Data: " + data + "\nStatus: " + status);
+              // console.log("Hello 1");
+              // alert("Data: " + data + "\nStatus: " + status);
             });
           });
         });
@@ -394,7 +480,7 @@ console.log(resultString);
                   <li><a href="{% url 'index'%}">Home</a></li>
                   <li><a href="{% url 'latestnews' %}">Latest</a></li>
                   <li><a href="{% url 'archives'%}">Archives</a></li>
-                  <li><a href="{% url 'storytitle'%}">Contests</a></li>
+                  <li><a href="{% url 'about'%}">About</a></li>
                   <li><a href="{% url 'contactus' %}">Contact</a></li>
               </ul>
             </div>

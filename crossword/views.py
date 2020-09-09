@@ -107,8 +107,8 @@ def crossword_check(request):
       if is_occupied(i,j) == False:
         empty_cells.append([i,j])
 
-  # def check_result(result):
-    
+  
+      
   
   
   if request.method == 'POST' and request.is_ajax():
@@ -123,15 +123,19 @@ def crossword_check(request):
     crosswordcheck = Crosswordcheck.objects.all().last()
     name = request.POST['name']
     email = request.POST['email']
+  
     crosswordcheck.name = name
     crosswordcheck.email = email
-    crosswordcheck.save()
     
     
-  
-  
+    subscribe_yes = request.POST.get('wish_to_subscribe', False )
+    if subscribe_yes == 'on':
+      subscribe_yes = True
+    if subscribe_yes == 'off':
+      subscribe_yes = False
+    crosswordcheck.subscribe_yes = subscribe_yes
 
-  
+    crosswordcheck.save()
     
   return render(request, 'pages/contestsubmit.html')
 
