@@ -25,7 +25,8 @@ def contactus(request):
 
 def latest(request):
   return render(request, 'pages/latest.html')
-
+def contests(request):
+  return render(request, 'pages/contests.html')
 
 
 

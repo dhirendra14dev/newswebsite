@@ -17,6 +17,60 @@
   <title>Relevant and Irreverent | Welcome</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static './css/style.css' %}">
+  <style>
+.contest-list-container{
+  margin: 10rem 5rem 200px 5rem;
+}
+.contest-list{
+  display:grid;
+  margin:auto;
+  grid-template-rows:repeat(2,auto);
+  grid-template-columns:100px 800px;
+  grid-row-gap:30px;
+  grid-column-gap:30px;
+  width:900px;
+}
+.crossword-item img {
+  width:100%; padding:5px 5px 5px 5px;
+}
+.headline-item img {
+  width:100%; padding:5px 5px 5px 5px;
+}
+@media(max-width: 768px){
+
+  .contest-list-container{
+  margin: 3rem 20px 200px 20px;
+  line-height:1.7;
+}
+.contest-list{
+  display:grid;
+  margin:auto;
+  grid-template-columns: 350px;
+  grid-template-rows: repeat(4, 100px);
+  grid-row-gap:10px;
+  /* grid-column-gap:30px; */
+  width:350px;
+}
+
+.crossword-item img {
+  width:30%;
+}
+.crossword-details{
+  margin-bottom:20px;
+}
+.headline-item img {
+  width:30%;
+  margin-top:30px;
+  
+}
+.headline-details {
+  
+  margin-top:30px;
+  
+}
+
+}
+  </style>
 </head>
 <body>
   <header class='top-header'>
@@ -58,57 +112,20 @@
       </div>
       </div>
   </header>
-      <section class="contest-submit-message">
-        <p>This week's contest is now closed. Check back on Thursday for the next Making Headlines challenge.</p>
-      </section>
-      <!-- <main>
-        <div class="storytitle-title">
-        
-          Give this story a headline. If you win, your headline and name will make R&I's next edition. Go ahead, give it your best shot. If you're seeking inspiration, <a style="color:rgb(185, 21, 255) "href="https://www.rnisays.com/newscontent/">here's where</a> you can find some.
-        </div>
-          <div class = "main-container">
-            <div class = "storytitle-body">
-                <p class="storytitle-content ">It was a stressful four days for Nala and her owner. The cat was on her way from Bengaluru to New Delhi on an Air India flight when the carrier she was traveling in came undone in the aircraft's cargo compartment and the eight-month old slipped out. For four days she managed to elude her rescuers and stayed hidden on the vast premises of Delhi's Indira Gandhi International Airport. Wildlife SOS, a nonprofit called in to assist airport authorities with the search, tried to lure Nala out with food baits, but it was only after four days of tracking that the visibly distressed and hungry cat was spotted in the airport's cargo hold area. It was a few more hours before Nala could be captured and handed over to her relieved owner. </p>
+      
+     <main class="contest-list-container"> 
+      <div><p></p></div>
+       <div class="contest-list">
+         
+        <div class="crossword-item" style=""><img style="" src="{% static './images/crossword.png' %}" alt=""></div>
+        <div class="crossword-details" style=""><a href="{% url 'crossword' %}"style="color:rgb(185, 21, 255)">Crossword of the week</a><p>Play R&I's crossword! The clues are simple and all the words can be found in the <a href="{% url 'latestnews' %}">latest edition</a> of R&I.</p>
 
-            </div>
-            
-            <div class="storytitle-form" style="background:#dbfbff">
-                <form action="{% url 'storytitle_submit' %}" method="POST">
-                    {% csrf_token %}
-                  <div>
-                    <label for="title">Your headline</label>
-                    <input type="text" name="title" id="title">
-                  </div>
-                  <div>
-                    <label for="name">Name</label>
-                    <input type="name" name="name" id="name">
-                  </div>
-                  <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                  </div>
-                  <div class="subscribe-me">
-                    <input type="checkbox" id="wish_to_subscribe"  name="wish_to_subscribe" style="width:auto; height:10px;" checked>
-                
-                  
-                    <label for="wish_to_subscribe" id="wish_to_subscribe" style="display:inline;font-size:0.8rem;">Sign me up for the newsletter</label>
-                  </div>
-                  
-                  <button type="submit" class="storytitle-btn" >Submit</button>
-                </form>
-            </div>
-          
         </div>
-          </main> -->
-      <script>
-        var x = document.getElementById("wish_to_subscribe");
-            x.addEventListener("change",k)
-          function k(){
-            if (!x.checked) {
-              x.getAttribute.value = "off";
-            }
-          }
-      </script>
+        <div class="headline-item" style=""><img style="" src="{% static './images/headline.jpg' %}" alt=""></div>
+        <div class="headline-details" style=""><a href="{% url 'storytitle' %}" style="color:rgb(185, 21, 255)">Making Headlines</a> <p>Give the story a headline. If you win, your headline and name will make R&I's next edition.</p></div>
+       </div>
+    </main>
+      
       <footer id="main-footer">
         <div class="footer-container">
        
