@@ -190,6 +190,23 @@
   padding:30px 30px 30px 30px;
   text-align: center;
 }
+@media(max-width: 768px){
+  .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
 </style>
 </head>
 <body>
@@ -210,6 +227,9 @@
           </div>
       </header>
       <section>
+          <div class="not-available-message">
+            <p>Currently the crossword is only avaialble for the desktop. We are ironing out few issues and it will be available on mobile devices very soon.</p>
+          </div>
           <div class="crossword-instructions"><h3>Instructions</h3>
             <ol class="intruction-list">
               <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
