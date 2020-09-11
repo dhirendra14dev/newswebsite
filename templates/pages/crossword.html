@@ -20,6 +20,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
   /*Crossword*/
+  .not-available-message{
+  display:none;
+  }
 .crossword-instructions{
   margin: 1rem 5rem 2rem 5rem;
 }
@@ -192,6 +195,29 @@
 }
 @media(max-width: 768px){
   .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .not-available-message{
   margin: 8rem 10rem 0 10rem; 
   font-size: 1.2rem;
   background:rgb(255, 245, 201);
@@ -207,6 +233,401 @@
     display:none;
   }
 }
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 834px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1112px) 
+  and (max-device-width: 1112px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+/* Portrait and Landscape */
+@media 
+  (min-device-width: 800px) 
+  and (max-device-width: 1280px) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+@media 
+  (max-device-width: 800px) 
+  and (orientation: portrait) { 
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+@media 
+  (max-device-width: 1280px) 
+  and (orientation: landscape) { 
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* ----------- Galaxy Tab S ----------- */
+
+/* Portrait and Landscape */
+@media 
+  (min-device-width: 800px) 
+  and (max-device-width: 1280px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+@media 
+  (max-device-width: 800px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+@media 
+  (max-device-width: 1280px) 
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .not-available-message{
+  margin: 8rem 10rem 0 10rem; 
+  font-size: 1.2rem;
+  background:rgb(255, 245, 201);
+  line-height:2;
+  border-radius:20px;
+  padding:30px 30px 30px 30px;
+  text-align: center;;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
 </style>
 </head>
 <body>
