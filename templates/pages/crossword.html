@@ -185,7 +185,6 @@
 .not-available-message{
   margin: 2rem 10rem 0 10rem; 
   font-size: 1rem;
-  background:rgb(255, 245, 201);
   line-height:2;
   border-radius:20px;
   padding:10px 10px 10px 10px;
@@ -197,6 +196,7 @@
     font-size: 1rem;
     background:rgb(255, 245, 201);
     line-height:1.8;
+    
     border-radius:20px;
     padding:10px 10px 10px 10px;
     text-align: center;
@@ -496,7 +496,7 @@
   }
 }
 /* Portrait and Landscape */
-@media 
+/* @media 
   (min-device-width: 800px) 
   and (max-device-width: 1280px) {
     .not-available-message{
@@ -514,7 +514,7 @@
   .crossword-container{
     display:none;
   }
-}
+} */
 
 /* Portrait */
 @media 
@@ -640,7 +640,7 @@
                 <li><a href="{% url 'index'%}">Home</a></li>
                 <li><a href="{% url 'latestnews' %}">Latest</a></li>
                 <li><a href="{% url 'archives'%}">Archives</a></li>
-                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'crossword'%}">Contests</a></li>
                 <li><a href="{% url 'contactus' %}">Contact</a></li>
               </ul>
             </nav>
@@ -650,13 +650,8 @@
           <div class="not-available-message">
             <p>Currently, our crossword is only available for desktop users. We're working on a mobile version and shoud be able to bring that to you soon. We regret the inconvenience.</p>
           </div>
-          <div class="crossword-instructions"><h3>Instructions</h3>
-            <ol class="intruction-list">
-              <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</li>
-              <li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li>
-              <li>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </li>
-              <li>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</li>
-            </ol>
+          <div class="crossword-instructions"><h3>Crossword of the week</h3>
+            <p>Play R&I's crossword! The clues are simple and all the words can be found in the latest edition of R&I. The contest is open until 10 p.m., Mumbai time, on Wednesday. The winner stands to win an INR100 Amazon.in gift card. If there are multiple correct entries, the winner will be selected by a lucky draw.</p>
           </div>
           <div class = "crossword-container" id="main-box">
             <div class="crossword-left-box">
@@ -703,7 +698,7 @@
               <div><input type="text" id="name"  name="name" placeholder="Enter your name" required></div>  
               <div><input type="email" id="email"  name="email" placeholder="Enter your email address" required></div>  
               <div class="subscribe-me" style="text-align:left;">
-              <input type="checkbox" id="wish_to_subscribe" style="width:auto; height:10px;"  name="subscribe" value="subcribe" checked>
+              <input type="checkbox" id="wish_to_subscribe" style="width:auto; height:10px;"  name="wish_to_subscribe" checked>
               <label  id="checkbox-label" style="display:inline; font:0.9rem;" for="subscribe">Sign me up for the newsletter</label>
               </div>
               <div><button type="submit" class="crossword-submit-btn" id ="submit-btn" name="check-result" value="check-result">Submit</button></div>
@@ -737,14 +732,14 @@ var o = document.getElementById("game-submit-form");
   document.addEventListener("keyup",l, false);
   
   
-  var p = document.getElementById("wish_to_subscribe");
-            p.addEventListener("change",q)
-          function q(){
-            if (!p.checked) {
-              p.getAttribute.value = "off";
+  var a = document.getElementById("wish_to_subscribe");
+            a.addEventListener("change",b)
+          function b(){
+            if (!a.checked) {
+              a.getAttribute.value = "off";
             }
           }
-
+    
 
 
 
