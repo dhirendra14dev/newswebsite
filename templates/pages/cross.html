@@ -668,8 +668,24 @@
     display:none;
   }
 }
-
+.mobile-keypad{
+  display:grid; 
+  grid-template-rows: repeat(3,35px);
+  grid-template-columns: repeat(11,35px); 
+  grid-row-gap:2px;
+  grid-column-gap:2px
+}
+.btn-container{
+  /* border:1px solid black;  */
+  /* text-align:center; */
+}
+.keypad-btn{
+  width:100%; 
+  height:100%;
+  margin:auto;
+  background:white;
   
+}
 </style>
 </head>
 <body>
@@ -690,6 +706,44 @@
           </div>
       </header>
       <section>
+        <div class="mobile-keypad"> 
+          <div><button  class="keypad-btn" id ="btn-q1"  name="btn-q1" value="btn-q">Q</button></div>
+          <div><button  class="keypad-btn" id ="btn-w1"  name="btn-w1" value="btn-w">W</button></div>
+          <div><button  class="keypad-btn" id ="btn-e1"  name="btn-e1" value="btn-e">E</button></div>
+          <div><button  class="keypad-btn" id ="btn-r1"  name="btn-r1" value="btn-r">R</button></div>
+          <div><button  class="keypad-btn" id ="btn-t1"  name="btn-t1" value="btn-t">T</button></div>
+          <div><button  class="keypad-btn" id ="btn-y1"  name="btn-y1" value="btn-y">Y</button></div>
+          <div><button  class="keypad-btn" id ="btn-u1"  name="btn-u1" value="btn-u">U</button></div>
+          <div><button  class="keypad-btn" id ="btn-i1"  name="btn-i1" value="btn-i">I</button></div>
+          <div><button  class="keypad-btn" id ="btn-o1"  name="btn-o1" value="btn-o">O</button></div>
+          <div><button  class="keypad-btn" id ="btn-p1"  name="btn-p1" value="btn-p">P</button></div>
+          <div><button  class="keypad-btn" id ="btn-del"  name="btn-del" value="btn-del">DEL</button></div>
+          <div><button  class="keypad-btn" id ="btn-a1"  name="btn-a1" value="btn-a">A</button></div>
+          <div><button  class="keypad-btn" id ="btn-s1"  name="btn-s1" value="btn-s">S</button></div>
+          <div><button  class="keypad-btn" id ="btn-d1"  name="btn-d1" value="btn-d">D</button></div>
+          <div><button  class="keypad-btn" id ="btn-f1"  name="btn-f1" value="btn-f">F</button></div>
+          <div><button  class="keypad-btn" id ="btn-g1"  name="btn-g1" value="btn-g">G</button></div>
+          <div><button  class="keypad-btn" id ="btn-h1"  name="btn-h1" value="btn-h">H</button></div>
+          <div><button  class="keypad-btn" id ="btn-j1"  name="btn-j1" value="btn-j">J</button></div>
+          <div><button  class="keypad-btn" id ="btn-k1"  name="btn-k1" value="btn-k">K</button></div>
+          <div><button  class="keypad-btn" id ="btn-l1"  name="btn-l1" value="btn-l">L</button></div>
+          <div><button  class="keypad-btn" id ="btn-up"  name="btn-up" value="btn-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button></div>
+          <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty1"  name="btn-empty1" value="btn-c"></button></div>
+          <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty2"  name="btn-empty2" value="btn-c"></button></div>
+          <div><button  class="keypad-btn" id ="btn-z1"  name="btn-z1" value="btn-z">Z</button></div>
+          <div><button  class="keypad-btn" id ="btn-x1"  name="btn-x1" value="btn-x">X</button></div>
+          <div><button  class="keypad-btn" id ="btn-c1"  name="btn-c1" value="btn-c">C</button></div>
+          <div><button  class="keypad-btn" id ="btn-v1"  name="btn-v1" value="btn-v">V</button></div>
+          <div><button  class="keypad-btn" id ="btn-b1"  name="btn-b1" value="btn-b">B</button></div>
+          <div><button  class="keypad-btn" id ="btn-n1"  name="btn-n1" value="btn-n">N</button></div>
+          <div><button  class="keypad-btn" id ="btn-m1"  name="btn-m1" value="btn-m">M</button></div>
+          
+          <div><button  class="keypad-btn" id ="btn-left"  name="btn-left" value="btn-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button></div>
+          <div><button  class="keypad-btn" id ="btn-down"  name="btn-down" value="btn-down">
+            <i class="fa fa-angle-down" aria-hidden="true"></i></button></div>
+          <div><button  class="keypad-btn" id ="btn-right"  name="btn-right" value="btn-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
+          
+         </div>
           <div class="not-available-message">
             <p>Currently, our crossword is only available for desktop users. We're working on a mobile version and should be able to bring that to you soon. We regret the inconvenience.</p>
           </div>
@@ -752,7 +806,7 @@
             
           </div>
         </div>
-
+ 
  <script type="text/javascript">
 
 
@@ -798,7 +852,7 @@ w = [];
 function f(e){
   var z = e.target;
   w.push(z);
-  console.log(w);
+  // console.log(w);
   z.style.background = "#b8b8b8";
   // if (w.length==1){
   //   w[w.length-1].style.background = "#b8b8b8";
@@ -945,6 +999,48 @@ console.log(resultString);
             });
           });
         });
+
+// keypad for mobile
+var keyArray=["btn-q1", "btn-w1", "btn-e1", "btn-r1", "btn-t1", "btn-y1", "btn-u1", "btn-i1", "btn-o1", "btn-p1", "btn-del", "btn-a1", "btn-s1", "btn-d1", "btn-f1", "btn-g1", "btn-h1","btn-j1", "btn-k1", "btn-l1","btn-up", "btn-z1","btn-x1", "btn-c1", "btn-v1", "btn-b1","btn-n1", "btn-m1", "btn-left", "btn-down", "btn-right" , "btn-empty1", "btn-empty2"]
+
+
+var btn = document.getElementsByClassName("keypad-btn");
+
+
+for (i = 0; i < keyArray.length; i++) {
+  btn.namedItem(`${keyArray[i]}`).addEventListener('click',tString);
+
+}
+ 
+
+function tString(e){
+    i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+    j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+    if (e.target.getAttribute("name")== "btn-del"){
+
+    }
+    if (e.target.getAttribute("name")== "btn-left"){
+      
+    }
+    if (e.target.getAttribute("name")== "btn-right"){
+      
+    }
+    if (e.target.getAttribute("name")== "btn-up"){
+      
+    }
+    if (e.target.getAttribute("name")== "empty1"){
+      
+    }
+    if (e.target.getAttribute("name")== "empty2"){
+      
+    }
+    else {
+     
+    x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
+    }
+  }
+
+
         </script>
       </section>
         
