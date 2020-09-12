@@ -208,6 +208,204 @@
   background:white;
   
 }
+
+@media(max-width: 768px){
+    
+.crossword-instructions{
+  margin: 1rem 5rem 2rem 5rem;
+}
+.crossword-instructions h3{
+  color: #f6660c;
+  font-weight:700;
+}
+.crossword-instructions .instruction-list{
+  font-size:1rem;
+  border: 1px solid rgb(5, 159, 206);
+  border-radius: 10px;
+}
+.crossword-container{
+  display:grid;
+  grid-template-columns:auto;
+  grid-template-rows: auto;
+  margin:1rem 10px 200px 10px;
+  /* background:burlywood; */
+  width:100%;
+  grid-template-areas: 
+  'box1' 
+  'box4'
+  'box2'
+  'box3';
+}
+
+.crossword-left-box{
+  grid-area: box1;
+  margin-bottom:-2rem;
+  
+}
+.crossword-grid{
+  display: inline-flex; 
+  flex-direction:column; 
+  flex-wrap:wrap; 
+}
+
+.empty-cell{
+  width:25px;
+  height:25px;
+  background:rgb(68, 68, 68);
+}
+.input-boxes{
+  width:25px;
+  height:25px; 
+  font-size:0.7rem;
+  color: #3f0cf6;
+  font-weight:800;
+  padding-bottom:4px;
+  text-align: center;
+  text-transform: capitalize;
+  
+}
+.crossword-form{
+  grid-area: box3;
+  width:100%;
+  /* background:rgb(204, 50, 50); */
+  text-align: center;
+  
+  
+  
+}
+
+.crossword-right-box{
+  /* margin-bottom:-3rem; */
+  grid-area: box2;
+  display:flex;
+  flex-direction: row;
+
+  /* background: rgb(145, 240, 164); */
+
+}  
+
+.crossword-form{
+  grid-area: box3;
+}
+
+.clue-list {
+  
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:top;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px 2px 2px 2px;
+  width:100%;
+}
+.clue-list .list-title {
+  font-size:0.8rem;
+  font-weight: 1000;
+  padding-bottom: 5px;
+}
+.clue-list .start-position {
+  color: #3f0cf6;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0px 5px 0px 0px;
+  
+}
+.input-wrapper{
+  position:relative;
+  float:left;
+  width:25px;
+  height:25px;
+}
+
+.input-wrapper .unit{
+  position:absolute;
+  top:0px;
+  left:1px;
+  font-size:0.4rem;
+}
+
+#game-submit-form{
+  width:80%;
+  margin: auto;
+  background: rgb(224, 255, 253);
+  padding: 40px 20px 20px 20px;
+  border-radius:20px;
+}
+#game-submit-form input {
+  width: 100%;
+  padding: 10px;
+  margin:5px;
+  font-size:0.9rem;
+  border: 1px #ddd solid;
+  border-radius: 4px;
+}
+
+#game-submit-form :focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
+.subscribe-me{
+  
+  text-align:left;
+}
+.subscribe-me #wish_to_subscribe{
+  width:auto; 
+  height:10px;
+}
+
+.subscribe-me #checkbox-label{
+  display:inline;
+  font-size:0.8rem;
+}
+.crossword-submit-btn {
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.done-btn{
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+.mobile-keypad{
+  
+  background:#9d9d9d;
+  padding:5px 5px 5px 5px;
+  grid-area: box4;
+  display:grid; 
+  grid-template-rows: repeat(3,27px);
+  grid-template-columns: repeat(11,27px); 
+  grid-row-gap:4px;
+  grid-column-gap:4px;
+  margin:auto;
+}
+.btn-container{
+  /* border:1px solid black;  */
+  /* text-align:center; */
+}
+.keypad-btn{
+  width:100%; 
+  height:100%;
+  margin:auto;
+  background:white;
+  
+}
+
+}
 </style>
 </head>
 <body>
@@ -228,59 +426,21 @@
           </div>
       </header>
       <section>
-        <div class="mobile-keypad"> 
-          <div><button  class="keypad-btn" id ="btn-q1"  name="btn-q1" value="btn-q">Q</button></div>
-          <div><button  class="keypad-btn" id ="btn-w1"  name="btn-w1" value="btn-w">W</button></div>
-          <div><button  class="keypad-btn" id ="btn-e1"  name="btn-e1" value="btn-e">E</button></div>
-          <div><button  class="keypad-btn" id ="btn-r1"  name="btn-r1" value="btn-r">R</button></div>
-          <div><button  class="keypad-btn" id ="btn-t1"  name="btn-t1" value="btn-t">T</button></div>
-          <div><button  class="keypad-btn" id ="btn-y1"  name="btn-y1" value="btn-y">Y</button></div>
-          <div><button  class="keypad-btn" id ="btn-u1"  name="btn-u1" value="btn-u">U</button></div>
-          <div><button  class="keypad-btn" id ="btn-i1"  name="btn-i1" value="btn-i">I</button></div>
-          <div><button  class="keypad-btn" id ="btn-o1"  name="btn-o1" value="btn-o">O</button></div>
-          <div><button  class="keypad-btn" id ="btn-p1"  name="btn-p1" value="btn-p">P</button></div>
-          <div><button  class="keypad-btn" id ="btn-del"  name="btn-del" value="btn-del">DEL</button></div>
-          <div><button  class="keypad-btn" id ="btn-a1"  name="btn-a1" value="btn-a">A</button></div>
-          <div><button  class="keypad-btn" id ="btn-s1"  name="btn-s1" value="btn-s">S</button></div>
-          <div><button  class="keypad-btn" id ="btn-d1"  name="btn-d1" value="btn-d">D</button></div>
-          <div><button  class="keypad-btn" id ="btn-f1"  name="btn-f1" value="btn-f">F</button></div>
-          <div><button  class="keypad-btn" id ="btn-g1"  name="btn-g1" value="btn-g">G</button></div>
-          <div><button  class="keypad-btn" id ="btn-h1"  name="btn-h1" value="btn-h">H</button></div>
-          <div><button  class="keypad-btn" id ="btn-j1"  name="btn-j1" value="btn-j">J</button></div>
-          <div><button  class="keypad-btn" id ="btn-k1"  name="btn-k1" value="btn-k">K</button></div>
-          <div><button  class="keypad-btn" id ="btn-l1"  name="btn-l1" value="btn-l">L</button></div>
-          <div><button  class="keypad-btn" id ="btn-up"  name="btn-up" value="btn-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button></div>
-          <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty1"  name="btn-empty1" value="btn-c"></button></div>
-          <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty2"  name="btn-empty2" value="btn-c"></button></div>
-          <div><button  class="keypad-btn" id ="btn-z1"  name="btn-z1" value="btn-z">Z</button></div>
-          <div><button  class="keypad-btn" id ="btn-x1"  name="btn-x1" value="btn-x">X</button></div>
-          <div><button  class="keypad-btn" id ="btn-c1"  name="btn-c1" value="btn-c">C</button></div>
-          <div><button  class="keypad-btn" id ="btn-v1"  name="btn-v1" value="btn-v">V</button></div>
-          <div><button  class="keypad-btn" id ="btn-b1"  name="btn-b1" value="btn-b">B</button></div>
-          <div><button  class="keypad-btn" id ="btn-n1"  name="btn-n1" value="btn-n">N</button></div>
-          <div><button  class="keypad-btn" id ="btn-m1"  name="btn-m1" value="btn-m">M</button></div>
-          
-          <div><button  class="keypad-btn" id ="btn-left"  name="btn-left" value="btn-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button></div>
-          <div><button  class="keypad-btn" id ="btn-down"  name="btn-down" value="btn-down">
-            <i class="fa fa-angle-down" aria-hidden="true"></i></button></div>
-          <div><button  class="keypad-btn" id ="btn-right"  name="btn-right" value="btn-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
-          
-         </div>
-          <div class="not-available-message">
+          <div class="not-available-message" style="display:none;">
             <p>Currently, our crossword is only available for desktop users. We're working on a mobile version and should be able to bring that to you soon. We regret the inconvenience.</p>
           </div>
-          <div class="crossword-instructions"><h3>Crossword of the week</h3>
+          <div class="crossword-instructions"style="display:none;" ><h3>Crossword of the week</h3>
             <p>Play R&I's crossword! The clues are simple and all the words can be found in the latest edition of R&I. The contest is open until 10 p.m., Mumbai time, on Wednesday. The winner stands to win an INR100 Amazon.in gift card. If there are multiple correct entries, the winner will be selected by a lucky draw.</p>
           </div>
           <div class = "crossword-container" id="main-box">
             <div class="crossword-left-box">
-            <div class="crossword-grid" style="max-height:448px;">
+            <div class="crossword-grid" style="max-height:270px;">
               {%for item in all_cells%} 
               {%if item in empty_cells%}
-              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#fc802d;width:28px;height:28px;margin-top:0px !important;"></p>
+              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#fc802d;width:18px;height:18px;margin-top:0px !important;"></p>
               {%else%}
-              <div class="input-wrapper" style="width:28px;height:28px">
-              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="width:28px;height:28px;border:none;border-radius:0px;background:white;border:0.5px solid black;box-sizing:border-box;margin-top:0px !important; color:black;"></p>
+              <div class="input-wrapper" style="width:18px;height:18px">
+              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="width:18px;height:18px;border:none;border-radius:0px;background:white;border:0.5px solid black;box-sizing:border-box;margin-top:0px !important; color:black;"></p>
               {%for word in all_word_list%}
               {%if word.3 == item.0 and word.4 == item.1 %}
               <div class="unit">{{word.2}}</div>
@@ -294,6 +454,44 @@
           </div>
 
     </div>
+    <div class="mobile-keypad"> 
+      <div><button  class="keypad-btn" id ="btn-q1"  name="btn-q1" value="btn-q">Q</button></div>
+      <div><button  class="keypad-btn" id ="btn-w1"  name="btn-w1" value="btn-w">W</button></div>
+      <div><button  class="keypad-btn" id ="btn-e1"  name="btn-e1" value="btn-e">E</button></div>
+      <div><button  class="keypad-btn" id ="btn-r1"  name="btn-r1" value="btn-r">R</button></div>
+      <div><button  class="keypad-btn" id ="btn-t1"  name="btn-t1" value="btn-t">T</button></div>
+      <div><button  class="keypad-btn" id ="btn-y1"  name="btn-y1" value="btn-y">Y</button></div>
+      <div><button  class="keypad-btn" id ="btn-u1"  name="btn-u1" value="btn-u">U</button></div>
+      <div><button  class="keypad-btn" id ="btn-i1"  name="btn-i1" value="btn-i">I</button></div>
+      <div><button  class="keypad-btn" id ="btn-o1"  name="btn-o1" value="btn-o">O</button></div>
+      <div><button  class="keypad-btn" id ="btn-p1"  name="btn-p1" value="btn-p">P</button></div>
+      <div><button  class="keypad-btn" id ="btn-del"  name="btn-del" value="btn-del">DEL</button></div>
+      <div><button  class="keypad-btn" id ="btn-a1"  name="btn-a1" value="btn-a">A</button></div>
+      <div><button  class="keypad-btn" id ="btn-s1"  name="btn-s1" value="btn-s">S</button></div>
+      <div><button  class="keypad-btn" id ="btn-d1"  name="btn-d1" value="btn-d">D</button></div>
+      <div><button  class="keypad-btn" id ="btn-f1"  name="btn-f1" value="btn-f">F</button></div>
+      <div><button  class="keypad-btn" id ="btn-g1"  name="btn-g1" value="btn-g">G</button></div>
+      <div><button  class="keypad-btn" id ="btn-h1"  name="btn-h1" value="btn-h">H</button></div>
+      <div><button  class="keypad-btn" id ="btn-j1"  name="btn-j1" value="btn-j">J</button></div>
+      <div><button  class="keypad-btn" id ="btn-k1"  name="btn-k1" value="btn-k">K</button></div>
+      <div><button  class="keypad-btn" id ="btn-l1"  name="btn-l1" value="btn-l">L</button></div>
+      <div><button  class="keypad-btn" id ="btn-up"  name="btn-up" value="btn-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button></div>
+      <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty1"  name="btn-empty1" value="btn-c"></button></div>
+      <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty2"  name="btn-empty2" value="btn-c"></button></div>
+      <div><button  class="keypad-btn" id ="btn-z1"  name="btn-z1" value="btn-z">Z</button></div>
+      <div><button  class="keypad-btn" id ="btn-x1"  name="btn-x1" value="btn-x">X</button></div>
+      <div><button  class="keypad-btn" id ="btn-c1"  name="btn-c1" value="btn-c">C</button></div>
+      <div><button  class="keypad-btn" id ="btn-v1"  name="btn-v1" value="btn-v">V</button></div>
+      <div><button  class="keypad-btn" id ="btn-b1"  name="btn-b1" value="btn-b">B</button></div>
+      <div><button  class="keypad-btn" id ="btn-n1"  name="btn-n1" value="btn-n">N</button></div>
+      <div><button  class="keypad-btn" id ="btn-m1"  name="btn-m1" value="btn-m">M</button></div>
+      
+      <div><button  class="keypad-btn" id ="btn-left"  name="btn-left" value="btn-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button></div>
+      <div><button  class="keypad-btn" id ="btn-down"  name="btn-down" value="btn-down">
+        <i class="fa fa-angle-down" aria-hidden="true"></i></button></div>
+      <div><button  class="keypad-btn" id ="btn-right"  name="btn-right" value="btn-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
+      
+     </div>
         <div class = "crossword-right-box">
             <div class="clue-list">
                 <p class="list-title">Across</p>
@@ -557,7 +755,6 @@ function tString(e){
       
     }
     else {
-     
     x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
     }
   }
