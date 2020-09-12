@@ -190,6 +190,48 @@
   padding:10px 10px 10px 10px;
   text-align: center;
 }
+@media screen 
+  and (width: 1024px) 
+  and (height: 800px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+}
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    .not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    .not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+}
 
 @media(max-width: 768px){
   .not-available-message{
