@@ -734,32 +734,83 @@ for (i = 0; i < keyArray.length; i++) {
  
 
 function tString(e){
+   console.log(e.target.parentElement);
     i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
     j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
-    if (e.target.getAttribute("name")== "btn-del"){
+    console.log(i,j);
+    if (e.target.getAttribute("name") == "btn-del"){
+      console.log("del pressed")
+      
+      if(x.namedItem(`cell${i},${j}`) != null){
+        x.namedItem(`cell${i},${j}`).textContent ="";
+    }
+    } else if (e.target.parentElement.getAttribute("name") == "btn-left"){
+      console.log("left pressed");
+     if(x.namedItem(`cell${i-1},${j}`) != null){
+       console.log("hello1");
+        x.namedItem(`cell${i-1},${j}`).focus();
+        x.namedItem(`cell${i-1},${j}`).style.background = "#b8b8b8";
+        w.push(x.namedItem(`cell${i-1},${j}`));
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        
+  }
 
     }
-    if (e.target.getAttribute("name")== "btn-left"){
+    }
+    else if (e.target.parentElement.getAttribute("name")== "btn-right"){
+      if(x.namedItem(`cell${parseInt(i)+1},${j}`) != null){
+        x.namedItem(`cell${parseInt(i)+1},${j}`).focus();
+        x.namedItem(`cell${parseInt(i)+1},${j}`).style.background = "#b8b8b8";
+        w.push(x.namedItem(`cell${parseInt(i)+1},${j}`));
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        
+      }
+    }
+    }
+    else if (e.target.parentElement.getAttribute("name")== "btn-down"){
+      if(x.namedItem(`cell${i},${parseInt(j)+1}`) != null){
+        x.namedItem(`cell${i},${parseInt(j)+1}`).focus();
+        x.namedItem(`cell${i},${parseInt(j)+1}`).style.background = "#b8b8b8";
+        w.push(x.namedItem(`cell${i},${parseInt(j)+1}`));
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        
+        }
+        
+      }
+    }
+    else if (e.target.parentElement.getAttribute("name")== "btn-up"){
+      console.log(e.target.getAttribute("name"))
+      if(x.namedItem(`cell${i},${j-1}`) != null){
+        x.namedItem(`cell${i},${j-1}`).focus();
+        x.namedItem(`cell${i},${j-1}`).style.background = "#b8b8b8";
+        w.push(x.namedItem(`cell${i},${j-1}`));
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        
+        }
+        }
+    }
+    else if (e.target.getAttribute("name")== "empty1"){
       
     }
-    if (e.target.getAttribute("name")== "btn-right"){
-      
-    }
-    if (e.target.getAttribute("name")== "btn-up"){
-      
-    }
-    if (e.target.getAttribute("name")== "empty1"){
-      
-    }
-    if (e.target.getAttribute("name")== "empty2"){
+    else if (e.target.getAttribute("name")== "empty2"){
       
     }
     else {
     x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
     }
   }
-
-
         </script>
       </section>
         
