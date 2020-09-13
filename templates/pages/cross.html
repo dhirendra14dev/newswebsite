@@ -751,12 +751,12 @@ function tString(e){
         x.namedItem(`cell${i-1},${j}`).focus();
         x.namedItem(`cell${i-1},${j}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${i-1},${j}`));
-        if (x.namedItem(`cell${i},${j}`).textContent==""){
-        x.namedItem(`cell${i},${j}`).style.background ="white";
-        } else{
-        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+  //       if (x.namedItem(`cell${i},${j}`).textContent==""){
+  //       x.namedItem(`cell${i},${j}`).style.background ="white";
+  //       } else{
+  //       x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
         
-  }
+  // }
 
     }
     }
@@ -765,12 +765,12 @@ function tString(e){
         x.namedItem(`cell${parseInt(i)+1},${j}`).focus();
         x.namedItem(`cell${parseInt(i)+1},${j}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${parseInt(i)+1},${j}`));
-        if (x.namedItem(`cell${i},${j}`).textContent==""){
-        x.namedItem(`cell${i},${j}`).style.background ="white";
-        } else{
-        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+      //   if (x.namedItem(`cell${i},${j}`).textContent==""){
+      //   x.namedItem(`cell${i},${j}`).style.background ="white";
+      //   } else{
+      //   x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
         
-      }
+      // }
     }
     }
     else if (e.target.parentElement.getAttribute("name")== "btn-down"){
@@ -778,12 +778,12 @@ function tString(e){
         x.namedItem(`cell${i},${parseInt(j)+1}`).focus();
         x.namedItem(`cell${i},${parseInt(j)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${i},${parseInt(j)+1}`));
-        if (x.namedItem(`cell${i},${j}`).textContent==""){
-        x.namedItem(`cell${i},${j}`).style.background ="white";
-        } else{
-        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        // if (x.namedItem(`cell${i},${j}`).textContent==""){
+        // x.namedItem(`cell${i},${j}`).style.background ="white";
+        // } else{
+        // x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
         
-        }
+        // }
         
       }
     }
@@ -793,20 +793,20 @@ function tString(e){
         x.namedItem(`cell${i},${j-1}`).focus();
         x.namedItem(`cell${i},${j-1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${i},${j-1}`));
-        if (x.namedItem(`cell${i},${j}`).textContent==""){
-        x.namedItem(`cell${i},${j}`).style.background ="white";
-        } else{
-        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        // if (x.namedItem(`cell${i},${j}`).textContent==""){
+        // x.namedItem(`cell${i},${j}`).style.background ="white";
+        // } else{
+        // x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
         
+        // }
         }
-        }
     }
-    else if (e.target.getAttribute("name")== "empty1"){
+    // else if (e.target.getAttribute("name")== "empty1"){
       
-    }
-    else if (e.target.getAttribute("name")== "empty2"){
+    // }
+    // else if (e.target.getAttribute("name")== "empty2"){
       
-    }
+    // }
     else {
     x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
     }
