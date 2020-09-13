@@ -571,6 +571,7 @@ var o = document.getElementById("game-submit-form");
 w = [];
 function f(e){
   var z = e.target;
+  console.log(z);
   w.push(z);
   // console.log(w);
   z.style.background = "#b8b8b8";
@@ -751,12 +752,12 @@ function tString(e){
         x.namedItem(`cell${i-1},${j}`).focus();
         x.namedItem(`cell${i-1},${j}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${i-1},${j}`));
-  //       if (x.namedItem(`cell${i},${j}`).textContent==""){
-  //       x.namedItem(`cell${i},${j}`).style.background ="white";
-  //       } else{
-  //       x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
         
-  // }
+  }
 
     }
     }
@@ -781,12 +782,12 @@ function tString(e){
         x.namedItem(`cell${i},${parseInt(j)+1}`).focus();
         x.namedItem(`cell${i},${parseInt(j)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${i},${parseInt(j)+1}`));
-        // if (x.namedItem(`cell${i},${j}`).textContent==""){
-        // x.namedItem(`cell${i},${j}`).style.background ="white";
-        // } else{
-        // x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
         
-        // }
+        }
         
       }
     }
@@ -796,12 +797,12 @@ function tString(e){
         x.namedItem(`cell${i},${j-1}`).focus();
         x.namedItem(`cell${i},${j-1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${i},${j-1}`));
-        // if (x.namedItem(`cell${i},${j}`).textContent==""){
-        // x.namedItem(`cell${i},${j}`).style.background ="white";
-        // } else{
-        // x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
         
-        // }
+        }
         }
     }
     // else if (e.target.getAttribute("name")== "empty1"){
