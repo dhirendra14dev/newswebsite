@@ -434,7 +434,7 @@
           </div>
           <div class = "crossword-container" id="main-box">
             <div class="crossword-left-box">
-            <div class="crossword-grid" style="max-height:352px;">
+            <div class="crossword-grid" style="max-height:330px;">
               {%for item in all_cells%} 
               {%if item in empty_cells%}
               <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#fc802d;width:22px;height:22px;margin-top:0px !important;"></p>
@@ -536,7 +536,7 @@ for (i=0; i<wordList.length; i++){
   a=[wordList[i][1],wordList[i][3],wordList[i][4],`${wordList[i][6]}`.toLowerCase()];
   startPostion.push(a);
 }
-console.log(startPostion);
+
 
 
 
@@ -619,13 +619,13 @@ function f(e){
         currentWordArray.push([parseInt(currentX)+i,parseInt(currentY)]);
   
       }
-      console.log(currentWordArray);
+     
     }else{
       for(i=0; i<wordLength; i++){
         currentWordArray.push([parseInt(currentX),parseInt(currentY)+i]);
   
       }
-      console.log(currentWordArray);
+      
     }
     
   }
@@ -829,8 +829,8 @@ var flag = 1;
 var acrossOrDown;
 function tString(e){
     
-   console.log(e.target);
-   console.log(flag);
+   
+   
     i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
     j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
 
@@ -845,7 +845,7 @@ function tString(e){
     }
     else {
     x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
-    console.log(flag);
+    
     currentX = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
     currentY = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
     console.log(currentX);
@@ -865,7 +865,7 @@ function tString(e){
       
     }
     }
-    console.log(acrossOrDown);
+    
     function isIncluded(arr){
       
       for (i=0; i<currentWordArray.length; i++){
@@ -889,14 +889,14 @@ function tString(e){
       acrossOrDown = "true";
     }
     
-    console.log(acrossOrDown);
+    
   if (JSON.parse(acrossOrDown)){
     if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
         
-        console.log("startacross");
+        
        
-        console.log(flag);
+        
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
   
@@ -908,9 +908,9 @@ function tString(e){
        
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
         
-        console.log("startdown");
         
-        console.log(flag);
+        
+        
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
         
@@ -924,7 +924,7 @@ function tString(e){
       if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
        
-        console.log("across");
+        
         
         console.log(flag);
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
@@ -938,14 +938,16 @@ function tString(e){
       if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
        
-        console.log("down");
+        
       
-        console.log(flag);
+        
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
         
   }else{
     flag=1;
+    
+    
   }
     }
     
