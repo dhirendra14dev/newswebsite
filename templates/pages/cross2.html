@@ -434,7 +434,7 @@
           </div>
           <div class = "crossword-container" id="main-box">
             <div class="crossword-left-box">
-            <div class="crossword-grid" style="max-height:352px;">
+            <div class="crossword-grid" style="max-height:330px;">
               {%for item in all_cells%} 
               {%if item in empty_cells%}
               <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#fc802d;width:22px;height:22px;margin-top:0px !important;"></p>
@@ -553,6 +553,7 @@ function isStartingPoint(x,y){
 return z;
 }
 
+
 var x = document.getElementsByClassName("input-boxes");
 var y = document.getElementsByClassName("empty-cell");
 
@@ -591,15 +592,44 @@ var o = document.getElementById("game-submit-form");
 }
   
 w = [];
+currentWordArray=[];
+var wordLength;
+
 function f(e){
+  currentWordArray=[];
   var z = e.target;
   console.log(z);
   w.push(z);
   // console.log(w);
   z.style.background = "#b8b8b8";
-  // if (w.length==1){
-  //   w[w.length-1].style.background = "#b8b8b8";
-  // }
+  
+  currentX = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+  currentY = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+  
+  if (isStartingPoint(currentX ,currentY)){
+    for (i=0; i<startPostion.length; i++){
+      if (startPostion[i][1] == currentX && startPostion[i][2] == currentY ){
+          acrossOrDown = startPostion[i][3];
+          wordLength = startPostion[i][0];
+      
+      }
+    }
+    if (JSON.parse(acrossOrDown)){  
+      for(i=0; i<wordLength; i++){
+        currentWordArray.push([parseInt(currentX)+i,parseInt(currentY)]);
+  
+      }
+      console.log(currentWordArray);
+    }else{
+      for(i=0; i<wordLength; i++){
+        currentWordArray.push([parseInt(currentX),parseInt(currentY)+i]);
+  
+      }
+      console.log(currentWordArray);
+    }
+    
+  }
+  
   if ((w.length) > 1){
   if (w[w.length-2].textContent == ""){
     w[w.length-2].style.background = "white";
@@ -628,52 +658,51 @@ function f(e){
 // }
 //   }
 
-var flag = 1;
-var acrossOrDown;
+
 function g(e){
     w[w.length-1].textContent = e.key;
-    currentX = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
-    currentY = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
-  if (isStartingPoint(currentX ,currentY)){
-    for (i=0; i<startPostion.length; i++){
-    if (startPostion[i][1] == currentX && startPostion[i][2] == currentY){
-      acrossOrDown = startPostion[i][3];
-    }
-    }
-    console.log(acrossOrDown);
-  if (JSON.parse(acrossOrDown)){
-    if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
-        x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
-        x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
-        w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
+  //   currentX = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+  //   currentY = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+  // if (isStartingPoint(currentX ,currentY)){
+  //   for (i=0; i<startPostion.length; i++){
+  //   if (startPostion[i][1] == currentX && startPostion[i][2] == currentY){
+  //     acrossOrDown = startPostion[i][3];
+  //   }
+  //   }
+  //   console.log(acrossOrDown);
+  // if (JSON.parse(acrossOrDown)){
+  //   if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
+  //       x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
+  //       x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
+  //       w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
   
-      }
-  }else {
-  flag=0;
-  if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
-        x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
-        x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
-        w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
-      }
+  //     }
+  // }else {
+  // flag=0;
+  // if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
+  //       x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
+  //       x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
+  //       w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
+  //     }
 
-    }
+  //   }
 
-  }else{
-    if(flag == 1){
-      if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
-        x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
-        x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
-        w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
-    }
-    }else{
-      if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
-        x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
-        x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
-        w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
-  }
-    }
+  // }else{
+  //   if(flag == 1){
+  //     if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
+  //       x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
+  //       x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
+  //       w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
+  //   }
+  //   }else{
+  //     if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
+  //       x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
+  //       x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
+  //       w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
+  // }
+  //   }
 
-  }
+  // }
   
 }
 
@@ -795,11 +824,13 @@ for (i = 0; i < keyArray.length; i++) {
   btn.namedItem(`${keyArray[i]}`).addEventListener('click',tString);
 
 }
- 
 
-
+var flag = 1;
+var acrossOrDown;
 function tString(e){
+    
    console.log(e.target);
+   console.log(flag);
     i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
     j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
 
@@ -814,46 +845,110 @@ function tString(e){
     }
     else {
     x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
+    console.log(flag);
     currentX = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
     currentY = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+    console.log(currentX);
+    // if (isStartingPoint(currentX ,currentY)){
+    //   for (i=0; i<startPostion.length; i++){
+    //   if (startPostion[i][1] == currentX && startPostion[i][2] == currentY ){
+    //       wordLength = startPostion[i][0];
+    //       acrossOrDown = startPostion[i][3];
+    // }
+    //   }
+    // &&currentWordArray.includes(parseInt(currentX),parseInt(currentY)) }
   if (isStartingPoint(currentX ,currentY)){
+    
     for (i=0; i<startPostion.length; i++){
-    if (startPostion[i][1] == currentX && startPostion[i][2] == currentY){
+    if (startPostion[i][1] == currentX && startPostion[i][2] == currentY ){
       acrossOrDown = startPostion[i][3];
+      
     }
     }
+    console.log(acrossOrDown);
+    function isIncluded(arr){
+      
+      for (i=0; i<currentWordArray.length; i++){
+        if (arr[0] == currentWordArray[i][0] && arr[1] == currentWordArray[i][1]){
+          z=true;
+          return z
+        }else{
+          z=false;
+        }
+  
+      }
+      return z;
+
+    }
+
+  //  console.log(!isIncluded([parseInt(currentX)+1,parseInt(currentY)]));
+    if (acrossOrDown = "false" && (!isIncluded([parseInt(currentX)+1,parseInt(currentY)]))) {
+      acrossOrDown = "false";
+    }
+    if(acrossOrDown = "true" && (!isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
+      acrossOrDown = "true";
+    }
+    
     console.log(acrossOrDown);
   if (JSON.parse(acrossOrDown)){
     if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
+        
+        console.log("startacross");
+       
+        console.log(flag);
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
   
       }
+      
   }else {
   flag=0;
   if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
+       
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
+        
+        console.log("startdown");
+        
+        console.log(flag);
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
+        
       }
+  }
 
-    }
-
+    
+  
   }else{
     if(flag == 1){
       if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
+       
+        console.log("across");
+        
+        console.log(flag);
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
+    }else{
+      flag = 1;
     }
     }else{
+      console.log("here");
+      console.log(flag);
       if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
+       
+        console.log("down");
+      
+        console.log(flag);
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
+        
+  }else{
+    flag=1;
   }
     }
+    
 
   }
 
