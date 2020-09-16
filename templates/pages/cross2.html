@@ -866,12 +866,12 @@ function tString(e){
 
   
       
-      if(acrossOrDown = "true" && (!isIncluded([parseInt(currentX)+1,parseInt(currentY)]))){
+      if(acrossOrDown == "true" && (!isIncluded([parseInt(currentX)+1,parseInt(currentY)]))){
       
       acrossOrDown = "false";
       
       }
-      if(acrossOrDown = "false" && (!isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
+      if(acrossOrDown == "false" && (!isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
       
       acrossOrDown = "true";
       
@@ -901,12 +901,8 @@ function tString(e){
     }else {
   flag=0;
   if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
-       
+        console.log("herefirst");
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).focus();
-        
-        
-        
-        
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
         if (x.namedItem(`cell${currentX},${currentY}`).textContent==""){
