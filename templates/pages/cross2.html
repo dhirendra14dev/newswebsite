@@ -865,12 +865,7 @@ function tString(e){
       }
 
   
-      if (acrossOrDown == "false" ){
-        flag=0;
-      }else{
-        flag=1;
-      }
-      console.log(flag);
+      
       if(acrossOrDown = "true" && (!isIncluded([parseInt(currentX)+1,parseInt(currentY)]))){
       
       acrossOrDown = "false";
@@ -881,8 +876,13 @@ function tString(e){
       acrossOrDown = "true";
       
       }
+      if (acrossOrDown == "false" ){
+        flag=0;
+      }else{
+        flag=1;
+      }
       console.log(flag);
-      
+      console.log(acrossOrDown);
     
      if (JSON.parse(acrossOrDown)){
       if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
