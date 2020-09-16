@@ -552,7 +552,9 @@ function isStartingPoint(x,y){
 }
 return z;
 }
+function setFlag(x,y){
 
+}
 
 var x = document.getElementsByClassName("input-boxes");
 var y = document.getElementsByClassName("empty-cell");
@@ -905,6 +907,9 @@ function tString(e){
     
   
   }else{
+    if (x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) = null){
+      flag = 0;}
+    
     if(flag == 1){
       if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
