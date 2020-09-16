@@ -21,6 +21,8 @@
 <style>
   /*Crossword*/
   
+/*Crossword*/
+  
 .crossword-instructions{
   margin: 1rem 5rem 2rem 5rem;
 }
@@ -55,17 +57,18 @@
 .crossword-grid{
   display: inline-flex; 
   flex-direction:column; 
-  flex-wrap:wrap; 
+  flex-wrap:wrap;
+  max-height:448px;
 }
 
 .empty-cell{
-  width:25px;
-  height:25px;
+  width:28px;
+  height:28px;
   background:rgb(68, 68, 68);
 }
 .input-boxes{
-  width:25px;
-  height:25px; 
+  width:28px;
+  height:28px; 
   font-size:1rem;
   color: #3f0cf6;
   font-weight:800;
@@ -123,8 +126,8 @@
 .input-wrapper{
   position:relative;
   float:left;
-  width:25px;
-  height:25px;
+  width:28px;
+  height:28px;
 }
 
 .input-wrapper .unit{
@@ -191,27 +194,14 @@
   text-align: center;
 }
 .mobile-keypad{
-  display:grid; 
-  grid-template-rows: repeat(3,35px);
-  grid-template-columns: repeat(11,35px); 
-  grid-row-gap:2px;
-  grid-column-gap:2px
+  display:none; 
 }
-.btn-container{
-  /* border:1px solid black;  */
-  /* text-align:center; */
-}
-.keypad-btn{
-  width:100%; 
-  height:100%;
-  margin:auto;
-  background:white;
-  
-}
+
 
 @media(max-width: 768px){
     
 .crossword-instructions{
+  display:none;
   margin: 1rem 5rem 2rem 5rem;
 }
 .crossword-instructions h3{
@@ -245,7 +235,8 @@
 .crossword-grid{
   display: inline-flex; 
   flex-direction:column; 
-  flex-wrap:wrap; 
+  flex-wrap:wrap;
+  max-height:384px;
 }
 
 .empty-cell{
@@ -256,7 +247,7 @@
 .input-boxes{
   width:24px;
   height:24px; 
-  font-size:0.7rem;
+  font-size:0.8rem;
   color: #3f0cf6;
   font-weight:1000;
   padding-bottom:4px;
@@ -295,7 +286,7 @@
   flex-direction:column;
   align-content:center;
   justify-content:top;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
   padding: 2px 2px 2px 2px;
   width:100%;
@@ -307,7 +298,7 @@
 }
 .clue-list .start-position {
   color: #3f0cf6;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   padding: 0px 5px 0px 0px;
   
@@ -429,21 +420,21 @@
           </div>
       </header>
       <section>
-          <div class="not-available-message" style="display:none;">
+          <!-- <div class="not-available-message">
             <p>Currently, our crossword is only available for desktop users. We're working on a mobile version and should be able to bring that to you soon. We regret the inconvenience.</p>
-          </div>
-          <div class="crossword-instructions"style="display:none;" ><h3>Crossword of the week</h3>
+          </div> -->
+          <div class="crossword-instructions"><h3>Crossword of the week</h3>
             <p>Play R&I's crossword! The clues are simple and all the words can be found in the latest edition of R&I. The contest is open until 10 p.m., Mumbai time, on Wednesday. The winner stands to win an INR100 Amazon.in gift card. If there are multiple correct entries, the winner will be selected by a lucky draw.</p>
           </div>
           <div class = "crossword-container" id="main-box">
             <div class="crossword-left-box">
-            <div class="crossword-grid" style="max-height:384px;">
+            <div class="crossword-grid">
               {%for item in all_cells%} 
               {%if item in empty_cells%}
-              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.2px solid rgb(0, 0, 0);background:#fc802d;width:24px;height:24px;margin-top:0px !important;"></p>
+              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.2px solid rgb(0, 0, 0);background:#fc802d;"></p>
               {%else%}
-              <div class="input-wrapper" style="width:24px;height:24px">
-              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="width:24px;height:24px;border:none;border-radius:0px;background:white;border:0.2px solid rgb(0, 0, 0);box-sizing:border-box;margin-top:0px !important; color:rgb(0, 0, 0);"></p>
+              <div class="input-wrapper">
+              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="background:white;border:0.2px solid rgb(0, 0, 0);"></p>
               {%for word in all_word_list%}
               {%if word.3 == item.0 and word.4 == item.1 %}
               <div class="unit">{{word.2}}</div>
