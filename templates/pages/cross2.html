@@ -869,27 +869,22 @@ function tString(e){
       }
 
   
-      console.log(!isIncluded([parseInt(currentX)+1,parseInt(currentY)]));
+      
       if(acrossOrDown == "true" && (!isIncluded([parseInt(currentX)+1,parseInt(currentY)]))){
-        console.log("if1");
-      acrossOrDown = "false";
+        
+      flag = 1;
       
       }
-      console.log(!isIncluded([parseInt(currentX),parseInt(currentY)+1]));
       if(acrossOrDown == "false" && (!isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
-        console.log("if2");
-      acrossOrDown = "true";
+       
+      flag = 0;
       
       }
-      if (acrossOrDown == "false" ){
-        flag=0;
-      }else{
-        flag=1;
-      }
+      
       console.log(flag);
-      console.log(acrossOrDown);
+      
     
-     if (JSON.parse(acrossOrDown)){
+     if (flag==1){
       if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
