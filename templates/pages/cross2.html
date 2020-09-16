@@ -851,8 +851,9 @@ function tString(e){
     console.log(acrossOrDown);
     console.log(flag);
       function isIncluded(arr){
-      
+      if (currentWordArray.length !=0){
         for (i=0; i<currentWordArray.length; i++){
+        
           if (arr[0] == currentWordArray[i][0] && arr[1] == currentWordArray[i][1]){
             z=true;
             return z
@@ -862,6 +863,9 @@ function tString(e){
   
         }
         return z;
+      }else{
+        return false;
+      }
       }
 
   
