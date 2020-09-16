@@ -865,14 +865,15 @@ function tString(e){
       }
 
   
-      
+      console.log(!isIncluded([parseInt(currentX)+1,parseInt(currentY)]));
       if(acrossOrDown == "true" && (!isIncluded([parseInt(currentX)+1,parseInt(currentY)]))){
-      
+        console.log("if1");
       acrossOrDown = "false";
       
       }
+      console.log(!isIncluded([parseInt(currentX),parseInt(currentY)+1]));
       if(acrossOrDown == "false" && (!isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
-      
+        console.log("if2");
       acrossOrDown = "true";
       
       }
