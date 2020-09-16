@@ -434,7 +434,7 @@
           </div>
           <div class = "crossword-container" id="main-box">
             <div class="crossword-left-box">
-            <div class="crossword-grid" style="max-height:352px;">
+            <div class="crossword-grid" style="max-height:330px;">
               {%for item in all_cells%} 
               {%if item in empty_cells%}
               <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#fc802d;width:22px;height:22px;margin-top:0px !important;"></p>
@@ -611,13 +611,11 @@ function f(e){
       if (startPostion[i][1] == currentX && startPostion[i][2] == currentY ){
           acrossOrDown = startPostion[i][3];
           wordLength = startPostion[i][0];
-      
       }
     }
     if (JSON.parse(acrossOrDown)){  
       for(i=0; i<wordLength; i++){
         currentWordArray.push([parseInt(currentX)+i,parseInt(currentY)]);
-  
       }
      
     }else{
@@ -828,81 +826,68 @@ for (i = 0; i < keyArray.length; i++) {
 var flag = 1;
 var acrossOrDown;
 function tString(e){
-    
-   
-   
-    i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
-    j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
 
-  
-    
-    if (e.target.getAttribute("name") == "btn-del"){
-      
-      
-      if(x.namedItem(`cell${i},${j}`) != null){
+  i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+  j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+  if (e.target.getAttribute("name") == "btn-del"){
+    if(x.namedItem(`cell${i},${j}`) != null){
         x.namedItem(`cell${i},${j}`).textContent ="";
     }
-    }
-    else {
+  }else {
     x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
     
     currentX = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
     currentY = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
-    console.log(currentX);
-    // if (isStartingPoint(currentX ,currentY)){
-    //   for (i=0; i<startPostion.length; i++){
-    //   if (startPostion[i][1] == currentX && startPostion[i][2] == currentY ){
-    //       wordLength = startPostion[i][0];
-    //       acrossOrDown = startPostion[i][3];
-    // }
-    //   }
-    // &&currentWordArray.includes(parseInt(currentX),parseInt(currentY)) }
-  if (isStartingPoint(currentX ,currentY)){
-    
-    for (i=0; i<startPostion.length; i++){
-    if (startPostion[i][1] == currentX && startPostion[i][2] == currentY ){
-      acrossOrDown = startPostion[i][3];
+    if (isStartingPoint(currentX ,currentY)){
+      console.log(currentWordArray);
+      for (i=0; i<startPostion.length; i++){
+        if (startPostion[i][1] == currentX && startPostion[i][2] == currentY ){
+          acrossOrDown = startPostion[i][3];
       
-    }
-    }
-    
-    function isIncluded(arr){
-      
-      for (i=0; i<currentWordArray.length; i++){
-        if (arr[0] == currentWordArray[i][0] && arr[1] == currentWordArray[i][1]){
-          z=true;
-          return z
-        }else{
-          z=false;
         }
+      }   
+    
+      function isIncluded(arr){
+      
+        for (i=0; i<currentWordArray.length; i++){
+          if (arr[0] == currentWordArray[i][0] && arr[1] == currentWordArray[i][1]){
+            z=true;
+            return z
+          }else{
+            z=false;
+          }
   
+        }
+        return z;
       }
-      return z;
 
-    }
-
-  //  console.log(!isIncluded([parseInt(currentX)+1,parseInt(currentY)]));
-    if (acrossOrDown = "false" && (!isIncluded([parseInt(currentX)+1,parseInt(currentY)]))) {
+  
+      // if (acrossOrDown = "false" && (!isIncluded([parseInt(currentX)+1,parseInt(currentY)]))) {
+      //   acrossOrDown = "false";
+      // }
+      if(acrossOrDown = "true" && (isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
+      
       acrossOrDown = "false";
-    }
-    if(acrossOrDown = "true" && (!isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
+      
+      }
+      if(acrossOrDown = "false" && (isIncluded([parseInt(currentX)+1,parseInt(currentY)]))){
+      
       acrossOrDown = "true";
-    }
+      
+      }
+      // if(acrossOrDown = "true" && (!isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
+      // acrossOrDown = "false";
+      // }
     
-    
-  if (JSON.parse(acrossOrDown)){
-    if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
+     if (JSON.parse(acrossOrDown)){
+      if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
-        
-        
-       
-        
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
   
       }
       
-  }else {
+    }else {
   flag=0;
   if(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`) != null){
        
