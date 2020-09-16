@@ -249,16 +249,16 @@
 }
 
 .empty-cell{
-  width:25px;
-  height:25px;
-  background:rgb(68, 68, 68);
+  width:24px;
+  height:24px;
+  background:rgb(255, 255, 255);
 }
 .input-boxes{
-  width:25px;
-  height:25px; 
+  width:24px;
+  height:24px; 
   font-size:0.7rem;
   color: #3f0cf6;
-  font-weight:800;
+  font-weight:1000;
   padding-bottom:4px;
   text-align: center;
   text-transform: capitalize;
@@ -294,19 +294,19 @@
   flex-direction:column;
   align-content:center;
   justify-content:top;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 500;
   padding: 2px 2px 2px 2px;
   width:100%;
 }
 .clue-list .list-title {
-  font-size:0.8rem;
+  font-size:0.9rem;
   font-weight: 1000;
   padding-bottom: 5px;
 }
 .clue-list .start-position {
   color: #3f0cf6;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   padding: 0px 5px 0px 0px;
   
@@ -314,15 +314,16 @@
 .input-wrapper{
   position:relative;
   float:left;
-  width:25px;
-  height:25px;
+  width:24px;
+  height:24px;
 }
 
 .input-wrapper .unit{
   position:absolute;
-  top:0px;
+  top:1px;
   left:1px;
-  font-size:0.4rem;
+  font-size:0.3rem;
+  color:#3f0cf6;
 }
 
 #game-submit-form{
@@ -387,10 +388,10 @@
   padding:5px 5px 5px 5px;
   grid-area: box4;
   display:grid; 
-  grid-template-rows: repeat(3,30px);
-  grid-template-columns: repeat(11,30px); 
-  grid-row-gap:4px;
-  grid-column-gap:4px;
+  grid-template-rows: repeat(3,34px);
+  grid-template-columns: repeat(10,34px); 
+  grid-row-gap:5px;
+  grid-column-gap:5px;
   margin:auto;
 }
 .btn-container{
@@ -434,13 +435,13 @@
           </div>
           <div class = "crossword-container" id="main-box">
             <div class="crossword-left-box">
-            <div class="crossword-grid" style="max-height:384px;">
+            <div class="crossword-grid" style="max-height:360px;">
               {%for item in all_cells%} 
               {%if item in empty_cells%}
-              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#ffbc8f;width:24px;height:24px;margin-top:0px !important;"></p>
+              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.2px solid rgb(0, 0, 0);background:#fc802d;width:24px;height:24px;margin-top:0px !important;"></p>
               {%else%}
               <div class="input-wrapper" style="width:24px;height:24px">
-              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="width:24px;height:24px;border:none;border-radius:0px;background:white;border:0.5px solid black;box-sizing:border-box;margin-top:0px !important; color:black;"></p>
+              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="width:24px;height:24px;border:none;border-radius:0px;background:white;border:0.2px solid rgb(0, 0, 0);box-sizing:border-box;margin-top:0px !important; color:rgb(0, 0, 0);"></p>
               {%for word in all_word_list%}
               {%if word.3 == item.0 and word.4 == item.1 %}
               <div class="unit">{{word.2}}</div>
@@ -465,7 +466,7 @@
       <div><button  class="keypad-btn" id ="btn-i1"  name="btn-i1" value="btn-i">I</button></div>
       <div><button  class="keypad-btn" id ="btn-o1"  name="btn-o1" value="btn-o">O</button></div>
       <div><button  class="keypad-btn" id ="btn-p1"  name="btn-p1" value="btn-p">P</button></div>
-      <div><button  class="keypad-btn" id ="btn-del"  name="btn-del" value="btn-del">DEL</button></div>
+      
       <div><button  class="keypad-btn" id ="btn-a1"  name="btn-a1" value="btn-a">A</button></div>
       <div><button  class="keypad-btn" id ="btn-s1"  name="btn-s1" value="btn-s">S</button></div>
       <div><button  class="keypad-btn" id ="btn-d1"  name="btn-d1" value="btn-d">D</button></div>
@@ -475,9 +476,9 @@
       <div><button  class="keypad-btn" id ="btn-j1"  name="btn-j1" value="btn-j">J</button></div>
       <div><button  class="keypad-btn" id ="btn-k1"  name="btn-k1" value="btn-k">K</button></div>
       <div><button  class="keypad-btn" id ="btn-l1"  name="btn-l1" value="btn-l">L</button></div>
-      <div><button  class="keypad-btn" id ="btn-up"  name="btn-up" value="btn-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button></div>
-      <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty1"  name="btn-empty1" value="btn-c"></button></div>
-      <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty2"  name="btn-empty2" value="btn-c"></button></div>
+      <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-up"  name="btn-up" value="btn-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button></div>
+      <div style="display:none;"><button  class="keypad-btn" id ="btn-empty1"  name="btn-empty1" value="btn-c"></button></div>
+      <div style="display:none;"><button  class="keypad-btn" id ="btn-empty2"  name="btn-empty2" value="btn-c"></button></div>
       <div><button  class="keypad-btn" id ="btn-z1"  name="btn-z1" value="btn-z">Z</button></div>
       <div><button  class="keypad-btn" id ="btn-x1"  name="btn-x1" value="btn-x">X</button></div>
       <div><button  class="keypad-btn" id ="btn-c1"  name="btn-c1" value="btn-c">C</button></div>
@@ -485,11 +486,11 @@
       <div><button  class="keypad-btn" id ="btn-b1"  name="btn-b1" value="btn-b">B</button></div>
       <div><button  class="keypad-btn" id ="btn-n1"  name="btn-n1" value="btn-n">N</button></div>
       <div><button  class="keypad-btn" id ="btn-m1"  name="btn-m1" value="btn-m">M</button></div>
-      
-      <div><button  class="keypad-btn" id ="btn-left"  name="btn-left" value="btn-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button></div>
-      <div><button  class="keypad-btn" id ="btn-down"  name="btn-down" value="btn-down">
+      <div><button  class="keypad-btn" id ="btn-del"  name="btn-del" value="btn-del">DEL</button></div>
+      <div style="display:none;;"><button  class="keypad-btn" id ="btn-left"  name="btn-left" value="btn-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button></div>
+      <div style="display:none;"><button  class="keypad-btn" id ="btn-down"  name="btn-down" value="btn-down">
         <i class="fa fa-angle-down" aria-hidden="true"></i></button></div>
-      <div><button  class="keypad-btn" id ="btn-right"  name="btn-right" value="btn-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
+      <div style="display:none;"><button  class="keypad-btn" id ="btn-right"  name="btn-right" value="btn-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
       
      </div>
         <div class = "crossword-right-box">
@@ -879,15 +880,19 @@ function tString(e){
       
       }
       console.log(flag);
-      // if(acrossOrDown = "true" && (!isIncluded([parseInt(currentX),parseInt(currentY)+1]))){
-      // acrossOrDown = "false";
-      // }
+      
     
      if (JSON.parse(acrossOrDown)){
       if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) != null){
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).focus();
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
+        if (x.namedItem(`cell${currentX},${currentY}`).textContent==""){
+        x.namedItem(`cell${currentX},${currentY}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${currentX},${currentY}`).style.background ="#d6fdff";
+        
+        }
   
       }
       
@@ -902,13 +907,17 @@ function tString(e){
         
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
+        if (x.namedItem(`cell${currentX},${currentY}`).textContent==""){
+        x.namedItem(`cell${currentX},${currentY}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${currentX},${currentY}`).style.background ="#d6fdff";
+        
+        }
         
       }
   }
 
-    
-  
-  }else{
+    }else{
     
     
     if(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`) == null){
@@ -927,6 +936,12 @@ function tString(e){
         console.log(flag);
         x.namedItem(`cell${parseInt(currentX)+1},${currentY}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${parseInt(currentX)+1},${currentY}`));
+        if (x.namedItem(`cell${currentX},${currentY}`).textContent==""){
+        x.namedItem(`cell${currentX},${currentY}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${currentX},${currentY}`).style.background ="#d6fdff";
+        
+        }
     }else{
       flag = 1;
     }
@@ -941,6 +956,12 @@ function tString(e){
         
         x.namedItem(`cell${currentX},${parseInt(currentY)+1}`).style.background = "#b8b8b8";
         w.push(x.namedItem(`cell${currentX},${parseInt(currentY)+1}`));
+        if (x.namedItem(`cell${currentX},${currentY}`).textContent==""){
+        x.namedItem(`cell${currentX},${currentY}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${currentX},${currentY}`).style.background ="#d6fdff";
+        
+        }
         
   }else{
     flag=1;
