@@ -20,7 +20,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
   
-.crossword-instructions{
+/* .crossword-instructions{
   margin: 1rem 5rem 2rem 5rem;
 }
 .crossword-instructions h3{
@@ -193,7 +193,7 @@
 .mobile-keypad{
   display:none; 
 } 
-
+ */
 
 @media(max-width: 768px){
     
@@ -403,10 +403,12 @@
 }
 /* ----------- iPad Pro 12.9" ----------- */
 
-/* Portrait and Landscape */
-@media only screen 
-  and (width: 1366px) 
-  and (orientation: landscape)
+/* Portrait and Landscape and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2)*/
+  @media only screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
 
   .crossword-instructions{
@@ -624,25 +626,25 @@
 /* Portrait */
 /* Declare the same value for min- and max-width to avoid colliding with desktops */
 /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
-@media only screen 
+/* @media only screen 
   and (min-device-width: 1024px) 
   and (max-device-width: 1024px) 
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 2) {
     
-}
+} */
 
 /* Landscape */
 /* Declare the same value for min- and max-width to avoid colliding with desktops */
 /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
-@media only screen 
+/* @media only screen 
   and (min-device-width: 1366px) 
   and (max-device-width: 1366px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
    
    
-}
+} */
 
 </style>
 </head>
