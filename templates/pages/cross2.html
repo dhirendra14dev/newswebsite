@@ -70,7 +70,7 @@
   width:28px;
   height:28px; 
   font-size:1rem;
-  color: #3f0cf6;
+  color: #000000;
   font-weight:800;
   padding-bottom:10px;
   text-align: center;
@@ -425,14 +425,15 @@
 }
 .crossword-container{
   display:grid;
-  grid-template-columns:auto auto;
+  grid-template-columns:auto auto auto;
   grid-template-rows: auto auto;
   margin:1rem 1rem 200px 1rem;
   /* background:burlywood; */
   width:100%;
   grid-template-areas: 
   'box1 box2' 
-  'box4 box3';
+  'box4' 
+  'box3 box3';
 }
 
 .crossword-left-box{
@@ -446,20 +447,21 @@
   display: inline-flex; 
   flex-direction:column; 
   flex-wrap:wrap;
-  max-height:384px;
+  max-height:448px;
   
 }
 
 .empty-cell{
-  width:24px;
-  height:24px;
+  width:28px;
+  height:28px;
   background:rgb(255, 255, 255);
 }
 .input-boxes{
-  width:24px;
-  height:24px; 
-  font-size:0.8rem;
-  color: #3f0cf6;
+  width:28px;
+  height:28px; 
+  font-size:1rem;
+  color: #000000;
+  margin:auto;
   font-weight:1000;
   padding-bottom:4px;
   text-align: center;
@@ -517,15 +519,15 @@
 .input-wrapper{
   position:relative;
   float:left;
-  width:24px;
-  height:24px;
+  width:28px;
+  height:28px;
 }
 
 .input-wrapper .unit{
   position:absolute;
-  top:1px;
-  left:1px;
-  font-size:0.4rem;
+  top:2px;
+  left:2px;
+  font-size:0.5rem;
   color:#000000;
 }
 
@@ -577,14 +579,14 @@
   padding:8px 12px 8px 12px;
   border-radius:6px;
 }
-.not-available-message{
+/* .not-available-message{
   margin: 2rem 10rem 0 10rem; 
   font-size: 1rem;
   line-height:2;
   border-radius:20px;
   padding:10px 10px 10px 10px;
   text-align: center;
-}
+} */
 .mobile-keypad{
   
   background:#9d9d9d;
