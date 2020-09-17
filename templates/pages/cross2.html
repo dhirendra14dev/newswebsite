@@ -406,9 +406,8 @@
 /* Portrait and Landscape and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2)*/
   @media only screen 
-  and (min-device-width: 1366px) 
-  and (max-device-width: 1366px) 
-  and (orientation: landscape) 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
   .crossword-instructions{
@@ -626,25 +625,427 @@
 /* Portrait */
 /* Declare the same value for min- and max-width to avoid colliding with desktops */
 /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
-/* @media only screen 
+@media only screen 
   and (min-device-width: 1024px) 
   and (max-device-width: 1024px) 
   and (orientation: portrait) 
   and (-webkit-min-device-pixel-ratio: 2) {
-    
+    .crossword-instructions{
+  
+  margin: 1rem 5rem 2rem 5rem;
+}
+.crossword-instructions h3{
+  color: #f6660c;
+  font-weight:700;
+}
+.crossword-instructions .instruction-list{
+  font-size:1rem;
+  border: 1px solid rgb(5, 159, 206);
+  border-radius: 10px;
+}
+.crossword-container{
+  display:grid;
+  grid-template-columns:50% 50%;
+  grid-template-rows: auto auto;
+  margin:1rem 1rem 200px 1rem;
+  width:100%;
+  grid-template-areas: 
+  'box1 box2' 
+  'box4 box2'
+  'box3 box3';
+}
+
+.crossword-left-box{
+  grid-area: box1; 
+  margin:auto;
+  margin-right:520px;
+}
+.crossword-grid{
+  display: inline-flex; 
+  flex-direction:column; 
+  flex-wrap:wrap;
+  max-height:448px;
+  
+}
+
+.empty-cell{
+  width:28px;
+  height:28px;
+  background:rgb(255, 255, 255);
+}
+.input-boxes{
+  width:28px;
+  height:28px; 
+  font-size:1rem;
+  color: #000000;
+  margin:auto;
+  font-weight:1000;
+  padding-bottom:6px;
+  text-align: center;
+  text-transform: capitalize;
+  
+}
+.crossword-form{
+  grid-area: box3;
+  width:100%;
+  /* background:rgb(204, 50, 50); */
+  text-align: center;
+  
+  
+  
+}
+
+.crossword-right-box{
+  /* margin-bottom:-3rem; */
+  grid-area: box2;
+  display:flex;
+  flex-direction: row;
+  /* margin:auto; */
+  margin-left:50px;
+  
+
+}  
+
+.crossword-form{
+  grid-area: box3;
+
+}
+
+.clue-list {
+  
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:top;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 2px 2px 2px 2px;
+  width:100%;
+}
+.clue-list .list-title {
+  font-size:0.9rem;
+  font-weight: 1000;
+  padding-bottom: 5px;
+}
+.clue-list .start-position {
+  color: #3f0cf6;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0px 5px 0px 0px;
+  
+}
+.input-wrapper{
+  position:relative;
+  float:left;
+  width:28px;
+  height:28px;
+}
+
+.input-wrapper .unit{
+  position:absolute;
+  top:2px;
+  left:2px;
+  font-size:0.5rem;
+  color:#000000;
+}
+
+#game-submit-form{
+  width:60%;
+  margin: auto;
+  background: rgb(224, 255, 253);
+  padding: 40px 20px 20px 20px;
+  border-radius:20px;
+}
+#game-submit-form input {
+  width: 100%;
+  padding: 10px;
+  margin:5px;
+  font-size:0.9rem;
+  border: 1px #ddd solid;
+  border-radius: 4px;
+}
+
+#game-submit-form :focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
+.subscribe-me{
+  
+  text-align:left;
+}
+.subscribe-me #wish_to_subscribe{
+  width:auto; 
+  height:10px;
+}
+
+.subscribe-me #checkbox-label{
+  display:inline;
+  font-size:0.8rem;
+}
+.crossword-submit-btn {
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.done-btn{
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+/* .not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
 } */
+.mobile-keypad{
+  
+  background:#9d9d9d;
+  padding:10px 10px 10px 10px;
+  grid-area: box4;
+  display:grid; 
+  grid-template-rows: repeat(3,40px);
+  grid-template-columns: repeat(10,40px); 
+  grid-row-gap:5px;
+  grid-column-gap:5px;
+  margin:auto;
+  margin-top:1rem;
+  margin-left: 7rem;
+  
+  
+}
+.btn-container{
+  /* border:1px solid black;  */
+  /* text-align:center; */
+}
+.keypad-btn{
+  touch-action: manipulation;
+  width:100%; 
+  height:100%;
+  margin:auto;
+  background:white;  
+}
+}
 
 /* Landscape */
 /* Declare the same value for min- and max-width to avoid colliding with desktops */
 /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
-/* @media only screen 
+@media only screen 
   and (min-device-width: 1366px) 
   and (max-device-width: 1366px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 2) {
    
-   
+    .crossword-instructions{
+  
+  margin: 1rem 5rem 2rem 5rem;
+}
+.crossword-instructions h3{
+  color: #f6660c;
+  font-weight:700;
+}
+.crossword-instructions .instruction-list{
+  font-size:1rem;
+  border: 1px solid rgb(5, 159, 206);
+  border-radius: 10px;
+}
+.crossword-container{
+  display:grid;
+  grid-template-columns:50% 50%;
+  grid-template-rows: auto auto;
+  margin:1rem 1rem 200px 1rem;
+  width:100%;
+  grid-template-areas: 
+  'box1 box2' 
+  'box4 box2'
+  'box3 box3';
+}
+
+.crossword-left-box{
+  grid-area: box1; 
+  margin:auto;
+  margin-right:520px;
+}
+.crossword-grid{
+  display: inline-flex; 
+  flex-direction:column; 
+  flex-wrap:wrap;
+  max-height:448px;
+  
+}
+
+.empty-cell{
+  width:28px;
+  height:28px;
+  background:rgb(255, 255, 255);
+}
+.input-boxes{
+  width:28px;
+  height:28px; 
+  font-size:1rem;
+  color: #000000;
+  margin:auto;
+  font-weight:1000;
+  padding-bottom:6px;
+  text-align: center;
+  text-transform: capitalize;
+  
+}
+.crossword-form{
+  grid-area: box3;
+  width:100%;
+  /* background:rgb(204, 50, 50); */
+  text-align: center;
+  
+  
+  
+}
+
+.crossword-right-box{
+  /* margin-bottom:-3rem; */
+  grid-area: box2;
+  display:flex;
+  flex-direction: row;
+  /* margin:auto; */
+  margin-left:50px;
+  
+
+}  
+
+.crossword-form{
+  grid-area: box3;
+
+}
+
+.clue-list {
+  
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:top;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 2px 2px 2px 2px;
+  width:100%;
+}
+.clue-list .list-title {
+  font-size:0.9rem;
+  font-weight: 1000;
+  padding-bottom: 5px;
+}
+.clue-list .start-position {
+  color: #3f0cf6;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0px 5px 0px 0px;
+  
+}
+.input-wrapper{
+  position:relative;
+  float:left;
+  width:28px;
+  height:28px;
+}
+
+.input-wrapper .unit{
+  position:absolute;
+  top:2px;
+  left:2px;
+  font-size:0.5rem;
+  color:#000000;
+}
+
+#game-submit-form{
+  width:60%;
+  margin: auto;
+  background: rgb(224, 255, 253);
+  padding: 40px 20px 20px 20px;
+  border-radius:20px;
+}
+#game-submit-form input {
+  width: 100%;
+  padding: 10px;
+  margin:5px;
+  font-size:0.9rem;
+  border: 1px #ddd solid;
+  border-radius: 4px;
+}
+
+#game-submit-form :focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
+.subscribe-me{
+  
+  text-align:left;
+}
+.subscribe-me #wish_to_subscribe{
+  width:auto; 
+  height:10px;
+}
+
+.subscribe-me #checkbox-label{
+  display:inline;
+  font-size:0.8rem;
+}
+.crossword-submit-btn {
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.done-btn{
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+/* .not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
 } */
+.mobile-keypad{
+  
+  background:#9d9d9d;
+  padding:10px 10px 10px 10px;
+  grid-area: box4;
+  display:grid; 
+  grid-template-rows: repeat(3,40px);
+  grid-template-columns: repeat(10,40px); 
+  grid-row-gap:5px;
+  grid-column-gap:5px;
+  margin:auto;
+  margin-top:1rem;
+  margin-left: 7rem;
+  
+  
+}
+.btn-container{
+  /* border:1px solid black;  */
+  /* text-align:center; */
+}
+.keypad-btn{
+  touch-action: manipulation;
+  width:100%; 
+  height:100%;
+  margin:auto;
+  background:white;  
+}
+}
 
 </style>
 </head>
