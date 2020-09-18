@@ -76,7 +76,7 @@
       grid-area: box3;
       width:100%;
       text-align: center;
-      margin-bottom:200px;
+      margin-bottom:100px;
     }
     
     .crossword-right-box{
@@ -193,7 +193,7 @@
       background:white;  
     }
   /******************************   mobile portrait    ***********************************************************************/
-  @media(max-width:900px){
+  @media(max-width:768px){
     
     .crossword-instructions{
       margin:1rem 30px 2rem 30px;
@@ -227,7 +227,7 @@
       flex-direction:column; 
       flex-wrap:wrap;
       max-height:336px;
-      /* margin:auto; */
+      margin:auto;
       
     }
     
@@ -378,6 +378,190 @@
       background:white;
       
     }
+    #btn-hide{
+      display:none;
+    }
+    }
+    /************************************* All tablets ******************************************************************************/
+    @media(min-width:1024px) and (max-width:768px){
+      .crossword-instructions{
+      
+      margin: 3rem 5rem 2rem 5rem;
+    }
+    .crossword-instructions h3{
+      color: #f6660c;
+      font-weight:700;
+    }
+    .crossword-instructions .instruction-list{
+      font-size:1rem;
+    }
+    .crossword-container{
+      display:grid;
+      grid-template-columns:auto auto;
+      grid-template-rows: auto auto;
+      grid-row-gap:20px;
+      grid-column-gap:20px;
+      margin-top: 2rem;
+      width:100%;
+      grid-template-areas: 
+      'box1 box2' 
+      'box4 box2'
+      'box3 box3';
+    }
+    
+    .crossword-left-box{
+      grid-area: box1; 
+      
+    }
+    .crossword-grid{
+      display: inline-flex; 
+      flex-direction:column; 
+      flex-wrap:wrap;
+      max-height:392px;
+      
+    }
+    
+    .empty-cell{
+      width:28px;
+      height:28px;
+      background:rgb(255, 255, 255);
+    }
+    .input-boxes{
+      width:28px;
+      height:28px; 
+      font-size:1rem;
+      color: #000000;
+      margin:auto;
+      font-weight:1000;
+      padding-bottom:6px;
+      text-align: center;
+      text-transform: capitalize;
+      
+    }
+    .crossword-form{
+      grid-area: box3;
+      width:100%;
+      text-align: center;
+      margin-bottom:100px;
+    }
+    
+    .crossword-right-box{
+      grid-area: box2;
+      display:flex;
+      flex-direction: row;
+    }  
+    .clue-list {
+      
+      display:flex;
+      flex-direction:column;
+      align-content:center;
+      justify-content:top;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 3px 3px 3px 3px;
+      width:100%;
+    }
+    .clue-list .list-title {
+      font-size:0.9rem;
+      font-weight: 1000;
+      padding-bottom: 5px;
+    }
+    .clue-list .start-position {
+      color: #3f0cf6;
+      font-size: 0.9rem;
+      font-weight: 800;
+      padding: 0px 5px 0px 0px;
+      
+    }
+    .input-wrapper{
+      position:relative;
+      float:left;
+      width:28px;
+      height:28px;
+    }
+    
+    .input-wrapper .unit{
+      position:absolute;
+      top:2px;
+      left:2px;
+      font-size:0.5rem;
+      color:#000000;
+    }
+    
+    #game-submit-form{
+      width:50%;
+      margin: auto;
+      background: rgb(224, 255, 253);
+      padding: 40px 20px 20px 20px;
+      border-radius:20px;
+    }
+    #game-submit-form input {
+      width: 100%;
+      padding: 10px;
+      margin:5px;
+      font-size:0.9rem;
+      border: 1px #ddd solid;
+      border-radius: 4px;
+    }
+    
+    #game-submit-form :focus {
+      outline: none;
+      border-color: #f7c08a;
+    }
+    
+    .subscribe-me{
+      
+      text-align:left;
+    }
+    .subscribe-me #wish_to_subscribe{
+      width:auto; 
+      height:10px;
+    }
+    
+    .subscribe-me #checkbox-label{
+      display:inline;
+      font-size:0.8rem;
+    }
+    .crossword-submit-btn {
+      font-size:1rem; 
+      color: white;
+      background:darkblue; 
+      padding:8px 12px 8px 12px;
+      border-radius:6px;
+    }
+    .done-btn{
+      font-size:1rem; 
+      color: white;
+      background:darkblue; 
+      padding:8px 12px 8px 12px;
+      border-radius:6px;
+    }
+    .keyboard-container{
+      grid-area: box4;
+      margin:auto;
+    }
+    .mobile-keypad{
+      
+      background:#9d9d9d;
+      padding:10px 10px 10px 10px;
+      display:grid; 
+      grid-template-rows: repeat(3,35px);
+      grid-template-columns: repeat(10,35px); 
+      grid-row-gap:5px;
+      grid-column-gap:5px;
+      margin:auto;
+    }
+    .keypad-btn{
+      touch-action: manipulation;
+      width:100%; 
+      height:100%;
+      margin:auto;
+      background:white;  
+    }
+    #btn-hide{
+      display:none;
+    }
+    
     }
     /* ----------------------------------------------iPad Pro 12.9" ---------------------------------------------------- */
     
@@ -563,6 +747,9 @@
       margin:auto;
       background:white;  
     }
+    #btn-hide{
+      display:none;
+    }
     }
     
     /* Portrait */
@@ -591,7 +778,7 @@
       grid-template-columns:auto auto;
       grid-template-rows: auto auto;
       grid-row-gap:40px;
-      grid-column-gap:150px;
+      grid-column-gap:40px;
       margin-top: 2rem;
       width:100%;
       grid-template-areas: 
@@ -748,6 +935,9 @@
       height:100%;
       margin:auto;
       background:white;  
+    }
+    #btn-hide{
+      display:none;
     }
     }
     
@@ -934,7 +1124,10 @@
       height:100%;
       margin:auto;
       background:white;  
-    }   
+    }  
+    #btn-hide{
+      display:none;
+    } 
     }
   
 
@@ -959,7 +1152,7 @@
       </header>
       <section>
           <div class="crossword-instructions"><h3>Crossword of the week</h3>
-            <p>Play R&I's crossword! The clues are simple and all the words can be found in the latest edition of R&I. The contest is open until 10 p.m., Mumbai time, on Wednesday. The winner stands to win an INR100 Amazon.in gift card. If there are multiple correct entries, the winner will be selected by a lucky draw.<br> <strong> For Desktop computers and laptops you may use the in-built keyboard. For touch - enabled devices please use the virtual keypad</strong></p>
+            <p>Play R&I's crossword! The clues are simple and all the words can be found in the latest edition of R&I. The contest is open until 10 p.m., Mumbai time, on Wednesday. The winner stands to win an INR100 Amazon.in gift card. If there are multiple correct entries, the winner will be selected by a lucky draw.<br> <strong> For Desktop computers and laptops you may use the device keyboard. For touch - enabled devices please use the virtual keypad</strong></p>
           </div>
           <div class = "crossword-container" id="main-box">
             <div class="crossword-left-box">
