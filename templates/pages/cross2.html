@@ -38,7 +38,7 @@
   
   grid-column-gap:540px;
   grid-row-gap:50px;
-  margin:4rem 0px 200px 0px;
+  margin:4rem 0px 100px 0px;
   
   width:100%;
   grid-template-areas: 
@@ -76,7 +76,7 @@
 .crossword-form{
   grid-area: box3;
   width:100%;
-  
+  margin-bottom:200px;
   text-align: center;
 }
 
@@ -1736,7 +1736,7 @@
   and (max-device-width: 1366px)
   and (-webkit-min-device-pixel-ratio: 2) {
     
-      .crossword-instructions{
+    .crossword-instructions{
       
       margin: 3rem 5rem 2rem 5rem;
     }
@@ -1892,7 +1892,6 @@
     }
     .keyboard-container{
       grid-area: box4;
-      width:100%;
       margin:auto;
     }
     .mobile-keypad{
@@ -1904,6 +1903,7 @@
       grid-template-columns: repeat(10,40px); 
       grid-row-gap:5px;
       grid-column-gap:5px;
+      margin:auto;
     }
     .keypad-btn{
       touch-action: manipulation;
@@ -1940,8 +1940,8 @@
       grid-template-columns:auto auto;
       grid-template-rows: auto auto;
       grid-row-gap:40px;
-      grid-column-gap:75px;
-      margin: 2rem 1rem 0px 1rem;
+      grid-column-gap:150px;
+      margin-top: 2rem;
       width:100%;
       grid-template-areas: 
       'box1 box2' 
@@ -1957,7 +1957,7 @@
       display: inline-flex; 
       flex-direction:column; 
       flex-wrap:wrap;
-      max-height:448px;
+      max-height:396px;
       
     }
     
@@ -2078,9 +2078,7 @@
     }
     .keyboard-container{
       grid-area: box4;
-      width:100%;
       margin:auto;
-      background:cornflowerblue;
     }
     .mobile-keypad{
       
@@ -2091,6 +2089,7 @@
       grid-template-columns: repeat(10,40px); 
       grid-row-gap:5px;
       grid-column-gap:5px;
+      margin:auto;
     }
     .keypad-btn{
       touch-action: manipulation;
@@ -2144,7 +2143,7 @@
       display: inline-flex; 
       flex-direction:column; 
       flex-wrap:wrap;
-      max-height:448px;
+      max-height:396px;
       
     }
     
@@ -2265,9 +2264,7 @@
     }
     .keyboard-container{
       grid-area: box4;
-      width:100%;
       margin:auto;
-      background:cornflowerblue;
     }
     .mobile-keypad{
       
@@ -2278,6 +2275,7 @@
       grid-template-columns: repeat(10,40px); 
       grid-row-gap:5px;
       grid-column-gap:5px;
+      margin:auto;
     }
     .keypad-btn{
       touch-action: manipulation;
@@ -2288,7 +2286,7 @@
     }
        
     }
-    @media only screen and (min-width: 1280px) and (max-width: 767px) { 
+  @media only screen and (max-width: 1280px) and (min-width: 767px) { 
       .crossword-instructions{
   margin: 1rem 5rem 2rem 5rem;
 }
@@ -2306,7 +2304,7 @@
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   
-  grid-column-gap:570px;
+  grid-column-gap:540px;
   grid-row-gap:50px;
   margin:4rem 0px 200px 0px;
   
@@ -2324,7 +2322,7 @@
   display: inline-flex; 
   flex-direction:column; 
   flex-wrap:wrap;
-  max-height:448px;
+  max-height:396px;
 }
 
 .empty-cell{
@@ -2346,20 +2344,12 @@
 .crossword-form{
   grid-area: box3;
   width:100%;
-  
   text-align: center;
-  
-  
-  
 }
-
 .crossword-right-box{
   grid-area: box2;
   display:flex;
   flex-direction: row;
-
- 
-
 }  
 
 .crossword-form{
@@ -2461,8 +2451,7 @@
 }
 .mobile-keypad{
   display:"none"; 
-}  
-    
+}    
   }
 
 
