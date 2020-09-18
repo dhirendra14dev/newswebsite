@@ -377,7 +377,7 @@
       grid-column-gap:5px;
       
       margin:auto;
-      margin-left:-1.5rem;
+      margin-left:-1.7rem;
     }
     .btn-container{
       /* border:1px solid black;  */
@@ -394,6 +394,209 @@
     
     
     
+    }
+
+    @media(max-width: 767px) and (min-width:420px){
+      .crossword-instructions{
+      /* display:none; */
+      margin: 1rem 10px 2rem 10px;
+    }
+    .crossword-instructions h3{
+      color: #f6660c;
+      font-weight:700;
+    }
+    .crossword-instructions .instruction-list{
+      font-size:1rem;
+      border: 1px solid rgb(5, 159, 206);
+      border-radius: 10px;
+    }
+    .crossword-container{
+      display:grid;
+      grid-template-columns:auto;
+      grid-template-rows: auto;
+      margin:1rem 10px 200px 10px;
+      /* background:burlywood; */
+      width:100%;
+      grid-template-areas: 
+      'box1' 
+      'box4'
+      'box2'
+      'box3';
+    }
+    
+    .crossword-left-box{
+      grid-area: box1;
+      margin-bottom:-1rem;
+    }
+    .crossword-grid{
+      display: inline-flex; 
+      flex-direction:column; 
+      flex-wrap:wrap;
+      max-height:384px;
+    }
+    
+    .empty-cell{
+      width:24px;
+      height:24px;
+      background:rgb(255, 255, 255);
+    }
+    .input-boxes{
+      width:24px;
+      height:24px; 
+      font-size:0.8rem;
+      color: #000000;
+      font-weight:1000;
+      padding-bottom:4px;
+      text-align: center;
+      text-transform: capitalize;
+      
+    }
+    .crossword-form{
+      grid-area: box3;
+      width:100%;
+      /* background:rgb(204, 50, 50); */
+      text-align: center;
+      
+      
+      
+    }
+    
+    .crossword-right-box{
+      /* margin-bottom:-3rem; */
+      grid-area: box2;
+      display:flex;
+      flex-direction: row;
+      margin:auto;
+      padding: 0px 10px 0px 10px;
+      /* background: rgb(145, 240, 164); */
+    
+    }  
+    
+    .crossword-form{
+      grid-area: box3;
+    }
+    
+    .clue-list {
+      
+      display:flex;
+      flex-direction:column;
+      align-content:center;
+      justify-content:top;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 2px 10px 2px 10px;
+      width:100%;
+      text-indent:-1rem;
+      
+    }
+    .clue-list .list-title {
+      font-size:0.9rem;
+      font-weight: 1000;
+      padding-bottom: 5px;
+    }
+    .clue-list .start-position {
+      color: #3f0cf6;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0px 5px 0px 0px;
+      
+    }
+    .input-wrapper{
+      position:relative;
+      float:left;
+      width:24px;
+      height:24px;
+    }
+    
+    .input-wrapper .unit{
+      position:absolute;
+      top:1px;
+      left:1px;
+      font-size:0.4rem;
+      color:#000000;
+    }
+    
+    #game-submit-form{
+      width:80%;
+      margin: auto;
+      background: rgb(224, 255, 253);
+      padding: 40px 20px 20px 20px;
+      border-radius:20px;
+    }
+    #game-submit-form input {
+      width: 100%;
+      padding: 10px;
+      margin:5px;
+      font-size:0.9rem;
+      border: 1px #ddd solid;
+      border-radius: 4px;
+    }
+    
+    #game-submit-form :focus {
+      outline: none;
+      border-color: #f7c08a;
+    }
+    
+    .subscribe-me{
+      
+      text-align:left;
+    }
+    .subscribe-me #wish_to_subscribe{
+      width:auto; 
+      height:10px;
+    }
+    
+    .subscribe-me #checkbox-label{
+      display:inline;
+      font-size:0.8rem;
+    }
+    .crossword-submit-btn {
+      font-size:1rem; 
+      color: white;
+      background:darkblue; 
+      padding:8px 12px 8px 12px;
+      border-radius:6px;
+    }
+    .done-btn{
+      font-size:1rem; 
+      color: white;
+      background:darkblue; 
+      padding:8px 12px 8px 12px;
+      border-radius:6px;
+    }
+    .keyboard-container{
+      grid-area: box4;
+      /* width:100%; */
+      margin:auto;
+    }
+    .mobile-keypad{
+      
+      background:#9d9d9d;
+      padding:5px 5px 5px 5px;
+      display:grid; 
+      grid-template-rows: repeat(3,33px);
+      grid-template-columns: repeat(10,33px); 
+      grid-row-gap:5px;
+      grid-column-gap:5px;
+      
+      margin:auto;
+      margin-left:-3rem;
+    }
+    .btn-container{
+      /* border:1px solid black;  */
+      /* text-align:center; */
+    }
+    .keypad-btn{
+      touch-action: manipulation;
+      width:100%; 
+      height:100%;
+      margin:auto;
+      background:white;
+      
+    }
+    
+    
+
     }
     /* ----------- iPad Pro 12.9" ----------- */
     
