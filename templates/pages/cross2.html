@@ -36,7 +36,7 @@
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   
-  grid-column-gap:570px;
+  grid-column-gap:540px;
   grid-row-gap:50px;
   margin:4rem 0px 200px 0px;
   
@@ -78,18 +78,12 @@
   width:100%;
   
   text-align: center;
-  
-  
-  
 }
 
 .crossword-right-box{
   grid-area: box2;
   display:flex;
   flex-direction: row;
-
- 
-
 }  
 
 .crossword-form{
@@ -192,6 +186,7 @@
 .mobile-keypad{
   display:none; 
 } 
+/*mobile portrait*/
   @media(max-width: 420px){
     
     .crossword-instructions{
@@ -224,12 +219,14 @@
     .crossword-left-box{
       grid-area: box1;
       margin-bottom:-1rem;
+      text-align: center;
     }
     .crossword-grid{
       display: inline-flex; 
       flex-direction:column; 
       flex-wrap:wrap;
       max-height:336px;
+      /* margin:auto; */
     }
     
     .empty-cell{
@@ -363,7 +360,7 @@
     }
     .keyboard-container{
       grid-area: box4;
-      /* width:100%; */
+      width:100%;
       margin:auto;
     }
     .mobile-keypad{
@@ -371,17 +368,13 @@
       background:#9d9d9d;
       padding:5px 5px 5px 5px;
       display:grid; 
-      grid-template-rows: repeat(3,33px);
-      grid-template-columns: repeat(10,33px); 
+      grid-template-rows: repeat(3,31px);
+      grid-template-columns: repeat(10,31px); 
       grid-row-gap:5px;
       grid-column-gap:5px;
-      
       margin:auto;
       
-    }
-    .btn-container{
-      /* border:1px solid black;  */
-      /* text-align:center; */
+      
     }
     .keypad-btn{
       touch-action: manipulation;
