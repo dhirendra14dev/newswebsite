@@ -224,7 +224,6 @@
     .crossword-left-box{
       grid-area: box1;
       margin-bottom:-1rem;
-      
     }
     .crossword-grid{
       display: inline-flex; 
@@ -956,6 +955,182 @@
     }
        
     }
+    @media only screen and (min-width: 1280px) and (max-width: 767px) { 
+      .crossword-instructions{
+  margin: 1rem 5rem 2rem 5rem;
+}
+.crossword-instructions h3{
+  color: #180cf6;
+  font-weight:700;
+}
+.crossword-instructions .instruction-list{
+  font-size:1rem;
+  border: 1px solid rgb(5, 159, 206);
+  border-radius: 10px;
+}
+.crossword-container{
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  
+  grid-column-gap:570px;
+  grid-row-gap:50px;
+  margin:4rem 0px 200px 0px;
+  
+  width:100%;
+  grid-template-areas: 
+  'box1 box2'
+  'box3 box3';
+}
+
+.crossword-left-box{
+  grid-area: box1;
+  
+}
+.crossword-grid{
+  display: inline-flex; 
+  flex-direction:column; 
+  flex-wrap:wrap;
+  max-height:448px;
+}
+
+.empty-cell{
+  width:28px;
+  height:28px;
+  background:rgb(68, 68, 68);
+}
+.input-boxes{
+  width:28px;
+  height:28px; 
+  font-size:1rem;
+  color: #000000;
+  font-weight:800;
+  padding-bottom:10px;
+  text-align: center;
+  text-transform: capitalize;
+  
+}
+.crossword-form{
+  grid-area: box3;
+  width:100%;
+  
+  text-align: center;
+  
+  
+  
+}
+
+.crossword-right-box{
+  grid-area: box2;
+  display:flex;
+  flex-direction: row;
+
+ 
+
+}  
+
+.crossword-form{
+  grid-area: box3;
+}
+
+.clue-list {
+  
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:top;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 5px 5px 5px 5px;
+  width:100%;
+}
+.clue-list .list-title {
+  font-size:1rem;
+  font-weight: 1000;
+  padding-bottom: 5px;
+}
+.clue-list .start-position {
+  color: #3f0cf6;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0px 5px 0px 0px;
+  
+}
+.input-wrapper{
+  position:relative;
+  float:left;
+  width:28px;
+  height:28px;
+}
+
+.input-wrapper .unit{
+  position:absolute;
+  top:0px;
+  left:1px;
+  font-size:0.6rem;
+}
+
+#game-submit-form{
+  width:40%;
+  margin: auto;
+  background: rgb(224, 255, 253);
+  padding: 40px 20px 20px 20px;
+  border-radius:20px;
+}
+#game-submit-form input {
+  width: 100%;
+  padding: 10px;
+  margin:5px;
+  font-size:0.9rem;
+  border: 1px #ddd solid;
+  border-radius: 4px;
+}
+
+#game-submit-form :focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
+.subscribe-me{
+  
+  text-align:left;
+}
+.subscribe-me #wish_to_subscribe{
+  width:auto; 
+  height:10px;
+}
+
+.subscribe-me #checkbox-label{
+  display:inline;
+  font-size:0.8rem;
+}
+.crossword-submit-btn {
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.done-btn{
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+.mobile-keypad{
+  display:"none"; 
+}  
+    
+  }
 
 
 
