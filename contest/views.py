@@ -182,7 +182,8 @@ def crossword(request):
     word_list.append(crossword.start_position) 
     word_list.append(crossword.start_position_x) 
     word_list.append(crossword.start_position_y )
-    word_list.append(crossword.clue)  
+    word_list.append(crossword.clue) 
+    word_list.append(str(crossword.is_across))  
     list_word_list.append(word_list)
   
   all_word_list = list_word_list

@@ -278,4 +278,4 @@ def crossword(request):
     'all_word_list':all_word_list,
     # 'start_position_across':start_position_across,
   }
-  return render(request, 'pages/cross2.html', context)
+  return render(request, 'pages/crossword.html', context)
