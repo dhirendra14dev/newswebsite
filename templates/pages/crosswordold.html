@@ -1,0 +1,1074 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173563544-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173563544-1');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Relevant and Irreverent | Welcome</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+  /*Crossword*/
+  
+.crossword-instructions{
+  margin: 1rem 5rem 2rem 5rem;
+}
+.crossword-instructions h3{
+  color: #f6660c;
+  font-weight:700;
+}
+.crossword-instructions .instruction-list{
+  font-size:1rem;
+  border: 1px solid rgb(5, 159, 206);
+  border-radius: 10px;
+}
+.crossword-container{
+  display:grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  
+  grid-column-gap:570px;
+  grid-row-gap:50px;
+  margin:4rem 0px 200px 0px;
+  /* background:burlywood; */
+  width:100%;
+  grid-template-areas: 
+  'box1 box2'
+  'box3 box3';
+}
+
+.crossword-left-box{
+  grid-area: box1;
+  
+}
+.crossword-grid{
+  display: inline-flex; 
+  flex-direction:column; 
+  flex-wrap:wrap; 
+}
+
+.empty-cell{
+  width:25px;
+  height:25px;
+  background:rgb(68, 68, 68);
+}
+.input-boxes{
+  width:25px;
+  height:25px; 
+  font-size:1rem;
+  color: #3f0cf6;
+  font-weight:800;
+  padding-bottom:10px;
+  text-align: center;
+  text-transform: capitalize;
+  
+}
+.crossword-form{
+  grid-area: box3;
+  width:100%;
+  /* background:rgb(204, 50, 50); */
+  text-align: center;
+  
+  
+  
+}
+
+.crossword-right-box{
+  grid-area: box2;
+  display:flex;
+  flex-direction: row;
+
+  /* background: rgb(145, 240, 164); */
+
+}  
+
+.crossword-form{
+  grid-area: box3;
+}
+
+.clue-list {
+  
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:top;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 5px 5px 5px 5px;
+  width:100%;
+}
+.clue-list .list-title {
+  font-size:1rem;
+  font-weight: 1000;
+  padding-bottom: 5px;
+}
+.clue-list .start-position {
+  color: #3f0cf6;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0px 5px 0px 0px;
+  
+}
+.input-wrapper{
+  position:relative;
+  float:left;
+  width:25px;
+  height:25px;
+}
+
+.input-wrapper .unit{
+  position:absolute;
+  top:0px;
+  left:1px;
+  font-size:0.6rem;
+}
+
+#game-submit-form{
+  width:40%;
+  margin: auto;
+  background: rgb(224, 255, 253);
+  padding: 40px 20px 20px 20px;
+  border-radius:20px;
+}
+#game-submit-form input {
+  width: 100%;
+  padding: 10px;
+  margin:5px;
+  font-size:0.9rem;
+  border: 1px #ddd solid;
+  border-radius: 4px;
+}
+
+#game-submit-form :focus {
+  outline: none;
+  border-color: #f7c08a;
+}
+
+.subscribe-me{
+  
+  text-align:left;
+}
+.subscribe-me #wish_to_subscribe{
+  width:auto; 
+  height:10px;
+}
+
+.subscribe-me #checkbox-label{
+  display:inline;
+  font-size:0.8rem;
+}
+.crossword-submit-btn {
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.done-btn{
+  font-size:1rem; 
+  color: white;
+  background:darkblue; 
+  padding:8px 12px 8px 12px;
+  border-radius:6px;
+}
+.not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+@media screen 
+  and (width: 1280px) 
+  and (height: 800px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+}
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    .not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+    .not-available-message{
+  margin: 2rem 10rem 0 10rem; 
+  font-size: 1rem;
+  line-height:2;
+  border-radius:20px;
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
+}
+
+@media(max-width: 768px){
+  .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 834px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1112px) 
+  and (max-device-width: 1112px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+/* Portrait and Landscape */
+@media 
+  (min-device-width: 800px) 
+  and (max-device-width: 1280px) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+@media 
+  (max-device-width: 800px) 
+  and (orientation: portrait) { 
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+@media 
+  (max-device-width: 1280px) 
+  and (orientation: landscape) { 
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* ----------- Galaxy Tab S ----------- */
+
+/* Portrait and Landscape */
+@media 
+  (min-device-width: 800px) 
+  and (max-device-width: 1280px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Portrait */
+@media 
+  (max-device-width: 800px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+
+/* Landscape */
+@media 
+  (max-device-width: 1280px) 
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    .not-available-message{
+    margin: 5rem 10px 200px 10px; 
+    font-size: 1rem;
+    background:rgb(255, 245, 201);
+    line-height:1.8;
+    border-radius:20px;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+  }
+  .crossword-instructions{
+    display:none;
+  }
+  .crossword-container{
+    display:none;
+  }
+}
+.mobile-keypad{
+  display:grid; 
+  grid-template-rows: repeat(3,35px);
+  grid-template-columns: repeat(11,35px); 
+  grid-row-gap:2px;
+  grid-column-gap:2px
+}
+.btn-container{
+  /* border:1px solid black;  */
+  /* text-align:center; */
+}
+.keypad-btn{
+  width:100%; 
+  height:100%;
+  margin:auto;
+  background:white;
+  
+}
+</style>
+</head>
+<body>
+    <header class='top-header'>
+        <div class="navbar">
+          <div>
+            <img src="{% static 'images/R&I-logo.png' %}" alt="logo">
+          </div>
+            <nav class="nav-items">
+              <ul>
+                <li><a href="{% url 'index'%}">Home</a></li>
+                <li><a href="{% url 'latestnews' %}">Latest</a></li>
+                <li><a href="{% url 'archives'%}">Archives</a></li>
+                <li><a href="{% url 'contests'%}">Contests</a></li>
+                <li><a href="{% url 'contactus' %}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+      </header>
+      <section>
+        <!-- <div class="mobile-keypad"> 
+          <div><button  class="keypad-btn" id ="btn-q1"  name="btn-q1" value="btn-q">Q</button></div>
+          <div><button  class="keypad-btn" id ="btn-w1"  name="btn-w1" value="btn-w">W</button></div>
+          <div><button  class="keypad-btn" id ="btn-e1"  name="btn-e1" value="btn-e">E</button></div>
+          <div><button  class="keypad-btn" id ="btn-r1"  name="btn-r1" value="btn-r">R</button></div>
+          <div><button  class="keypad-btn" id ="btn-t1"  name="btn-t1" value="btn-t">T</button></div>
+          <div><button  class="keypad-btn" id ="btn-y1"  name="btn-y1" value="btn-y">Y</button></div>
+          <div><button  class="keypad-btn" id ="btn-u1"  name="btn-u1" value="btn-u">U</button></div>
+          <div><button  class="keypad-btn" id ="btn-i1"  name="btn-i1" value="btn-i">I</button></div>
+          <div><button  class="keypad-btn" id ="btn-o1"  name="btn-o1" value="btn-o">O</button></div>
+          <div><button  class="keypad-btn" id ="btn-p1"  name="btn-p1" value="btn-p">P</button></div>
+          <div><button  class="keypad-btn" id ="btn-del"  name="btn-del" value="btn-del">DEL</button></div>
+          <div><button  class="keypad-btn" id ="btn-a1"  name="btn-a1" value="btn-a">A</button></div>
+          <div><button  class="keypad-btn" id ="btn-s1"  name="btn-s1" value="btn-s">S</button></div>
+          <div><button  class="keypad-btn" id ="btn-d1"  name="btn-d1" value="btn-d">D</button></div>
+          <div><button  class="keypad-btn" id ="btn-f1"  name="btn-f1" value="btn-f">F</button></div>
+          <div><button  class="keypad-btn" id ="btn-g1"  name="btn-g1" value="btn-g">G</button></div>
+          <div><button  class="keypad-btn" id ="btn-h1"  name="btn-h1" value="btn-h">H</button></div>
+          <div><button  class="keypad-btn" id ="btn-j1"  name="btn-j1" value="btn-j">J</button></div>
+          <div><button  class="keypad-btn" id ="btn-k1"  name="btn-k1" value="btn-k">K</button></div>
+          <div><button  class="keypad-btn" id ="btn-l1"  name="btn-l1" value="btn-l">L</button></div>
+          <div><button  class="keypad-btn" id ="btn-up"  name="btn-up" value="btn-up"><i class="fa fa-angle-up" aria-hidden="true"></i></button></div>
+          <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty1"  name="btn-empty1" value="btn-c"></button></div>
+          <div style="visibility:hidden;"><button  class="keypad-btn" id ="btn-empty2"  name="btn-empty2" value="btn-c"></button></div>
+          <div><button  class="keypad-btn" id ="btn-z1"  name="btn-z1" value="btn-z">Z</button></div>
+          <div><button  class="keypad-btn" id ="btn-x1"  name="btn-x1" value="btn-x">X</button></div>
+          <div><button  class="keypad-btn" id ="btn-c1"  name="btn-c1" value="btn-c">C</button></div>
+          <div><button  class="keypad-btn" id ="btn-v1"  name="btn-v1" value="btn-v">V</button></div>
+          <div><button  class="keypad-btn" id ="btn-b1"  name="btn-b1" value="btn-b">B</button></div>
+          <div><button  class="keypad-btn" id ="btn-n1"  name="btn-n1" value="btn-n">N</button></div>
+          <div><button  class="keypad-btn" id ="btn-m1"  name="btn-m1" value="btn-m">M</button></div>
+          
+          <div><button  class="keypad-btn" id ="btn-left"  name="btn-left" value="btn-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button></div>
+          <div><button  class="keypad-btn" id ="btn-down"  name="btn-down" value="btn-down">
+            <i class="fa fa-angle-down" aria-hidden="true"></i></button></div>
+          <div><button  class="keypad-btn" id ="btn-right"  name="btn-right" value="btn-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
+          
+         </div> -->
+          <div class="not-available-message">
+            <p>Currently, our crossword is only available for desktop users. We're working on a mobile version and should be able to bring that to you soon. We regret the inconvenience.</p>
+          </div>
+          <div class="crossword-instructions"><h3>Crossword of the week</h3>
+            <p>Play R&I's crossword! The clues are simple and all the words can be found in the latest edition of R&I. The contest is open until 10 p.m., Mumbai time, on Wednesday. The winner stands to win an INR100 Amazon.in gift card. If there are multiple correct entries, the winner will be selected by a lucky draw.</p>
+          </div>
+          <div class = "crossword-container" id="main-box">
+            <div class="crossword-left-box">
+            <div class="crossword-grid" style="max-height:392px;">
+              {%for item in all_cells%} 
+              {%if item in empty_cells%}
+              <p class="empty-cell" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" style="border:0.5px solid black;background:#fc802d;width:28px;height:28px;margin-top:0px !important;"></p>
+              {%else%}
+              <div class="input-wrapper" style="width:28px;height:28px">
+              <p  class="input-boxes" id ="cell{{item.0}},{{item.1}}" name = "cell{{item.0}},{{item.1}}" maxlength="1" style="width:28px;height:28px;border:none;border-radius:0px;background:white;border:0.5px solid black;box-sizing:border-box;margin-top:0px !important; color:black;"></p>
+              {%for word in all_word_list%}
+              {%if word.3 == item.0 and word.4 == item.1 %}
+              <div class="unit">{{word.2}}</div>
+              {% endif %}
+              {%endfor%}
+
+            </div>
+              {% endif %}
+              {%endfor%}
+
+          </div>
+
+    </div>
+        <div class = "crossword-right-box">
+            <div class="clue-list">
+                <p class="list-title">Across</p>
+                {%for item in word_across_list%}
+                <div><span class="start-position">{{item.2}}</span> {{item.5}}</div>
+                {%endfor%}
+            </div>
+            <div class="clue-list">
+                <p class="list-title">Down</p>
+                {%for item in word_down_list%}
+                <div><span class="start-position">{{item.2}}</span> {{item.5}}</div>
+                {%endfor%}
+            </div>
+            
+            </div>
+            <div class="crossword-form" >
+           
+              <form id="game-submit-form" style="display:none;"  action="{% url 'crossword_check' %}" method="POST" >
+                  {% csrf_token %}
+              <div class="game-submit" id="game-submit">
+              <div><input type="text" id="name"  name="name" placeholder="Enter your name" required></div>  
+              <div><input type="email" id="email"  name="email" placeholder="Enter your email address" required></div>  
+              <div class="subscribe-me" style="text-align:left;">
+              <input type="checkbox" id="wish_to_subscribe" style="width:auto; height:10px;"  name="wish_to_subscribe" checked>
+              <label  id="checkbox-label" style="display:inline; font:0.9rem;" for="subscribe">Sign me up for the newsletter</label>
+              </div>
+              <div><button type="submit" class="crossword-submit-btn" id ="submit-btn" name="check-result" value="check-result">Submit</button></div>
+            </div>
+            </form>
+        
+            <div><button  class="done-btn" id ="done-btn"  name="check-result" value="check-result">Done</button></div>
+            
+          </div>
+        </div>
+ 
+ <script type="text/javascript">
+
+
+
+var x = document.getElementsByClassName("input-boxes");
+var y = document.getElementsByClassName("empty-cell");
+
+   
+    
+var u = document.getElementById("done-btn");
+    u.addEventListener("click",k);
+// var a = document.getElementById("name");
+// var b = document.getElementById("email"); 
+// var c = document.getElementById("wish_to_subscribe"); 
+// var d = document.getElementById("submit-btn");  
+var o = document.getElementById("game-submit-form");     
+    
+  document.addEventListener("keypress",g, false);
+  document.addEventListener("keydown",h, false);
+  document.addEventListener("keyup",l, false);
+  
+  
+  var a = document.getElementById("wish_to_subscribe");
+            a.addEventListener("change",b)
+          function b(){
+            if (!a.checked) {
+              a.getAttribute.value = "off";
+            }
+          }
+    
+
+
+
+  for (i = 0; i <= {{max_x_coordinate}}; i++) {
+  for (j = 0; j <= {{max_y_coordinate}}; j++) {
+    if(x.namedItem(`cell${i},${j}`) != null){
+      x.namedItem(`cell${i},${j}`).addEventListener('click',f);
+    }
+  }
+}
+  
+w = [];
+function f(e){
+  var z = e.target;
+  w.push(z);
+  // console.log(w);
+  z.style.background = "#b8b8b8";
+  // if (w.length==1){
+  //   w[w.length-1].style.background = "#b8b8b8";
+  // }
+  if ((w.length) > 1){
+  if (w[w.length-2].textContent == ""){
+    w[w.length-2].style.background = "white";
+    // w[w.length-1].style.background = "#b8b8b8";
+  } else{
+    // w[w.length-1].style.background = "d6fdff";
+    w[w.length-2].style.background = "#d6fdff";
+  }
+  }
+  }
+
+function g(e){
+    w[w.length-1].textContent = e.key;
+  }
+
+
+
+
+function l(e){
+    if (e.keyCode == 8) {
+      i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+      j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+      
+      if(x.namedItem(`cell${i},${j}`) != null){
+        x.namedItem(`cell${i},${j}`).textContent ="";
+    }
+  }
+  }
+function h(e) {
+
+  if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+
+  if (e.keyCode == 37) {
+    i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+     j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+     if(x.namedItem(`cell${i-1},${j}`) != null){
+        x.namedItem(`cell${i-1},${j}`).focus();
+        x.namedItem(`cell${i-1},${j}`).style.background = "#b8b8b8";
+        w.push(x.namedItem(`cell${i-1},${j}`));
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        
+  }
+
+    }
+  } 
+
+     if (e.keyCode == 39) {
+      i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+      j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+      
+      if(x.namedItem(`cell${parseInt(i)+1},${j}`) != null){
+        x.namedItem(`cell${parseInt(i)+1},${j}`).focus();
+        x.namedItem(`cell${parseInt(i)+1},${j}`).style.background = "#b8b8b8";
+        w.push(x.namedItem(`cell${parseInt(i)+1},${j}`));
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        
+      }
+    }
+     }
+
+      if (e.keyCode == 38) {
+      i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+      j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+      
+      if(x.namedItem(`cell${i},${j-1}`) != null){
+        x.namedItem(`cell${i},${j-1}`).focus();
+        x.namedItem(`cell${i},${j-1}`).style.background = "#b8b8b8";
+        w.push(x.namedItem(`cell${i},${j-1}`));
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        
+        }
+        }
+      }
+
+      if (e.keyCode == 40) {
+      i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+      j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+      
+      if(x.namedItem(`cell${i},${parseInt(j)+1}`) != null){
+        x.namedItem(`cell${i},${parseInt(j)+1}`).focus();
+        x.namedItem(`cell${i},${parseInt(j)+1}`).style.background = "#b8b8b8";
+        w.push(x.namedItem(`cell${i},${parseInt(j)+1}`));
+        if (x.namedItem(`cell${i},${j}`).textContent==""){
+        x.namedItem(`cell${i},${j}`).style.background ="white";
+        } else{
+        x.namedItem(`cell${i},${j}`).style.background ="#d6fdff";
+        
+        }
+        
+      }
+      
+      }
+     }
+    
+    function switch_display(){
+    u.style.display = "none";
+    o.style.display = "";
+    }
+    resultString="";
+    function k(e) {
+    for (i = 0; i <= {{max_x_coordinate}}; i++) {
+    for (j = 0; j <= {{max_y_coordinate}}; j++) {
+    if(x.namedItem(`cell${i},${j}`) != null){
+      resultString += x.namedItem(`cell${i},${j}`).textContent;
+      console.log(resultString);
+      
+
+    }
+  }
+  switch_display();
+}
+    }  
+  
+console.log(resultString);
+      </script>
+      <script>
+        $(document).ready(function(){
+          $("#done-btn").click(function(){
+            // console.log("Hello 1");
+            $.post("{% url 'crossword_check' %}",
+            {
+              
+              city: resultString,
+              csrfmiddlewaretoken : "{{csrf_token}}"
+            },
+            function(data,status){
+              // console.log("Hello 1");
+              // alert("Data: " + data + "\nStatus: " + status);
+            });
+          });
+        });
+
+// keypad for mobile
+// var keyArray=["btn-q1", "btn-w1", "btn-e1", "btn-r1", "btn-t1", "btn-y1", "btn-u1", "btn-i1", "btn-o1", "btn-p1", "btn-del", "btn-a1", "btn-s1", "btn-d1", "btn-f1", "btn-g1", "btn-h1","btn-j1", "btn-k1", "btn-l1","btn-up", "btn-z1","btn-x1", "btn-c1", "btn-v1", "btn-b1","btn-n1", "btn-m1", "btn-left", "btn-down", "btn-right" , "btn-empty1", "btn-empty2"]
+
+
+// var btn = document.getElementsByClassName("keypad-btn");
+
+
+// for (i = 0; i < keyArray.length; i++) {
+//   btn.namedItem(`${keyArray[i]}`).addEventListener('click',tString);
+
+// }
+ 
+
+// function tString(e){
+//     i = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
+//     j = w[w.length-1].getAttribute("name").substring(4).split(',')[1];
+//     if (e.target.getAttribute("name")== "btn-del"){
+
+//     }
+//     if (e.target.getAttribute("name")== "btn-left"){
+      
+//     }
+//     if (e.target.getAttribute("name")== "btn-right"){
+      
+//     }
+//     if (e.target.getAttribute("name")== "btn-up"){
+      
+//     }
+//     if (e.target.getAttribute("name")== "empty1"){
+      
+//     }
+//     if (e.target.getAttribute("name")== "empty2"){
+      
+//     }
+//     else {
+     
+//     x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
+//     }
+//   }
+
+
+        </script>
+      </section>
+        
+      <footer id="main-footer">
+          <div class="footer-container">
+         
+           
+              
+            <div class="navlinks">
+              <ul class="linklist">
+                  <li><a href="{% url 'index'%}">Home</a></li>
+                  <li><a href="{% url 'latestnews' %}">Latest</a></li>
+                  <li><a href="{% url 'archives'%}">Archives</a></li>
+                  <li><a href="{% url 'contests'%}">Contests</a></li>
+                  <li><a href="{% url 'contactus' %}">Contact</a></li>
+              </ul>
+            </div>
+  
+            
+            <div class="icons">
+            <p>Follow us on</p>
+            <a target="_blank"  href="https://www.facebook.com/RnIsays"><i class="fab fa-facebook fa-2x sicons"></i></a>
+            <a target="_blank" href="http://twitter.com/RnIsays" target="_blank"><i class="fab fa-twitter fa-2x 
+                sicons"></i></a>
+            <a target="_blank"  href="http://instagram.com/relevant.irreverent" target="_blank"><i class="fab fa-instagram fa-2x sicons"></i></a> 
+          </div>
+          
+          </div>
+        </footer>
+</body>
+</html>

@@ -51,7 +51,7 @@
       display: inline-flex; 
       flex-direction:column; 
       flex-wrap:wrap;
-      max-height:392px;
+      max-height:420px;
       
     }
     
@@ -1465,7 +1465,6 @@ for (i=0; i<wordList.length; i++){
 
 
 
-
 function isStartingPoint(x,y){
   for (i=0; i<startPostion.length; i++){
     if (startPostion[i][1] == x && startPostion[i][2] == y){
@@ -1519,13 +1518,13 @@ var o = document.getElementById("game-submit-form");
 w = [];
 currentWordArray=[];
 var wordLength;
-
+var acrossOrDown;
 function f(e){
   currentWordArray=[];
   var z = e.target;
   console.log(z);
   w.push(z);
-  // console.log(w);
+  console.log(w);
   z.style.background = "#b8b8b8";
   
   currentX = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
@@ -1535,7 +1534,9 @@ function f(e){
     for (i=0; i<startPostion.length; i++){
       if (startPostion[i][1] == currentX && startPostion[i][2] == currentY ){
           acrossOrDown = startPostion[i][3];
+          console.log(acrossOrDown);
           wordLength = startPostion[i][0];
+
       }
     }
     if (JSON.parse(acrossOrDown)){  
@@ -1749,7 +1750,7 @@ for (i = 0; i < keyArray.length; i++) {
 }
 
 var flag = 1;
-var acrossOrDown;
+
 function tString(e){
   if(e.target.getAttribute("name") == "btn-hide"){
       virtualKeyboard.style.visibility = "hidden";}
