@@ -1759,9 +1759,8 @@ function tString(e){
     if(x.namedItem(`cell${i},${j}`) != null){
         x.namedItem(`cell${i},${j}`).textContent ="";
     }
-    }else if(e.target.getAttribute("name") == "btn-hide"){
-      virtualKeyboard.style.visibility = "hidden";
-    }else {
+    }
+    else {
     x.namedItem(`cell${i},${j}`).textContent=e.target.textContent;
     
     currentX = w[w.length-1].getAttribute("name").substring(4).split(',')[0];
