@@ -211,7 +211,6 @@
       grid-template-rows: auto;
       margin:1rem 0rem 200px 0rem;
       width:100%;
-      background:green;
       grid-template-areas: 
       'box1' 
       'box4'
@@ -221,30 +220,28 @@
     
     .crossword-left-box{
       grid-area: box1;
-      background:blue;
-      margin: 0px 0px -1rem 0px;
+      margin: 0px 0rem -1rem 0px;
       width:100%;
-      /* margin:auto; */
+      
+      
      
     }
     .crossword-grid{
       display: inline-flex; 
       flex-direction:column; 
       flex-wrap:wrap;
-      max-height:252px;
-      margin:auto;
-      /* margin-left:2rem; */ 
-      
+      max-height:336px;
+      margin-left:2rem;
     }
     
     .empty-cell{
-      width:18px;
-      height:18px;
+      width:24px;
+      height:24px;
       background:rgb(255, 255, 255);
     }
     .input-boxes{
-      width:18px;
-      height:18px; 
+      width:24px;
+      height:24px; 
       font-size:0.8rem;
       color: #000000;
       font-weight:1000;
@@ -299,8 +296,8 @@
     .input-wrapper{
       position:relative;
       float:left;
-      width:18px;
-      height:18px;
+      width:24px;
+      height:24px;
     }
     
     .input-wrapper .unit{
@@ -362,6 +359,7 @@
     .keyboard-container{
       grid-area: box4;
       margin:auto;
+      
     }
     .mobile-keypad{
       
