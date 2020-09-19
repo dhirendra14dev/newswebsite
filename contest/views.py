@@ -136,22 +136,23 @@ def crossword_check(request):
       
   
   
-  if request.method == 'POST' and request.is_ajax():
-    crosswordcheck = Crosswordcheck(name="do",email="do@po.com",result="asdf")
-    crosswordcheck.save()
-    result = request.POST.get('city')
-    crosswordcheck.result = result
-    crosswordcheck.save()
+  # if request.method == 'POST' and request.is_ajax():
+  #   crosswordcheck = Crosswordcheck(name="do",email="do@po.com",result="asdf")
+  #   crosswordcheck.save()
+  #   result = request.POST.get('city')
+  #   crosswordcheck.result = result
+  #   crosswordcheck.save()
     
   
   if request.method == 'POST' and request.is_ajax() == False:
-    crosswordcheck = Crosswordcheck.objects.all().last()
+    # crosswordcheck = Crosswordcheck.objects.all().last()
     name = request.POST['name']
     email = request.POST['email']
-    
-    crosswordcheck.name = name
-    crosswordcheck.email = email
-    
+    result = request.POST['result']
+    crosswordcheck = Crosswordcheck(name=name,email=email,result=result)
+    # crosswordcheck.name = name
+    # crosswordcheck.email = email
+    # crosswordcheck.result = result
     subscribe_yes = request.POST.get('wish_to_subscribe',False)
    
     

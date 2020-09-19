@@ -1438,7 +1438,8 @@
               <form id="game-submit-form" style="display:none;"  action="{% url 'crossword_check' %}" method="POST" >
                   {% csrf_token %}
               <div class="game-submit" id="game-submit">
-              <div><input type="text" id="name"  name="name" placeholder="Enter your name" required></div>  
+              <div><input type="text" id="name"  name="name" placeholder="Enter your name" required></div> 
+              <div><input type="hidden" id="result"  name="result" value="result"></div>  
               <div><input type="email" id="email"  name="email" placeholder="Enter your email address" required></div>  
               <div class="subscribe-me" style="text-align:left;">
               <input type="checkbox" id="wish_to_subscribe" style="width:auto; height:10px;"  name="wish_to_subscribe" checked>
@@ -1728,14 +1729,16 @@ function h(e) {
     for (j = 0; j <= {{max_y_coordinate}}; j++) {
     if(x.namedItem(`cell${i},${j}`) != null){
       resultString += x.namedItem(`cell${i},${j}`).textContent;
-      console.log(resultString);
-      
+      // console.log(resultString);
+      document.getElementById('result').value = resultString;
+      console.log(document.getElementById('result').value);
 
     }
   }
   switch_display();
 }
     }  
+
   
 // keypad for mobile
 var keyArray=["btn-q1", "btn-w1", "btn-e1", "btn-r1", "btn-t1", "btn-y1", "btn-u1", "btn-i1", "btn-o1", "btn-p1", "btn-del", "btn-a1", "btn-s1", "btn-d1", "btn-f1", "btn-g1", "btn-h1","btn-j1", "btn-k1", "btn-l1","btn-up", "btn-z1","btn-x1", "btn-c1", "btn-v1", "btn-b1","btn-n1", "btn-m1", "btn-left", "btn-down", "btn-right" , "btn-empty1", "btn-empty2","btn-hide"]
@@ -1972,7 +1975,7 @@ function tString(e){
       
     // }
       </script>
-      <script>
+      <!-- <script>
         $(document).ready(function(){
           $("#done-btn").click(function(){
             // console.log("Hello 1");
@@ -1991,7 +1994,7 @@ function tString(e){
 
 
     
-      </script>
+      </script> -->
       </section>
         
       <footer id="main-footer">
